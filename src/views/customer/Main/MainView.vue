@@ -38,7 +38,6 @@ import "@/assets/css/customer/MainView.css";
 import AppFooter from "@/components/customer/AppFooter.vue";
 import AppHeader from "@/components/customer/AppHeader.vue";
 
-
 export default {
   name: "MainView",
   components: {
