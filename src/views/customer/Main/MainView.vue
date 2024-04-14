@@ -33,7 +33,7 @@
   </div>
 </template>
   
-  <script>
+<script>
 import "@/assets/css/customer/MainView.css";
 import AppFooter from "@/components/customer/AppFooter.vue";
 import AppHeader from "@/components/customer/AppHeader.vue";
@@ -52,4 +52,4 @@ export default {
   created() {},
 };
 </script>
-  <style></style>
+<style></style>
