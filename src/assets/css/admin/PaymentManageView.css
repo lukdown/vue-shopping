@@ -1,0 +1,47 @@
+#m-payment-table {
+    border-collapse: collapse;
+    width: 800px;
+}
+
+#m-payment-table th, td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+#m-payment-table tr:hover {background-color:#f5f5f5;}
+
+#m-payment-table {
+    margin: 20px 0;
+}
+
+.m-payment-table-th {
+    background-color: #3f0a2d;
+    color: white;
+}
+
+.m-payment-table-content {
+    background-color: white;
+}
+
+#m-payment-search-form {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#m-payment-search-form input[type="text"] {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 200px;
+    height: 35px;
+}
+
+#m-payment-search-form button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #3f0a2d;
+    color: white;
+}

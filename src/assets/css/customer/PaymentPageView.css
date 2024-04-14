@@ -1,0 +1,134 @@
+.u-payment-product-information {
+    margin-bottom: 20px;
+    border: 1px solid #666;
+}
+
+
+.u-payment-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #444;
+}
+
+
+#price {
+    font-size: 16px;
+    color: #666;
+}
+
+
+#u-payment-delivery-address input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+#u-payment-phone input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+#u-payment-point p {
+    margin-bottom: 5px;
+}
+
+#u-payment-point input[type="text"] {
+    width: calc(100% - 70px);
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#u-payment-point button {
+    padding: 10px 20px;
+    margin-top: 5px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+#u-payment-total-price label {
+    font-weight: bold;
+}
+
+#u-payment-total-price #u-total-price {
+    font-size: 20px;
+    color: #333;
+}
+
+
+#payment-final-button {
+    padding: 15px 30px;
+    margin-top: 20px;
+    border: none;
+    background-color: #28a745;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+#payment-final-button:hover {
+    background-color: #218838;
+}
+
+/*총결제테이블*/
+.u-payment-total-price-all {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.u-payment-total-price {
+    width: 30%;
+    margin-bottom: 10px;
+}
+
+.table_price {
+    width: 100%;
+}
+
+.table_price th,
+.table_price td {
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+.table_price th {
+    font-weight: bold;
+}
+
+#u-total-price {
+    font-size: 18px;
+}
+
+/*결제 수단 선택*/
+.u-payment-method-button label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.u-payment-method-button button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #2e053a;
+    color: #fff;
+    cursor: pointer;
+}
+
+.u-payment-method-button button:hover {
+    background-color: #5d0e75;
+}
+

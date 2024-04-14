@@ -1,0 +1,23 @@
+#ProductDetails-img{
+    float: left;
+    height: 244px;
+  }
+  
+  #ProductDetails-quantity{
+    text-align: center;
+  }
+  
+  #ProductDetails-explanation{
+    text-align: center;
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+  }
+  
+  #ProductDetails-Description{
+    text-align: center;
+  }
+  
+  #ProductDetails-QuantityButton{
+    border: 1px solid #000000;
+  }
+  

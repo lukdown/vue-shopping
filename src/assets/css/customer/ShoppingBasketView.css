@@ -1,0 +1,21 @@
+#ShoppingBasketList {
+    width: 500px;
+    height: 200px;
+    list-style-type: none;
+    border: 1px solid #000000;
+}
+
+#ShoppingBasket-img {
+    width: 200px;
+    height: 197px;
+    float: left;
+}
+
+.ShoppingBasket-Cancelbtn {
+    position: relative;
+    left: 285px;
+}
+
+#ShoppingBasket-TotalPaymentAmountPayment{
+    text-align: center;
+}
