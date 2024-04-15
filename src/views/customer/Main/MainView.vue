@@ -74,12 +74,12 @@ export default {
         {
           title: 'Slide <b style="font-size: 1.3em;color: yellow">#1</b>',
           content: 'Slide title can be HTML.<br>And so does the slide content, <span style="font-size: 1.2em;color: yellow">why not?</span>',
-          image: require('@/assets/img/logo.png')
+          image: require('@/assets/img/Song-Ji-Hyo.jpg')
         },
         {
           title: 'rerewrwerwet',
           content: 'ytdryr',
-          image: require('@/assets/img/logo.png')
+          image: require('@/assets/img/JungWooSung.jpg')
         },
         // Other slides...
       ]
