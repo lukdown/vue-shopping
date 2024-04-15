@@ -1,63 +1,208 @@
+.u-payment-all-all{
+    background-color: rgb(56, 9, 95);
+}
+
+.u-payment-all{
+    margin: auto;
+    width: 1000px;
+    background-color: #ffffff;
+}
+
+#u-payment-h1{
+    font-family: '바탕';
+    font-size: 50px;
+    text-align: center;
+}
+
+/*상품 정보 영역*/
+#u-payment-product-name{
+    font-size: 30px;
+    margin: 0px 0px 0px 0px;
+}
+
+#u-payment-product-intro{
+    font-size: 15px;
+    margin: 0px 0px 0px 0px;
+}
+
+#u-payment-product-quantity{
+    font-size: 20px;
+    margin: 0px 0px 0px 0px;
+}
+
+#u-payment-product-qqqprice {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 50px 0px -40px;
+}
+
+#u-payment-product-qqq{
+    font-size: 20px;
+}
+
+#u-payment-product-qprice{
+    font-size: 30px;
+}
+
+
 .u-payment-product-information {
+    margin: auto;
+    width: 800px;
+    font-family: "바탕";
     margin-bottom: 20px;
-    border: 1px solid #666;
+    border: 1px solid #bbbbbb;
+    border-radius: 10px;
+    padding: 10px 0px 10px 20px;
 }
 
 
 .u-payment-title {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     color: #444;
 }
 
+/*배송지*/
 
-#price {
-    font-size: 16px;
-    color: #666;
+#u-payment-delivery-org-address{
+    margin: auto;
+    width: 800px;
+    font-family: "바탕";
+    margin-bottom: 20px;
+    border: 1px solid #bbbbbb;
+    border-radius: 10px;
+    padding: 15px 0px 5px 20px;
+}
+
+#u-payment-delivery-address-title{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#u-payment-delivery-new-address{
+    margin: 0px 0px 0px 100px;
+}
+
+
+#u-payment-delivery-new-address label{
+    margin-right: 10px;
+    margin-bottom: 30px;
 }
 
 
 #u-payment-delivery-address input[type="text"] {
-    width: 100%;
+    width: 500px;
     padding: 10px;
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-
-#u-payment-phone input[type="tel"] {
-    width: 100%;
+#u-payment-new-address{
+    width: 200px;
+    height: 40px;
     padding: 10px;
     margin-top: 5px;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
+#u-payment-delivery-new-address button{
+    padding: 2px 2px 2px 2px;
+    border: none;
+    height: 40px;
+    background-color: #680EAE;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 0px 0px 0px 10px;
+}
+
+#u-payment-delivery-new-address button:hover{
+    background-color: rgb(116, 63, 114);
+}
+
+/*요청사항*/
+.u-payment-request-class{
+    margin: 0px 0px 0px 100px;
+}
+
+.u-payment-request-class label{
+    margin-right: 20px;
+}
+
+.u-payment-request-class textarea{
+    width: 720px;
+    height: 100px;
+    resize: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    vertical-align:middle;
+}
+
+
+
+/*받는 분 연락처*/
+#u-payment-phone{
+    margin: 5px 0px 10px 100px;
+}
+
+#u-payment-phone label{
+    margin-right: 10px;
+}
+
+
+#u-payment-phone-number {
+    width: 400px;
+    height: 40px;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/*현재 포인트*/
+#u-payment-point{
+    width: 400px;
+    height: 100px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 20px 0px 0px 300px;
+    text-align: center;
+}
 
 #u-payment-point p {
-    margin-bottom: 5px;
+    margin: 5px 0px 5px 10px;
+    font-size: 20px;
+}
+
+#u-payment-point label{
+    margin: 0px 10px 20px 0px;
 }
 
 #u-payment-point input[type="text"] {
-    width: calc(100% - 70px);
+    width: 90px;
+    height: 40px;
     padding: 10px;
-    margin-top: 5px;
+    margin: 5px 10px 0px 0px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
 #u-payment-point button {
-    padding: 10px 20px;
-    margin-top: 5px;
+    height: 40px;
+    padding: 1px 1px;
     border: none;
-    background-color: #007bff;
+    background-color: #680EAE;
     color: #fff;
     border-radius: 5px;
     cursor: pointer;
 }
 
-
+/*총 금액*/
 #u-payment-total-price label {
     font-weight: bold;
 }
@@ -68,26 +213,17 @@
 }
 
 
-#payment-final-button {
-    padding: 15px 30px;
-    margin-top: 20px;
-    border: none;
-    background-color: #28a745;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 18px;
-}
 
-#payment-final-button:hover {
-    background-color: #218838;
-}
 
 /*총결제테이블*/
 .u-payment-total-price-all {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin: 100px 0px 0px 0px;
+}
+
+#u-payment-product{
+    margin-left: 100px;
 }
 
 .u-payment-total-price {
@@ -95,17 +231,22 @@
     margin-bottom: 10px;
 }
 
-.table_price {
+.u-payment-total-price {
+    width: 30%;
+    margin-bottom: 10px;
+}
+
+.u-table_price {
     width: 100%;
 }
 
-.table_price th,
-.table_price td {
+.u-table_price th,
+.u-table_price td {
     padding: 5px;
     border-bottom: 1px solid #ccc;
 }
 
-.table_price th {
+.u-table_price th {
     font-weight: bold;
 }
 
@@ -114,6 +255,10 @@
 }
 
 /*결제 수단 선택*/
+.u-payment-method-button{
+    text-align: center;
+}
+
 .u-payment-method-button label {
     display: block;
     margin-bottom: 5px;
@@ -123,12 +268,29 @@
     padding: 5px 10px;
     border-radius: 5px;
     border: none;
-    background-color: #2e053a;
+    background-color: #680EAE;
     color: #fff;
     cursor: pointer;
+    margin-right: 10px;
 }
 
 .u-payment-method-button button:hover {
-    background-color: #5d0e75;
+    background-color: rgb(86, 87, 23);
 }
 
+#payment-final-button {
+    width: 290px;
+    padding: 15px 30px;
+    margin-top: 20px;
+    border: none;
+    background-color: #680EAE;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 30px;
+    margin: 50px 0px 50px 350px;
+}
+
+#payment-final-button:hover {
+    background-color: #a15bd6;
+}
