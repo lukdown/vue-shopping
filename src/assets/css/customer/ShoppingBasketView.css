@@ -1,21 +1,65 @@
+#ShoppingBasketList-PagenameBreadcrumbs{
+    margin-left: 60px;
+}
+
+#ShoppingBasketList-All{
+    max-width: 1820px;
+    border: 4px solid #000000;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
 #ShoppingBasketList {
     width: 500px;
     height: 200px;
     list-style-type: none;
-    border: 1px solid #000000;
+    border: 3px solid #680EAE;
+    border-radius: 50px;
+    margin: 30px 30px 0px 30px ;
 }
 
 #ShoppingBasket-img {
     width: 200px;
-    height: 197px;
+    height: 195px;
     float: left;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
 }
 
 .ShoppingBasket-Cancelbtn {
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+    background-color: #E0E8F6;
     position: relative;
-    left: 285px;
+    left: 255px;
+    top: 10px;
+    border-radius: 20px;
+}
+
+.ShoppingBasket-BriefContents{
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+#ShoppingBasket-Emptybtn{
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #FDC828;
+    margin-left: 30px;
+    margin-top: 40px;
 }
 
 #ShoppingBasket-TotalPaymentAmountPayment{
+    font-size: 25px;
     text-align: center;
+    margin-bottom: 20px;
+}
+
+#ShoppingBasket-MakePaymentbtn{
+    border: none;
+    border-radius: 10px;
+    background-color: #FDC828;
+    margin-left: 20px;
 }

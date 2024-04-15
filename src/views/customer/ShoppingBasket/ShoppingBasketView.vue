@@ -9,42 +9,53 @@
 
                     <div id="index">
                         <div id="greetings">
-                            <div>
-                                <li id="ShoppingBasketList">
+                            <div id="ShoppingBasketList-PagenameBreadcrumbs">
+                                <h2>장바구니</h2>
+                                <h5>나의 패션리스트</h5>
+                            </div>
+                            <div id="ShoppingBasketList-All">
+                                <div>
+                                    <li id="ShoppingBasketList">
 
-                                    <img id="ShoppingBasket-img" src="#">
+                                        <img id="ShoppingBasket-img" src="@/assets/img/Kim-Jong-kook.jpg">
 
-                                    <div>
-                                        <button class="ShoppingBasket-Cancelbtn" type="button">X</button>
-                                    </div>
+                                        <div>
+                                            <button class="ShoppingBasket-Cancelbtn" type="button">X</button>
+                                        </div>
 
-                                    <div>
-                                        <p>영수의 스페셜 울트라 닝수셔츠</p>
-                                    </div>
+                                        <div class="ShoppingBasket-BriefContents">
+                                            <span>영수의 스페셜 울트라 닝수셔츠</span>
+                                        </div>
 
-                                    <div>
-                                        <p>영수표 빨강(L)</p>
-                                    </div>
+                                        <div class="ShoppingBasket-BriefContents">
+                                            <span>영수표 빨강(L)</span>
+                                        </div>
 
-                                    <span id="ShoppingBasket-QuantityButton">
-                                        <button>-</button>
-                                        <input id="ShoppingBasket-quantity" type="text" value="1">
-                                        <button>+</button>
-                                    </span>
-                                </li>
+                                        <div class="ShoppingBasket-BriefContents">
+                                            <label>수량:</label>
+                                            <span>1</span>
+                                        </div>
+
+                                        <div class="ShoppingBasket-BriefContents">
+                                            <label>가격:</label>
+                                            <span>1,000,000</span>
+                                        </div>
+                                    </li>
+                                </div>
 
                                 <div>
-                                    <button type="button">장바구니 비우기</button>
+                                    <button id="ShoppingBasket-Emptybtn" type="button">장바구니 비우기</button>
                                 </div>
-                                <br>
+
                                 <div id="ShoppingBasket-TotalPaymentAmountPayment">
                                     <div id="ShoppingBasket-TotalPaymentAmount">
-                                        <label>총 결제금액</label>
+                                        <label>총 결제금액:</label>
                                         <span>1,000,000</span>
+                                        <button id="ShoppingBasket-MakePaymentbtn" type="button">결제하기</button>
                                     </div>
-                                    <div>
-                                        <button type="button">결제하기</button>
-                                    </div>
+                                    
+                                    
+                                    
                                 </div>
                             </div>
                         </div>
@@ -82,8 +93,4 @@ export default {
     created() { },
 };
 </script>
-<style>
-
-
-
-</style>
+<style></style>
