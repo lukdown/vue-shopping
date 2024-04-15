@@ -8,6 +8,7 @@ import ProductListView from '@/views/customer/ProductList/ProductListView.vue'
 import SalesManagementView from '@/views/admin/SalesManagement/SalesManagementView.vue'
 import ShoppingBasketView from '@/views/customer/ShoppingBasket/ShoppingBasketView.vue'
 import PaymentManageView from '@/views/admin/PaymentManage/PaymentManageView.vue'
+import DeliveryManagementView from '@/views/admin/DeliveryManagement/DeliveryManagementView.vue'
 
 const routes = [
   {
@@ -55,6 +56,12 @@ const routes = [
     name: '/paymentmanage',
     component: PaymentManageView
   },
+  {
+    path: '/deliverymanagement',
+    name: '/deliverymanagement',
+    component: DeliveryManagementView
+  },
+
 ]
 
 const router = createRouter({
