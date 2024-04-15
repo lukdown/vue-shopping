@@ -1,6 +1,6 @@
 <template>
 <div>
-    <AppHeader />
+    <AdminAppHeader />
     <div id="wrap">
     <div id="container" class="clearfix">
         <!-- aside 없음 -->
@@ -67,21 +67,20 @@
     <!-- //footer -->
     </div>
     <!-- //wrap -->
-    <AppFooter />
+    <AdminAppFooter />
 </div>
 </template>
 
 <script>
     import "@/assets/css/admin/PaymentManageView.css";
-    import AppFooter from "@/components/customer/AppFooter.vue";
-
-    import AppHeader from "@/components/customer/AppHeader.vue";
+    import AdminAppFooter from "@/components/admin/AdminAppFooter.vue";
+    import AdminAppHeader from "@/components/admin/AdminAppHeader.vue";
 
     export default {
     name: "PaymentManageView",
     components: {
-        AppHeader,
-        AppFooter,
+        AdminAppHeader,
+        AdminAppFooter,
     },
     data() {
         return {};
