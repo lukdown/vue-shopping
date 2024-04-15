@@ -69,3 +69,8 @@
 .btn-toggle-nav a:focus {
   background-color: #d2f4ea;
 }
+#sidemenu-icon{
+  width: 24px;
+  height: 32px;
+}
+
