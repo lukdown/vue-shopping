@@ -62,15 +62,15 @@
 <script>
 import "@/assets/css/admin/SalesManagementView.css";
 import { Chart, registerables } from 'chart.js'
-import AppFooter from "@/components/customer/AppFooter.vue";
-import AppHeader from "@/components/customer/AppHeader.vue";
+import AdminAppFooter from "@/components/admin/AdminAppFooter.vue";
+import AdminAppHeader from "@/components/admin/AdminAppHeader.vue";
 Chart.register(...registerables)
 
 export default {
   name: "MainView",
   components: {
-    AppHeader,
-    AppFooter,
+    AdminAppHeader,
+    AdminAppFooter,
   },
   data:() => ({
     type: 'bar',

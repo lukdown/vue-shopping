@@ -128,7 +128,7 @@
     </div> 
 </template>
 <script>
-import '@/assets/css/customer/AppHeader.css'
+import '@/assets/css/admin/AdminAppHeader.css'
 
 export default {
     name: "AppHeader",

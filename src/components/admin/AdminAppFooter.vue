@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import '@/assets/css/customer/AppFooter.css'
+import '@/assets/css/admin/AdminAppFooter.css'
 export default {
     name: "AppFooter",
     components: {},
