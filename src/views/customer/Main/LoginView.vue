@@ -3,18 +3,20 @@
         <AppHeader/>
         <div id="Login-area">
             <h1 id="Login-h1">LOGIN</h1>
-            <ul>
-                <li>
-                    <label for="">ID</label>
-                    <input type="text">
+            <ul id="login-form">
+                <li class="login-form-li">
+                    <label for="" class="Login-label">ID</label>
+                    <input type="text" class="login-input">
                 </li>
-                <li>
-                    <label for="">password</label>
-                    <input type="password">
+                <li class="login-form-li">
+                    <label for="" class="Login-label">password</label>
+                    <input type="password" class="login-input">
                 </li>
             </ul>
-            <button>로그인</button>
-            <button>회원가입</button>
+            <div id="login-btns">
+                <button class="login-btn">LOGIN</button>
+                <button class="login-btn">Sign in</button>
+            </div>
         </div>
         <AppFooter/>
     </div>

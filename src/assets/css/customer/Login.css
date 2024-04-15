@@ -1,8 +1,52 @@
 #Login-area{
-    border: 5px solid #a6a6a6;
+    border: 3px solid #a6a6a6;
+    width: 700px;
+    height: 500px;
+    margin-left: 550px;
+    margin-top: 100px;
+    margin-bottom: 80px;
 }
 
 #Login-h1{
     font-size: 60px;
-    margin-left: 50px;
+    margin-left: 270px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.Login-label{
+    font-size: 30px;
+    margin-right: 25px;
+}
+
+.login-form-li{
+    margin-bottom: 30px;
+    margin-left: 60px;
+}
+
+.login-form-li:nth-child(1){
+    margin-left: 155px;
+}
+
+.login-input{
+    width: 250px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 3px solid #680eae;
+}
+
+#login-btns{
+    margin-left: 220px;
+}
+
+.login-btn{
+    width: 120px;
+    height: 60px;
+    margin-top: 40px;
+    margin-right: 30px;
+    border-radius: 10px;
+    font-size: 20px;
+    border: 2px solid #680eae;
+    background-color: #fff;
 }

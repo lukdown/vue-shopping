@@ -1,38 +1,40 @@
 <template>
     <AppHeader/>
     <div>
-        <h1>회원가입</h1>
-        <form action="">
-            <ul>
-                <li>
-                    <label for="">id</label>
-                    <input type="text">
-                    <button>중복체크</button>
-                </li>
-                <li>
-                    <label for="">이름</label>
-                    <input type="text">
-                </li>
-                <li>
-                    <label for="">비밀번호</label>
-                    <input type="password">
-                </li>
-                <li>
-                    <label for="">휴대폰번호</label>
-                    <input type="text">
-                </li>
-                <li>
-                    <label for="">성별</label>
-                    <input type="radio">남자
-                    <input type="radio">여자
-                </li>
-                <li>
-                    <label for="">나이</label>
-                    <input type="text">
-                </li>
-            </ul>
-            <button>회원가입하기</button>
-        </form>
+        <div  id="join-form">
+            <h1>회원가입</h1>
+            <form action="" id="join-table">
+                <ul>
+                    <li class="join-table-li">
+                        <label for="" class="join-label">id</label>
+                        <input type="text" class="join-input">
+                        <button id="check-btn">중복체크</button>
+                    </li>
+                    <li class="join-table-li">
+                        <label for="" class="join-label">이름</label>
+                        <input type="text" class="join-input">
+                    </li>
+                    <li class="join-table-li">
+                        <label for="" class="join-label">비밀번호</label>
+                        <input type="password" class="join-input">
+                    </li>
+                    <li class="join-table-li">
+                        <label for="" class="join-label">휴대폰번호</label>
+                        <input type="text" class="join-input">
+                    </li>
+                    <li class="join-table-li">
+                        <label for="" class="join-label">성별</label>
+                        <input type="radio">남자
+                        <input type="radio">여자
+                    </li>
+                    <li class="join-table-li">
+                        <label for="" class="join-label">나이</label>
+                        <input type="text" class="join-input">
+                    </li>
+                </ul>
+                <button id="join-btn">회원가입하기</button>
+            </form>
+        </div>
         <AppFooter/>
     </div>
 </template>
