@@ -9,52 +9,54 @@
 
           <div id="index">
             <div id="greetings">
-              <div>
-              
-                <img id="ProductDetails-img" src="#">
-                
-                <div>
+              <div id="ProductDetails-All">
+                <div id="ProductDetails-All2">
                   <div>
-                    <span>옷이름:</span>
+                    <img id="ProductDetails-img" src="@/assets/img/Kim-Jong-kook.jpg">
                   </div>
-                  <div>
-                    <p>영수의 스페셜 울트라 닝수셔츠</p>
+
+
+                  <div id="ProductDetails-Allexplanation">
+                    <div id="ProductDetails-clothesname">
+                      <strong>영수의 스페셜 울트라 닝수셔츠</strong>
+                    </div>
+
+
+                    <div>
+                      <div class="ProductDetails-fontsize">
+                        <strong>사이즈&색상:</strong>
+                        <span>영수표 빨강(L)</span>
+                      </div>
+                    </div>
+
+                    <div>
+                      <div class="ProductDetails-fontsize">
+                        <strong>가격:</strong>
+                        <span>₩100,000</span>
+                      </div>
+                    </div>
+
+                    <div class="ProductDetails-fontsize">
+                      <div>
+                        <strong>수량:</strong>
+                      </div>
+                      <span id="ProductDetails-quantityButton">
+                        <button class="ProductDetails-quantitynumberButton">-</button>
+                        <input id="ProductDetails-quantitynumber" type="text" value="1">
+                        <button class="ProductDetails-quantitynumberButton">+</button>
+                      </span>
+                    </div>
+
+                    <div id="ProductDetails-paymentbtn">
+                      <button class="ProductDetails-paymentbutton">결제하기</button>
+                      <button class="ProductDetails-paymentbutton">장바구니</button>
+                    </div>
                   </div>
                 </div>
-
-                <div>
-                  <div>
-                    <span>사이즈&색상:</span>
-                  </div>
-                  <div>
-                    <p>영수표 빨강(L)</p>
-                  </div>
-                </div>
-
-                <div>
-                  <div>
-                    <span>가격:</span>
-                  </div>
-                  <div>
-                   <p>₩100,000</p>
-                  </div>
-                </div>
-
-                <div>
-                  <div>
-                    <span>수량:</span>
-                  </div>
-                  <span id="ProductDetails-QuantityButton">
-                    <button>-</button>
-                    <input id="ProductDetails-quantity" type="text" value="1">
-                    <button>+</button>
-                  </span>
-                </div>
-
                 <br><br><br>
 
                 <div>
-                  <h1 id="ProductDetails-explanation">상 품 설 명</h1>
+                  <p id="ProductDetails-explanation">상 품 설 명</p>
 
                   <div id="ProductDetails-Description">
                     <span>영수하다의 기본이 되는 셔츠랄까? 영수가 되고 싶은 분 입으세요</span>
@@ -96,7 +98,4 @@ export default {
   created() { },
 };
 </script>
-<style>
-
-
-</style>
+<style></style>
