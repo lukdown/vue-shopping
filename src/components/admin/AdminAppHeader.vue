@@ -131,7 +131,7 @@
 import '@/assets/css/admin/AdminAppHeader.css'
 
 export default {
-    name: "AppHeader",
+    name: "AdminAppHeader",
     components: {},
     data() {
         return {};

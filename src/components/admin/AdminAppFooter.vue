@@ -39,7 +39,7 @@
 <script>
 import '@/assets/css/admin/AdminAppFooter.css'
 export default {
-    name: "AppFooter",
+    name: "AdminAppFooter",
     components: {},
     data() {
         return {};

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <AppHeader />
+    <AdminAppHeader />
     <div id="wrap">
       <div id="container" class="clearfix">
         <!-- aside 없음 -->
@@ -55,7 +55,7 @@
       <!-- //footer -->
     </div>
     <!-- //wrap -->
-    <AppFooter />
+    <AdminAppFooter />
   </div>
 </template>
   
@@ -67,7 +67,7 @@ import AdminAppHeader from "@/components/admin/AdminAppHeader.vue";
 Chart.register(...registerables)
 
 export default {
-  name: "MainView",
+  name: "SalesManagementView",
   components: {
     AdminAppHeader,
     AdminAppFooter,
