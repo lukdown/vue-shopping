@@ -15,28 +15,32 @@
               <div id="sales-title">
                 <p>매출</p>
               </div>
-
+              <div>
+                <input type="date">
+              </div>
               <div id="content">
                 <div class="dchart">
                   <canvas ref="MyChart"></canvas>
                 </div>
 
                 <div id="sales-table">
-                  
-                    
+
 
                   <table class="deleverymanagement hover">
                     <thead>
                       <tr>
                         <th class="title">상품명</th>
                         <th>출고량</th>
-                        <th>일일 상품 매출 가격</th>
-                        <th>한주 상품 매출 총가격</th>
+                        <th>매출 가격</th>
+                        <th>날짜</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td colspan="4">ㄹㄴㅇㄷㄹ</td>
+                        <td>ㄹㄴㅇㄷㄹ</td>
+                        <td>ㄹㄴㅇㄷㄹ</td>
+                        <td>ㄹㄴㅇㄷㄹ</td>
+                        <td>ㄹㄴㅇㄷㄹ</td>
                       </tr>
                     </tbody>
 
@@ -49,7 +53,6 @@
                       </tr>
                     </tfoot>
                   </table>
-
                 </div>
               </div>
             </div>
@@ -65,14 +68,12 @@
       <!-- //footer -->
     </div>
     <!-- //wrap -->
-    <AdminAppFooter />
   </div>
 </template>
   
 <script>
 import "@/assets/css/admin/SalesManagementView.css";
 import { Chart, registerables } from "chart.js";
-import AdminAppFooter from "@/components/admin/AdminAppFooter.vue";
 import AdminAppHeader from "@/components/admin/AdminAppHeader.vue";
 Chart.register(...registerables);
 
@@ -80,23 +81,22 @@ export default {
   name: "SalesManagementView",
   components: {
     AdminAppHeader,
-    AdminAppFooter,
   },
   data: () => ({
     type: "bar",
     data: {
       labels: [
-        "월요일",
-        "화요일",
-        "수요일",
-        "목요일",
-        "금요일",
-        "토요일",
-        "일요일",
+        "상품명",
+        "상품명",
+        "상품명",
+        "상품명",
+        "상품명",
+        "상품명",
+        "상품명",
       ],
       datasets: [
         {
-          label: "# of Votes",
+          label: "# 상품 매출 금액",
           data: [12, 19, 3, 5, 2, 3, 31],
           backgroundColor: [
             "rgba(255, 99, 132, 0.2)",
