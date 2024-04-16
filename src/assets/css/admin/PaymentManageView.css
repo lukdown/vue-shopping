@@ -2,6 +2,7 @@
     margin-left: 250px;
     width: 1500px;
     background-color: #ffffff;
+    font-family: "부크크 고딕";
 }
 
 .m-payment-all h1{
@@ -93,7 +94,7 @@
     min-width: 120px;
     min-height: 48px;
     line-height: 48px;
-    background-color: royalblue;
+    background-color: #3f0a2d;
     color: white;
     text-align: center;
 }
@@ -125,7 +126,7 @@
 
 .pagination a.on,
 .pagination a:hover {
-    background-color: royalblue;
+    background-color: #3f0a2d;
     font-weight: bold;
     color: white;
 }
@@ -165,7 +166,7 @@
     min-width: 120px;
     min-height: 48px;
     line-height: 48px;
-    background-color: royalblue;
+    background-color: #3f0a2d;
     color: white;
     text-align: center;
 }

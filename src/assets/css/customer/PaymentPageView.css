@@ -9,7 +9,7 @@
 }
 
 #u-payment-h1{
-    font-family: '바탕';
+    font-family: "리디바탕";
     font-size: 50px;
     text-align: center;
 }
@@ -48,7 +48,7 @@
 .u-payment-product-information {
     margin: auto;
     width: 800px;
-    font-family: "바탕";
+    font-family: "부크크 고딕";
     margin-bottom: 20px;
     border: 1px solid #bbbbbb;
     border-radius: 10px;
@@ -67,7 +67,7 @@
 #u-payment-delivery-org-address{
     margin: auto;
     width: 800px;
-    font-family: "바탕";
+    font-family: "부크크 고딕";
     margin-bottom: 20px;
     border: 1px solid #bbbbbb;
     border-radius: 10px;
@@ -87,6 +87,7 @@
 #u-payment-delivery-new-address label{
     margin-right: 10px;
     margin-bottom: 30px;
+    font-family: "부크크 고딕";
 }
 
 
@@ -96,6 +97,8 @@
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    font-family: "부크크 고딕";
+    font-size: 16px;
 }
 
 #u-payment-new-address{
@@ -118,6 +121,7 @@
     cursor: pointer;
     font-size: 18px;
     margin: 0px 0px 0px 10px;
+    font-family: "부크크 고딕";
 }
 
 #u-payment-delivery-new-address button:hover{
@@ -131,6 +135,7 @@
 
 .u-payment-request-class label{
     margin-right: 20px;
+    font-family: "부크크 고딕";
 }
 
 .u-payment-request-class textarea{
@@ -140,6 +145,8 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     vertical-align:middle;
+    font-family: "부크크 고딕";
+    padding: 10px 0px 10px 10px;
 }
 
 
@@ -147,6 +154,7 @@
 /*받는 분 연락처*/
 #u-payment-phone{
     margin: 5px 0px 10px 100px;
+    font-family: "부크크 고딕";
 }
 
 #u-payment-phone label{
@@ -172,10 +180,11 @@
     border-radius: 5px;
     margin: 20px 0px 0px 300px;
     text-align: center;
+    font-family: "부크크 고딕";
 }
 
 #u-payment-point p {
-    margin: 5px 0px 5px 10px;
+    margin: 10px 0px 5px 10px;
     font-size: 20px;
 }
 
@@ -205,11 +214,13 @@
 /*총 금액*/
 #u-payment-total-price label {
     font-weight: bold;
+    font-family: "부크크 고딕";
 }
 
 #u-payment-total-price #u-total-price {
     font-size: 20px;
     color: #333;
+    font-family: "부크크 고딕";
 }
 
 
@@ -219,7 +230,8 @@
 .u-payment-total-price-all {
     display: flex;
     justify-content: space-between;
-    margin: 100px 0px 0px 0px;
+    margin: 100px 50px 0px 50px;
+    font-family: "부크크 고딕";
 }
 
 #u-payment-product{
@@ -257,11 +269,14 @@
 /*결제 수단 선택*/
 .u-payment-method-button{
     text-align: center;
+    font-family: "부크크 고딕";
+    margin-top: 50px;
 }
 
 .u-payment-method-button label {
     display: block;
     margin-bottom: 5px;
+    font-size: 20px;
 }
 
 .u-payment-method-button button {
@@ -272,10 +287,11 @@
     color: #fff;
     cursor: pointer;
     margin-right: 10px;
+    font-family: "부크크 고딕";
 }
 
 .u-payment-method-button button:hover {
-    background-color: rgb(86, 87, 23);
+    background-color: #a15bd6;
 }
 
 #payment-final-button {
@@ -289,6 +305,7 @@
     cursor: pointer;
     font-size: 30px;
     margin: 50px 0px 50px 350px;
+    font-family: "부크크 고딕";
 }
 
 #payment-final-button:hover {

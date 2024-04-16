@@ -75,7 +75,7 @@
                         <!-- 포인트 -->
                         <div id="u-payment-point">
                             <p>현재 포인트: 500원</p>
-                            <label for="point">포인트: </label>
+                            <label for="u-payment-point-push">포인트: </label>
                             <input type="text" name="point" id="u-payment-point-push" placeholder="0">
                             <button id="u-payment-point-button">사용</button>
                         </div>
@@ -87,14 +87,16 @@
                                     <tbody>
                                         <tr id="u-payment-product">
                                             <th id="u-payment-product-price">상품금액</th>
-                                            <td><span>영수 킹갓제너럴스페셜 티셔츠</span>200,000<span>원</span></td>
-                                            <td><span>영수 킹갓제너럴스페셜 진</span>100,000<span>원</span></td>
+                                            <td>300,000<span>원</span></td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
+                            <div>
+                                <p>ㅡ</p>
+                            </div>
                             <div class="u-payment-total-price">
-                                <table class="table_price">
+                                <table class="u-table_price">
                                     <tbody>
                                         <tr>
                                             <th>포인트 사용금액</th>
@@ -102,6 +104,9 @@
                                         </tr>
                                     </tbody>
                                 </table>
+                            </div>
+                            <div>
+                                <p>=</p>
                             </div>
                             <div class="u-payment-total-price">
                                 <table class="u-table_price">
@@ -118,7 +123,7 @@
     
                         <!-- 결제 방법 영역-->
                         <div class="u-payment-method-button">
-                            <label for="payment-method">결제 수단 선택:</label>
+                            <label for="payment-method">결제 수단 선택</label>
                             <button type="button" id="payment-method-button">신용카드</button>
                             <button type="button" id="bank-transfer-button">계좌이체</button>
                             <button type="button" id="paypal-button">네이버페이</button>
