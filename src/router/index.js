@@ -48,7 +48,7 @@ const routes = [
   },
   {
     path: '/customer/shoppingbasket',
-    name: '/shoppingbasket',
+    name: '/customer/shoppingbasket',
     component: ShoppingBasketView
   },
   {
