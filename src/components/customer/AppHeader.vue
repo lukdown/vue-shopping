@@ -13,9 +13,33 @@
                     </router-link>
 
                     <div id="ls-gather-btn">
-                        <router-link to="/customer/login">Login</router-link>
-                        <router-link to="/customer/join">Sign Up</router-link>
+                        
+                        <ul v-if="this.$store.state.authUser != null">
+                            <li>{{ this.$store.state.authUser.user_name}} 님 안녕하세요^^</li>
+                            <li><button v-on:click="logout" type="button" class="btn_s">Logout</button></li>
+                        </ul>
+                        
+                        <ul v-if="this.$store.state.authUser == null">
+                            <router-link to="/customer/login">Login</router-link>
+                            <router-link to="/customer/join">Sign Up</router-link>
+                        </ul>
                     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     
 
                     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbarLight" aria-labelledby="offcanvasNavbarLightLabel">
@@ -149,6 +173,11 @@ export default {
         return {};
     },
     methods: {
+        logout() {
+        console.log("로그아웃이다 임마!!!");
+        this.$store.commit("setAuthUser", null);
+        this.$store.commit("setToken", null);
+      }
     },
     created() { }
 };
