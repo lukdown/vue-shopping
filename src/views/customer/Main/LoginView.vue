@@ -71,7 +71,7 @@ export default {
 
                     //token은 응답문서의 헤더에 있음
                     console.log(response.headers.authorization.split(" ")[1]);
-                    const token = response.headers.authorization.split(" "[1]);
+                    const token = response.headers.authorization.split(" ")[1];
 
                     //vuex 저장
                     this.$store.commit("setAuthUser", authUser);

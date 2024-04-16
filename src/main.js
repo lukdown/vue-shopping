@@ -5,4 +5,4 @@ import store from "./store/storage"
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-createApp(App).use(router).use(store).use(router).mount('#app')
+createApp(App).use(router).use(router).use(store).use(router).mount('#app')

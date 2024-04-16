@@ -14,41 +14,49 @@
                                 <h5 class="ShoppingBasket-FontFamilyLitleTitle">나의 패션리스트</h5>
                             </div>
                             <div id="ShoppingBasketList-All">
-                                <div id="ShoppingBasketList-scroll" v-bind:key="i" v-for="(cartVo,i) in cartList">
-                                    <li id="ShoppingBasketList">
+                                <div id="ShoppingBasketList-scroll">
+                                    <div v-bind:key="i" v-for="(cartVo, i) in cartList">
+                                        <li id="ShoppingBasketList">
 
-                                        <img id="ShoppingBasket-img" v-bind:src="`http://localhost:9002/upload/${cartVo.saveName}`">
+                                            <img id="ShoppingBasket-img"
+                                                v-bind:src="`http://localhost:9002/upload/${cartVo.saveName}`">
 
-                                        <div>
-                                            <button class="ShoppingBasket-Cancelbtn" v-on:click="Cancelbtn()" type="button">X</button>
-                                        </div>
+                                            <div>
+                                                <button class="ShoppingBasket-Cancelbtn" v-on:click="Cancelbtn()"
+                                                    type="button">X</button>
+                                            </div>
 
-                                        <div class="ShoppingBasket-BriefContents">
-                                            <span id="ShoppingBasket-BriefContents-name">{{ cartVo.p_name }}</span>
-                                        </div>
+                                            <div class="ShoppingBasket-BriefContents">
+                                                <span id="ShoppingBasket-BriefContents-name">{{ cartVo.p_name }}</span>
+                                            </div>
 
-                                        <div class="ShoppingBasket-BriefContents">
-                                            <label>사이즈:</label>
-                                            <select id="ShoppingBasket-sizechoose" name="size" v-model="cartVo.c_size">
-                                                <option class="" value="S">S</option>
-                                                <option class="" value="M">M</option>
-                                                <option class="" value="L">L</option>
-                                                <option class="" value="XL">XL</option>
-                                            </select>
-                                        </div>
+                                            <div class="ShoppingBasket-BriefContents">
+                                                <label>사이즈:</label>
+                                                <select id="ShoppingBasket-sizechoose" name="size"
+                                                    v-model="cartVo.c_size">
+                                                    <option class="" value="S">S</option>
+                                                    <option class="" value="M">M</option>
+                                                    <option class="" value="L">L</option>
+                                                    <option class="" value="XL">XL</option>
+                                                </select>
+                                            </div>
 
-                                        <div id="ShoppingBasket-quantitynumberAll" class="ShoppingBasket-BriefContents">
-                                            <label>수량:</label>
-                                            <button class="ShoppingBasket-quantitynumberButton">-</button>
-                                            <input id="ShoppingBasket-quantitynumber" type="text" v-model="cartVo.c_p_amount">
-                                            <button class="ShoppingBasket-quantitynumberButton">+</button>
-                                        </div>
+                                            <div id="ShoppingBasket-quantitynumberAll"
+                                                class="ShoppingBasket-BriefContents">
+                                                <label>수량:</label>
+                                                <button class="ShoppingBasket-quantitynumberButton">-</button>
+                                                <input id="ShoppingBasket-quantitynumber" type="text"
+                                                    v-model="cartVo.c_p_amount">
+                                                <button class="ShoppingBasket-quantitynumberButton">+</button>
+                                            </div>
 
-                                        <div class="ShoppingBasket-BriefContents">
-                                            <label>가격:</label>
-                                            <span>{{ cartVo.p_price }}원</span>
-                                        </div>
-                                    </li>
+                                            <div class="ShoppingBasket-BriefContents">
+                                                <label>가격:</label>
+                                                <span>{{ cartVo.p_price }}원</span>
+                                            </div>
+                                            
+                                        </li>
+                                    </div>
                                 </div>
 
                                 <div>
@@ -57,9 +65,9 @@
 
                                 <div id="ShoppingBasket-TotalPaymentAmountPayment">
                                     <div id="ShoppingBasket-TotalPaymentAmount">
-                                        <div>
+                                        <div id="ShoppingBasket-TotalNumberOfProductsAll">
                                             <label class="ShoppingBasket-TotalNumberOfProducts">총 상품갯수:</label>
-                                            <span class="ShoppingBasket-TotalNumberOfProducts">1개</span>
+                                            <input id="ShoppingBasket-TotalNumberOfProductsId" class="ShoppingBasket-TotalNumberOfProducts" type="text" v-bind:value="cartList.length" readonly/>
                                         </div>
                                         <div>
                                             <label class="ShoppingBasket-TotalPaymentAmountFont">총 결제금액:</label>
@@ -104,30 +112,32 @@ export default {
     },
     data() {
         return {
-            cartList:[],
-            cartVo:{
-                saveName:"",
-                p_name:"",
-                p_price:"",
-                c_p_amount:"",
-                c_size:""
+            cartList: [],
+            cartVo: {
+                saveName: "",
+                p_name: "",
+                p_price: "",
+                c_p_amount: "",
+                c_size: ""
             },
+            
         };
     },
     methods: {
-        Cancelbtn(){
+        Cancelbtn() {
             console.log("클릭");
         },
-        getcartList(){
-            
+        getcartList() {
+
             console.log("데이터 가져오기")
 
             axios({
                 method: 'get', // put, post, delete                   
                 url: 'http://localhost:9002/api/customer/shoppingbasket',
-                headers: { "Content-Type": "application/json; charset=utf-8",
-                           "Authorization": "Bearer " + this.$store.state.token
-                        }, //전송타입
+                headers: {
+                    "Content-Type": "application/json; charset=utf-8",
+                    "Authorization": "Bearer " + this.$store.state.token
+                }, //전송타입
                 //params: guestbookVo, //get방식 파라미터로 값이 전달
                 //data: guestbookVo, //put, post, delete 방식 자동으로 JSON으로 변환 전달
 
