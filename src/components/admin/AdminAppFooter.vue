@@ -13,7 +13,7 @@
 
         <div id="footer">
             
-            Copyright ⓒ 2020 Conan. All right reserved
+            Copyright ⓒ 2024 YoungGround. All right reserved
             
         </div>
         <!-- //footer -->

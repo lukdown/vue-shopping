@@ -93,6 +93,7 @@
 }
 
 #ProductDetails-Description {
+  max-width: 1920px;
   height: 400px;
   text-align: center;
   padding-top: 30px;

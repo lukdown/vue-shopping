@@ -70,6 +70,10 @@
     left: 10px;
 }
 
+#ShoppingBasket-BriefContents-name{
+    font-weight: bold;
+}
+
 #ShoppingBasket-Emptybtn{
     width: 160px;
     font-family: "부크크 고딕 Bold";
@@ -86,7 +90,7 @@
     height: 300px;
     font-size: 25px;
     text-align: center;
-    margin-bottom: 10px;
+    margin: 0px 0px 10px 60px;
     position: relative;
     left: 600px;
     bottom: 420px;
