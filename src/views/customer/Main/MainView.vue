@@ -9,7 +9,10 @@
 
           <div id="index">
             <div id="greetings">
-
+              <div id="Slider-text">
+                <p id="Slider-p1">영수하다 ㅡ,</p>
+                <p id="Slider-p2">영수하다 란? <br> 타락천사 닝수 대장공주 2세의 <br> 패션을 알아보세요.</p>
+              </div>
 
               <div id="Main-Slider">
                 <vueper-slides autoplay>
@@ -72,24 +75,16 @@ export default {
       internalAutoPlaying: true,
       slides: [
         {
-          title: 'Slide <b style="font-size: 1.3em;color: yellow">#1</b>',
-          content: 'Slide title can be HTML.<br>And so does the slide content, <span style="font-size: 1.2em;color: yellow">why not?</span>',
-          image: require('C:/javaStudy/workspace_vue/vue-shopping/src/assets/img/portrait-young-woman-wearing-2000-s-fashion-style.jpg')
+          image: require('@/assets/img/portrait-young-woman-wearing-2000-s-fashion-style.jpg')
         },
         {
-          title: 'rerewrwerwet',
-          content: 'ytdryr',
-          image: require('C:/javaStudy/workspace_vue/vue-shopping/src/assets/img/short-haired-woman-sunglasses-posing-yellow-doors-curly-woman-undershirt-with-jacket-looks-away-yellow-doors.jpg')
+          image: require('@/assets/img/short-haired-woman-sunglasses-posing-yellow-doors-curly-woman-undershirt-with-jacket-looks-away-yellow-doors.jpg')
         },
         {
-          title: 'Slide <b style="font-size: 1.3em;color: yellow">#1</b>',
-          content: 'Slide title can be HTML.<br>And so does the slide content, <span style="font-size: 1.2em;color: yellow">why not?</span>',
-          image: require('C:/javaStudy/workspace_vue/vue-shopping/src/assets/img/portrait-young-woman-wearing-2000-s-fashion-style.jpg')
+          image: require('@/assets/img/portrait-young-woman-wearing-2000-s-fashion-style.jpg')
         },
         {
-          title: 'rerewrwerwet',
-          content: 'ytdryr',
-          image: require('C:/javaStudy/workspace_vue/vue-shopping/src/assets/img/short-haired-woman-sunglasses-posing-yellow-doors-curly-woman-undershirt-with-jacket-looks-away-yellow-doors.jpg')
+          image: require('@/assets/img/short-haired-woman-sunglasses-posing-yellow-doors-curly-woman-undershirt-with-jacket-looks-away-yellow-doors.jpg')
         }
         // Other slides...
       ]
