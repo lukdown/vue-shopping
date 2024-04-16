@@ -2,31 +2,27 @@
     <div>
 
 
-        <div class="navbar header" aria-label="Light offcanvas navbar">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#offcanvasNavbarLight" aria-controls="offcanvasNavbarLight"
-                    style="border:2px solid white;">
-                    <span><img id="sidemenu-icon" src="@/assets/img/pngwing.com.png" alt="sidebar-btn"></span>
-                </button>
+            <div class="navbar header" aria-label="Light offcanvas navbar">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarLight" aria-controls="offcanvasNavbarLight" style="border:2px solid white;">
+                        <span><img id="sidemenu-icon" src="@/assets/img/pngwing.com.png" alt="sidebar-btn"></span>
+                    </button>
 
-                <router-link to="/">
-                    <img id="logo" src="@/assets/img/logo.png" alt="youngground" />
-                </router-link>
+                    <router-link to="/">
+                        <img id="logo" src="@/assets/img/logo.png" alt="youngground" />
+                    </router-link>
 
-                <div id="ls-gather-btn">
-                    <router-link to="#">Login</router-link>
-                    <router-link to="#">Sign Up</router-link>
-                </div>
+                    <div id="ls-gather-btn">
+                        <router-link to="/login">Login</router-link>
+                        <router-link to="/join">Sign Up</router-link>
+                    </div>
+                    
 
-                <div id="side-bar">
-                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbarLight"
-                        aria-labelledby="offcanvasNavbarLightLabel">
+                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbarLight" aria-labelledby="offcanvasNavbarLightLabel">
 
                         <div class="offcanvas-header border-bottom">
-                            <h5 class="offcanvas-title" id="offcanvasNavbarLightLabel">Young Ground</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
-                                aria-label="Close"></button>
+                            <h5 class="offcanvas-title" id="offcanvasNavbarLightLabel">Offcanvas</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                         </div>
 
                         <ul class="list-unstyled ps-0">
@@ -99,7 +95,6 @@
                     </div>
                 </div>
             </div>
-        </div>
 
 
 
@@ -141,8 +136,8 @@
 
 
 
-
-    </div>
+        
+    </div> 
 </template>
 <script>
 import '@/assets/css/customer/AppHeader.css'
