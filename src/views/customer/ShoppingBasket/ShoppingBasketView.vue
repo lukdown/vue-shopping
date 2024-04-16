@@ -14,22 +14,22 @@
                                 <h5 class="ShoppingBasket-FontFamilyLitleTitle">나의 패션리스트</h5>
                             </div>
                             <div id="ShoppingBasketList-All">
-                                <div id="ShoppingBasketList-scroll">
+                                <div id="ShoppingBasketList-scroll" v-bind:key="i" v-for="(cartVo,i) in cartList">
                                     <li id="ShoppingBasketList">
 
-                                        <img id="ShoppingBasket-img" src="@/assets/img/Kim-Jong-kook.jpg">
+                                        <img id="ShoppingBasket-img" v-bind:src="`http://localhost:9002/upload/${cartVo.saveName}`">
 
                                         <div>
-                                            <button class="ShoppingBasket-Cancelbtn" type="button">X</button>
+                                            <button class="ShoppingBasket-Cancelbtn" v-on:click="Cancelbtn()" type="button">X</button>
                                         </div>
 
                                         <div class="ShoppingBasket-BriefContents">
-                                            <span id="ShoppingBasket-BriefContents-name">영수의 스페셜 울트라 닝수셔츠</span>
+                                            <span id="ShoppingBasket-BriefContents-name">{{ cartVo.p_name }}</span>
                                         </div>
 
                                         <div class="ShoppingBasket-BriefContents">
                                             <label>사이즈:</label>
-                                            <select id="ShoppingBasket-sizechoose" name="size">
+                                            <select id="ShoppingBasket-sizechoose" name="size" v-model="cartVo.c_size">
                                                 <option class="" value="S">S</option>
                                                 <option class="" value="M">M</option>
                                                 <option class="" value="L">L</option>
@@ -40,13 +40,13 @@
                                         <div id="ShoppingBasket-quantitynumberAll" class="ShoppingBasket-BriefContents">
                                             <label>수량:</label>
                                             <button class="ShoppingBasket-quantitynumberButton">-</button>
-                                            <input id="ShoppingBasket-quantitynumber" type="text" value="1">
+                                            <input id="ShoppingBasket-quantitynumber" type="text" v-model="cartVo.c_p_amount">
                                             <button class="ShoppingBasket-quantitynumberButton">+</button>
                                         </div>
 
                                         <div class="ShoppingBasket-BriefContents">
                                             <label>가격:</label>
-                                            <span>1,000,000원</span>
+                                            <span>{{ cartVo.p_price }}원</span>
                                         </div>
                                     </li>
                                 </div>
@@ -94,6 +94,7 @@
 import "@/assets/css/customer/ShoppingBasketView.css";
 import AppFooter from "@/components/customer/AppFooter.vue";
 import AppHeader from "@/components/customer/AppHeader.vue";
+import axios from 'axios';
 
 export default {
     name: "ShoppingBasketView",
@@ -102,10 +103,46 @@ export default {
         AppFooter,
     },
     data() {
-        return {};
+        return {
+            cartList:[],
+            cartVo:{
+                saveName:"",
+                p_name:"",
+                p_price:"",
+                c_p_amount:"",
+                c_size:""
+            },
+        };
     },
-    methods: {},
-    created() { },
+    methods: {
+        Cancelbtn(){
+            console.log("클릭");
+        },
+        getcartList(){
+            
+            console.log("데이터 가져오기")
+
+            axios({
+                method: 'get', // put, post, delete                   
+                url: 'http://localhost:9002/api/customer/shoppingbasket',
+                headers: { "Content-Type": "application/json; charset=utf-8",
+                           "Authorization": "Bearer " + this.$store.state.token
+                        }, //전송타입
+                //params: guestbookVo, //get방식 파라미터로 값이 전달
+                //data: guestbookVo, //put, post, delete 방식 자동으로 JSON으로 변환 전달
+
+                responseType: 'json' //수신타입
+            }).then(response => {
+                console.log(response.data.apiData); //수신데이타
+                this.cartList = response.data.apiData;
+            }).catch(error => {
+                console.log(error);
+            });
+        },
+    },
+    created() {
+        this.getcartList()
+    },
 };
 </script>
 <style></style>

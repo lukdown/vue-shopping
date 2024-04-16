@@ -8,9 +8,13 @@
           <!-- content-head 없음 -->
 
           <div id="index">
+
             <div id="greetings">
+
               <div id="ProductDetails-All">
+
                 <div id="ProductDetails-All2">
+
                   <div>
                     <img id="ProductDetails-img" src="@/assets/img/Kim-Jong-kook.jpg">
                   </div>
@@ -20,7 +24,6 @@
                     <div id="ProductDetails-clothesname">
                       <strong>영수의 스페셜 울트라 닝수셔츠</strong>
                     </div>
-
 
                     <div>
                       <div class="ProductDetails-fontsize">
@@ -103,9 +106,13 @@ export default {
     AppFooter,
   },
   data() {
-    return {};
+    return {
+
+    };
   },
-  methods: {},
+  methods: {
+    
+  },
   created() { },
 };
 </script>
