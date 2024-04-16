@@ -36,33 +36,16 @@
                         <th>총 가격</th>
                         <th>배송상태</th>
                     </tr>
-                    <tr class="m-payment-table-content">
-                        <td id="m-payment-date">2024-01-01</td>
-                        <td id="m-payment-name">홍길동</td>
-                        <td id="m-payment-address">서울특별시</td>
-                        <td id="m-payment-hp">010-1234-5678</td>
-                        <td id="m-payment-request">빠른 배송 부탁드립니다.</td>
-                        <td id="m-payment-total-price">10,000원</td>
-                        <td>배송완료</td>
+                    <tr v-bind:key="i" v-for="(paymentVo,i) in paymentList" class="m-payment-table-content">
+                        <td id="m-payment-date">{{ paymentVo.o_date }}</td>
+                        <td id="m-payment-name">{{ paymentVo.o_name }}</td>
+                        <td id="m-payment-address">{{ paymentVo.o_address }}</td>
+                        <td id="m-payment-hp">{{ paymentVo.o_hp }}</td>
+                        <td id="m-payment-request">{{ paymentVo.o_request }}</td>
+                        <td id="m-payment-total-price">{{ paymentVo.totalprice }}</td>
+                        <td>{{ paymentVo.o_status}}</td>
                     </tr>
-                    <tr class="m-payment-table-content">
-                        <td id="m-payment-date">2024-01-01</td>
-                        <td id="m-payment-name">홍길동</td>
-                        <td id="m-payment-address">서울특별시</td>
-                        <td id="m-payment-hp">010-1234-5678</td>
-                        <td id="m-payment-request">빠른 배송 부탁드립니다.</td>
-                        <td id="m-payment-total-price">10,000원</td>
-                        <td>배송완료</td>
-                    </tr>
-                    <tr class="m-payment-table-content">
-                        <td id="m-payment-date">2024-01-01</td>
-                        <td id="m-payment-name">홍길동</td>
-                        <td id="m-payment-address">서울특별시</td>
-                        <td id="m-payment-hp">010-1234-5678</td>
-                        <td id="m-payment-request">빠른 배송 부탁드립니다.</td>
-                        <td id="m-payment-total-price">10,000원</td>
-                        <td>배송완료</td>
-                    </tr>
+                    
                 </table>
 
                 <!-- 페이지네이션 -->
@@ -94,6 +77,7 @@
 </template>
 
 <script>
+    import axios from "axios";
     import "@/assets/css/admin/PaymentManageView.css";
     import AdminAppFooter from "@/components/admin/AdminAppFooter.vue";
     import AdminAppHeader from "@/components/admin/AdminAppHeader.vue";
@@ -105,10 +89,49 @@
         AdminAppFooter,
     },
     data() {
-        return {};
+        return {
+            paymentList: [],
+            paymentVo: {
+                o_no: "",
+                o_name: "",
+                o_address: "",
+                o_hp: "",
+                o_request: "",
+                totalprice: "",
+                o_date: "",
+                o_status: "",
+                o_payment: ""
+            }
+        };
     },
-    methods: {},
-    created() {},
+    methods: {
+        getList(){
+            console.log("getList");
+            //서버로 전송
+            axios({
+                method: 'get', // put, post, delete  //불러오는것은 GET //저장은 POST
+                url: 'http://localhost:9002/api/admin/paymentmanage', //''따옴표 문법도 중요
+                headers: {
+                    "Content-Type": "application/json; charset=utf-8"
+                },
+                //params: guestbookVo, //get방식 파라미터로 값이 전달 @ModelAttribute
+                //data: this.memberVo.no, //put, post, delete 방식 자동으로 JSON으로 변환 전달 @RequestBody
+
+                responseType: 'json' //수신타입
+            }).then(response => {
+                console.log(response.data.apiData); //수신데이타
+                
+                this.paymentList = response.data.apiData;
+                console.log(this.paymentList);
+            }).catch(error => {
+                console.log(error);
+            });
+
+        }
+    },
+    created() {
+        this.getList();
+    },
     };
 </script>
 <style>
