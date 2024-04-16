@@ -2,7 +2,7 @@
     <AppHeader/>
     <div>
         <div  id="join-form">
-            <h1>회원가입</h1>
+            <h1>Sign Up</h1>
             <form action="" id="join-table">
                 <ul>
                     <li class="join-table-li">
@@ -23,6 +23,10 @@
                         <input type="text" class="join-input">
                     </li>
                     <li class="join-table-li">
+                        <label for="" class="join-label">주소</label>
+                        <input type="text" class="join-input">
+                    </li>
+                    <li class="join-table-li">
                         <label for="" class="join-label">성별</label>
                         <input type="radio">남자
                         <input type="radio">여자
@@ -32,7 +36,7 @@
                         <input type="text" class="join-input">
                     </li>
                 </ul>
-                <button id="join-btn">회원가입하기</button>
+                <button id="join-btn">Sign up</button>
             </form>
         </div>
         <AppFooter/>

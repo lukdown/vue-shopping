@@ -9,23 +9,27 @@
 
 #Login-h1{
     font-size: 60px;
-    margin-left: 270px;
-    margin-top: 30px;
+    margin-left: 255px;
+    margin-top: 60px;
     margin-bottom: 50px;
+    font-family: "Cafe24 Classictype";
+    color: #680eae;
 }
 
 .Login-label{
     font-size: 30px;
     margin-right: 25px;
+    font-family: "Cafe24 Classictype";
 }
 
 .login-form-li{
     margin-bottom: 30px;
-    margin-left: 60px;
+    margin-left: 145px;
 }
 
-.login-form-li:nth-child(1){
-    margin-left: 155px;
+.login-form-li:nth-child(2){
+    margin-bottom: 30px;
+    margin-left: 128px;
 }
 
 .login-input{
@@ -37,7 +41,7 @@
 }
 
 #login-btns{
-    margin-left: 220px;
+    margin-left: 215px;
 }
 
 .login-btn{
@@ -47,6 +51,8 @@
     margin-right: 30px;
     border-radius: 10px;
     font-size: 20px;
-    border: 2px solid #680eae;
-    background-color: #fff;
+    border: none;
+    background-color: #680eae;
+    color: #fff;
+    font-family: "Cafe24 Classictype";
 }

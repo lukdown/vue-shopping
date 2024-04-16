@@ -9,13 +9,13 @@
                     <input type="text" class="login-input">
                 </li>
                 <li class="login-form-li">
-                    <label for="" class="Login-label">password</label>
+                    <label for="" class="Login-label">PW</label>
                     <input type="password" class="login-input">
                 </li>
             </ul>
             <div id="login-btns">
                 <button class="login-btn">LOGIN</button>
-                <button class="login-btn">Sign in</button>
+                <button class="login-btn">Sign Up</button>
             </div>
         </div>
         <AppFooter/>

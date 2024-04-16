@@ -11,19 +11,19 @@
             <div id="greetings">
 
 
-
-              <vueper-slides autoplay>
-                <vueper-slide v-for="(slide, i) in slides"
-                  :key="i"
-                  :title="slide.title"
-                  :content="slide.content"
-                  :image="slide.image" />
-                  
-                <template #pause>
-                  <i class="icon pause_circle_outline"></i>
-                </template>
-              </vueper-slides>
-
+              <div id="Main-Slider">
+                <vueper-slides autoplay>
+                  <vueper-slide v-for="(slide, i) in slides"
+                    :key="i"
+                    :title="slide.title"
+                    :content="slide.content"
+                    :image="slide.image" />
+                    
+                  <template #pause>
+                    <i class="icon pause_circle_outline"></i>
+                  </template>
+                </vueper-slides>
+              </div>
 
 
 
@@ -74,13 +74,23 @@ export default {
         {
           title: 'Slide <b style="font-size: 1.3em;color: yellow">#1</b>',
           content: 'Slide title can be HTML.<br>And so does the slide content, <span style="font-size: 1.2em;color: yellow">why not?</span>',
-          image: require('@/assets/img/Song-Ji-Hyo.jpg')
+          image: require('C:/javaStudy/workspace_vue/vue-shopping/src/assets/img/portrait-young-woman-wearing-2000-s-fashion-style.jpg')
         },
         {
           title: 'rerewrwerwet',
           content: 'ytdryr',
-          image: require('@/assets/img/JungWooSung.jpg')
+          image: require('C:/javaStudy/workspace_vue/vue-shopping/src/assets/img/short-haired-woman-sunglasses-posing-yellow-doors-curly-woman-undershirt-with-jacket-looks-away-yellow-doors.jpg')
         },
+        {
+          title: 'Slide <b style="font-size: 1.3em;color: yellow">#1</b>',
+          content: 'Slide title can be HTML.<br>And so does the slide content, <span style="font-size: 1.2em;color: yellow">why not?</span>',
+          image: require('C:/javaStudy/workspace_vue/vue-shopping/src/assets/img/portrait-young-woman-wearing-2000-s-fashion-style.jpg')
+        },
+        {
+          title: 'rerewrwerwet',
+          content: 'ytdryr',
+          image: require('C:/javaStudy/workspace_vue/vue-shopping/src/assets/img/short-haired-woman-sunglasses-posing-yellow-doors-curly-woman-undershirt-with-jacket-looks-away-yellow-doors.jpg')
+        }
         // Other slides...
       ]
     };
