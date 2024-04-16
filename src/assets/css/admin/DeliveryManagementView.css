@@ -229,10 +229,12 @@
 
 .dm-btn {
     display: inline-block;
+    border-radius: 5px;
     min-width: 120px;
     min-height: 48px;
     line-height: 48px;
-    background-color: royalblue;
+    background-color: #680eae;
     color: white;
     text-align: center;
+    font-size: 25px;
 }
