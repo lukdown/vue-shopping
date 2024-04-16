@@ -1,3 +1,13 @@
+@font-face {
+    font-family: "부크크 고딕 Bold";
+    src: url('../../font/부크크고딕_굵은글씨.ttf') format('opentype');
+}
+@font-face {
+    font-family: "부크크 고딕 Light";
+    src: url('../../font/부크크고딕_얇은글씨.ttf') format('opentype');
+}
+
+
 .u-payment-all-all{
     background-color: rgb(56, 9, 95);
     max-width: 1920px;
@@ -150,6 +160,27 @@
     padding: 10px 0px 10px 10px;
 }
 
+/*받는 분 성함*/
+#u-payment-name{
+    margin: 5px 0px 10px 100px;
+    font-family: "부크크 고딕";
+}
+
+#u-payment-name label{
+    margin-right: 10px;
+}
+
+
+#u-payment-phone-name {
+    width: 200px;
+    height: 40px;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
 
 
 /*받는 분 연락처*/
@@ -171,45 +202,6 @@
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-}
-
-/*현재 포인트*/
-#u-payment-point{
-    width: 400px;
-    height: 100px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin: 20px 0px 0px 300px;
-    text-align: center;
-    font-family: "부크크 고딕";
-}
-
-#u-payment-point p {
-    margin: 10px 0px 5px 10px;
-    font-size: 20px;
-}
-
-#u-payment-point label{
-    margin: 0px 10px 20px 0px;
-}
-
-#u-payment-point input[type="text"] {
-    width: 90px;
-    height: 40px;
-    padding: 10px;
-    margin: 5px 10px 0px 0px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-#u-payment-point button {
-    height: 40px;
-    padding: 1px 1px;
-    border: none;
-    background-color: #680EAE;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
 }
 
 /*총 금액*/
@@ -240,33 +232,20 @@
 }
 
 .u-payment-total-price {
-    width: 30%;
-    margin-bottom: 10px;
-}
-
-.u-payment-total-price {
-    width: 30%;
-    margin-bottom: 10px;
-}
-
-.u-table_price {
-    width: 100%;
-}
-
-.u-table_price th,
-.u-table_price td {
-    padding: 5px;
-    border-bottom: 1px solid #ccc;
+    width: 500px;
+    margin: 100px 0px 10px 380px;
+    font-family: "부크크 고딕";
 }
 
 .u-table_price th {
     font-weight: bold;
+    font-size: 30px;
+    padding-right: 20px;
 }
 
-#u-total-price {
-    font-size: 18px;
+.u-table_price td {
+    font-size: 30px;
 }
-
 /*결제 수단 선택*/
 .u-payment-method{
     text-align: center;
@@ -342,4 +321,71 @@
 
 #payment-final-button:hover {
     background-color: #a15bd6;
+}
+
+
+/*모달창 내용 흰색부분*/
+.u-payment-modal-content{
+    width: 500px;
+    height: 300px;
+    border-radius: 10px;
+    margin: 400px auto; /*상하 100px, 좌우 가운데*/
+    padding: 0px 20px 20px 20px; /*안쪽 여백*/
+    background-color: #ffffff; /*배경색 흰색*/
+    border: 1px solid #888888; /*테두리 모양 색*/
+
+    font-family: "부크크 고딕";
+    text-align: center;
+}
+
+.u-payment-m-body{
+    font-size: 30px;
+    margin-top: 80px;
+}
+
+.u-payment-m-footer button{
+    width: 200px;
+    height: 50px;
+    margin-top: 30px;
+    background-color: #680EAE;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.u-payment-m-footer p{
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+    font-family: "부크크 고딕";
+}
+
+.u-payment-m-footer button:hover {
+    background-color: #a15bd6;
+
+}
+
+
+
+/*모달창 배경 회색부분*/
+#u-payment-modal{
+    width: 100%; /*가로 전체*/
+    height: 100%; /*세로 전체*/
+    display: none; /*시작할 때 숨김처리*/
+    position: fixed; /*화면에 고정*/
+    left: 0; /*왼쪽 0에서 시작*/
+    top: 0; /*위쪽 0에서 시작*/
+    z-index: 999; /*제일 위에*/
+    overflow: auto; /*내용이 많으면 스크롤 생김*/
+    background-color: rgba(0, 0, 0, 0.4); /*배경이 검정색에 반투명*/ 
+}
+
+/*닫기 버튼*/
+#u-payment-modal .closeBtn{
+    text-align: right;
+    color: #aaaaaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
 }
