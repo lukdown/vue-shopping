@@ -4,7 +4,6 @@
     position: absolute;
     left: 1200px;
     top: 350px;
-    z-index: 2;
 }
 #Slider-p1{
     font-family: "부크크 명조";
@@ -15,4 +14,9 @@
     font-family: "부크크 명조";
     color: #fff;
     font-size: 50px;
+}
+
+#Main-Slider{
+    max-width: 1920px;
+    margin-bottom: 50px;
 }

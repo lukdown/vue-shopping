@@ -5,15 +5,10 @@
   max-width: 1920px;
   min-width: 512px;
   height: 115px;
-  z-index: 2;
 }
 
 .navbar {
   margin-bottom: 20px;
-}
-
-#side-bar{
-  z-index: 7;
 }
 
 
