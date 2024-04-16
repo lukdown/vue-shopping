@@ -10,7 +10,7 @@
           <div id="index">
             <div id="greetings">
               <div id="Slider-text">
-                <p id="Slider-p1">영수하다 ㅡ,</p>
+                <p id="Slider-p1">영수하다 -,</p>
                 <p id="Slider-p2">영수하다 란? <br> 타락천사 닝수 대장공주 2세의 <br> 패션을 알아보세요.</p>
               </div>
 
