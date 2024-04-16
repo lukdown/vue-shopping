@@ -58,17 +58,17 @@
                     ※ 고객센터에 접수 후 상품 보내주셔야하며, 지정택배사를 이용해주시기 바랍니다.<br>
 
                     <h2 style="margin-top:20px">SNS</h2>
-                    <a href="" target="_blank"><i class="fa fa-instagram"></i> INSTAGRAM @dasom</a><br><a href=""
-                        target="_blank"><i class="fa fa-shopping-bag"></i> SMARTSTORE @YoungGround</a><br><a href=""
-                        target="_blank"><i class="fa fa-facebook"></i> FACEBOOK @YoungGround</a>
+                    <router-link to="" target="_blank"><i class="fa fa-instagram"></i> INSTAGRAM @dasom</router-link><br><router-link to=""
+                        target="_blank"><i class="fa fa-shopping-bag"></i> SMARTSTORE @YoungGround</router-link><br><router-link to=""
+                        target="_blank"><i class="fa fa-facebook"></i> FACEBOOK @YoungGround</router-link>
                 </div>
             </div>
             <div class="footer_menu">
-                <a href="">홈으로</a>
-                <a href="">회사소개</a>
-                <a href="">이용약관</a>
-                <a href=""><strong>개인정보처리방침</strong></a>
-                <a href="">이용안내</a>
+                <router-link to="#">홈으로</router-link>
+                <router-link to="#">회사소개</router-link>
+                <router-link to="#">이용약관</router-link>
+                <router-link to="#"><strong>개인정보처리방침</strong></router-link>
+                <router-link to="#">이용안내</router-link>
             </div>
         </div>
 

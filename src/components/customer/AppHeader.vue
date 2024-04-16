@@ -2,87 +2,104 @@
     <div>
 
 
-            <div class="navbar header" aria-label="Light offcanvas navbar">
-                <div class="container-fluid">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbarLight" aria-controls="offcanvasNavbarLight" style="border:2px solid white;">
-                        <span><img id="sidemenu-icon" src="@/assets/img/pngwing.com.png" alt="sidebar-btn"></span>
-                    </button>
+        <div class="navbar header" aria-label="Light offcanvas navbar">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbarLight" aria-controls="offcanvasNavbarLight"
+                    style="border:2px solid white;">
+                    <span><img id="sidemenu-icon" src="@/assets/img/pngwing.com.png" alt="sidebar-btn"></span>
+                </button>
 
-                    <router-link to="/">
-                        <img id="logo" src="@/assets/img/logo.png" alt="youngground" />
-                    </router-link>
+                <router-link to="/">
+                    <img id="logo" src="@/assets/img/logo.png" alt="youngground" />
+                </router-link>
 
-                    <div id="ls-gather-btn">
-                        <router-link to="#">Login</router-link>
-                        <router-link to="#">Sign Up</router-link>
-                    </div>
-                    
+                <div id="ls-gather-btn">
+                    <router-link to="#">Login</router-link>
+                    <router-link to="#">Sign Up</router-link>
+                </div>
 
-                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbarLight" aria-labelledby="offcanvasNavbarLightLabel">
+                <div id="side-bar">
+                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbarLight"
+                        aria-labelledby="offcanvasNavbarLightLabel">
 
                         <div class="offcanvas-header border-bottom">
-                            <h5 class="offcanvas-title" id="offcanvasNavbarLightLabel">Offcanvas</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            <h5 class="offcanvas-title" id="offcanvasNavbarLightLabel">Young Ground</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
                         </div>
 
                         <ul class="list-unstyled ps-0">
-                        <li class="mb-1">
-                            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-                            Home
-                            </button>
-                            <div class="collapse show" id="home-collapse">
-                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                <li><router-link to="#" class="link-dark d-inline-flex text-decoration-none rounded">Overview</router-link></li>
-                                <li><router-link to="#" class="link-dark d-inline-flex text-decoration-none rounded">Updates</router-link></li>
-                                <li><router-link to="#" class="link-dark d-inline-flex text-decoration-none rounded">Reports</router-link></li>
-                            </ul>
-                            </div>
-                        </li>
-                        <li class="mb-1">
-                            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                            Dashboard
-                            </button>
-                            <div class="collapse" id="dashboard-collapse">
-                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                <li><router-link to="#" class="link-dark d-inline-flex text-decoration-none rounded">Overview</router-link></li>
-                                <li><router-link to="#" class="link-dark d-inline-flex text-decoration-none rounded">Weekly</router-link></li>
-                                <li><router-link to="#" class="link-dark d-inline-flex text-decoration-none rounded">Monthly</router-link></li>
-                                <li><router-link to="#" class="link-dark d-inline-flex text-decoration-none rounded">Annually</router-link></li>
-                            </ul>
-                            </div>
-                        </li>
-                        <li class="mb-1">
-                            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-                            Orders
-                            </button>
-                            <div class="collapse" id="orders-collapse">
-                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                <li><router-link to="#" class="link-dark d-inline-flex text-decoration-none rounded">New</router-link></li>
-                                <li><router-link to="#" class="link-dark d-inline-flex text-decoration-none rounded">Processed</router-link></li>
-                                <li><router-link to="#" class="link-dark d-inline-flex text-decoration-none rounded">Shipped</router-link></li>
-                                <li><router-link to="#" class="link-dark d-inline-flex text-decoration-none rounded">Returned</router-link></li>
-                            </ul>
-                            </div>
-                        </li>
-                        <li class="border-top my-3"></li>
-                        <li class="mb-1">
-                            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-                            Account
-                            </button>
-                            <div class="collapse" id="account-collapse">
-                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                <li><router-link to="#" class="link-dark d-inline-flex text-decoration-none rounded">New...</router-link></li>
-                                <li><router-link to="#" class="link-dark d-inline-flex text-decoration-none rounded">Profile</router-link></li>
-                                <li><router-link to="#" class="link-dark d-inline-flex text-decoration-none rounded">Settings</router-link></li>
-                                <li><router-link to="#" class="link-dark d-inline-flex text-decoration-none rounded">Sign out</router-link></li>
-                            </ul>
-                            </div>
-                        </li>
+                            <li class="mb-1">
+                                <button
+                                    class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                                    data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+                                    Clothes
+                                </button>
+                                <div class="collapse show" id="home-collapse">
+                                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                        <li><router-link to="#"
+                                                class="link-dark d-inline-flex text-decoration-none rounded">Outer</router-link>
+                                        </li>
+                                        <li><router-link to="#"
+                                                class="link-dark d-inline-flex text-decoration-none rounded">Top</router-link>
+                                        </li>
+                                        <li><router-link to="#"
+                                                class="link-dark d-inline-flex text-decoration-none rounded">Bottom</router-link>
+                                        </li>
+                                        <li><router-link to="#"
+                                                class="link-dark d-inline-flex text-decoration-none rounded">ETC</router-link>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="mb-1">
+                                <button
+                                    class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                                    data-bs-toggle="collapse" data-bs-target="#dashboard-collapse"
+                                    aria-expanded="false">
+                                    Event
+                                </button>
+                                <div class="collapse" id="dashboard-collapse">
+                                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                        <li><router-link to="#"
+                                                class="link-dark d-inline-flex text-decoration-none rounded">출석체크</router-link>
+                                        </li>
+                                        <li><router-link to="#"
+                                                class="link-dark d-inline-flex text-decoration-none rounded">기획전</router-link>
+                                        </li>
+                                        <li><router-link to="#"
+                                                class="link-dark d-inline-flex text-decoration-none rounded">랜덤박스</router-link>
+                                        </li>
+                                        <li><router-link to="#"
+                                                class="link-dark d-inline-flex text-decoration-none rounded">이벤트 당첨자
+                                                발표</router-link></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="mb-1">
+                                <button
+                                    class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                                    data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+                                    고객센터
+                                </button>
+                                <div class="collapse" id="orders-collapse">
+                                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                        <li><router-link to="#"
+                                                class="link-dark d-inline-flex text-decoration-none rounded">FAQ</router-link>
+                                        </li>
+                                        <li><router-link to="#"
+                                                class="link-dark d-inline-flex text-decoration-none rounded">1:1
+                                                문의게시판</router-link></li>
+                                    </ul>
+                                </div>
+                            </li>
                         </ul>
 
                     </div>
                 </div>
             </div>
+        </div>
 
 
 
@@ -124,8 +141,8 @@
 
 
 
-        
-    </div> 
+
+    </div>
 </template>
 <script>
 import '@/assets/css/customer/AppHeader.css'
