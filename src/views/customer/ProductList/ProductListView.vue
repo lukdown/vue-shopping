@@ -24,46 +24,33 @@
 
                                     <div id="allUl">
 
-                                        <ul id="oneUl">
-                                            <li><router-link to="/customer/productdetails"><img id="clothesImg" src="https://www.fashionn.com/files/board/2018/image/p1cforbgmvcok1ii51o8c1tecoc11.jpg"></router-link></li>
-                                            <li>영수 스페셜 원피스</li>
-                                            <li><strong>10,000원</strong></li>
+                                        <ul>
+                                            
+                                            <li id="oneUl">
+                                                <router-link to="/customer/productdetails"><img id="clothesImg" src="https://www.fashionn.com/files/board/2018/image/p1cforbgmvcok1ii51o8c1tecoc11.jpg"></router-link>
+                                                <div>
+                                                    영수 스페셜 원피스
+                                                </div>
+                                                <div>
+                                                    <strong>10,000원</strong>
+                                                </div>
+                                            </li>
+                                            
                                         </ul>
 
-                                        <ul id="oneUl">
-                                            <li><router-link to="/customer/productdetails"><img id="clothesImg" src="https://www.fashionn.com/files/board/2018/image/p1cforbgmvcok1ii51o8c1tecoc11.jpg"></router-link></li>
-                                            <li>영수 스페셜 진</li>
-                                            <li><strong>8,000원</strong></li>
-                                        </ul>
-
-                                        <ul id="oneUl">
-                                            <li><router-link to="/customer/productdetails"><img id="clothesImg" src="https://www.fashionn.com/files/board/2018/image/p1cforbgmvcok1ii51o8c1tecoc11.jpg"></router-link></li>
-                                            <li>영수 스페셜 원피스</li>
-                                            <li><strong>10,000원</strong></li>
-                                        </ul>
                                         
-                                        <ul id="oneUl">
-                                            <li><router-link to="/customer/productdetails"><img id="clothesImg" src="https://www.fashionn.com/files/board/2018/image/p1cforbgmvcok1ii51o8c1tecoc11.jpg"></router-link></li>
-                                            <li>영수 스페셜 원피스</li>
-                                            <li><strong>10,000원</strong></li>
-                                        </ul>
 
-                                        <ul id="oneUl">
-                                            <li><router-link to="/customer/productdetails"><img id="clothesImg" src="https://www.fashionn.com/files/board/2018/image/p1cforbgmvcok1ii51o8c1tecoc11.jpg"></router-link></li>
-                                            <li>영수 스페셜 진</li>
-                                            <li><strong>8,000원</strong></li>
-                                        </ul>
-
-                                        <ul id="oneUl">
-                                            <li><router-link to="/customer/productdetails"><img id="clothesImg" src="https://www.fashionn.com/files/board/2018/image/p1cforbgmvcok1ii51o8c1tecoc11.jpg"></router-link></li>
-                                            <li>영수 스페셜 원피스</li>
-                                            <li><strong>10,000원</strong></li>
-                                        </ul>
-
-                                    </div>
+                                    </div>  
                                     
                                     <div id="paging">
-                                        <span>1 2 3 4 5 6</span>
+                                        <a href="#" class="page-arrow" id="first">&laquo;</a>
+                                        <a href="#" class="page-arrow" id="prev">&lsaquo;</a>
+                                        <!-- 페이지 번호 목록 -->
+                                        <div class="page-list">
+
+                                        </div>
+                                        <a href="javascript:;" class="page-arrow" id="next">&rsaquo;</a>
+                                        <a href="javascript:;" class="page-arrow" id="last">&raquo;</a>
                                     </div>
 
                                 </div>
