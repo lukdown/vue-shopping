@@ -59,7 +59,9 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <button id="ShoppingBasket-MakePaymentbtn" type="button">결제하기</button>
+                                        <router-link to="/customer/paymentpage">
+                                            <button id="ShoppingBasket-MakePaymentbtn" type="button">결제하기</button>
+                                        </router-link>
                                     </div>
                                 </div>
                             </div>

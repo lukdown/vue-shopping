@@ -17,48 +17,48 @@ const routes = [
     component: MainView
   },
   {
-    path: '/login',
-    name: '/login',
+    path: '/customer/login',
+    name: '/customer/login',
     component: LoginView
   },
   {
-    path: '/join',
-    name: '/join',
+    path: '/customer/join',
+    name: '/customer/join',
     component: JoinView
   },
   {
-    path: '/productdetails',
-    name: '/productdetails',
+    path: '/customer/productdetails',
+    name: '/customer/productdetails',
     component: ProductDetailsView
   },
   {
-    path: '/paymentpage',
-    name: '/paymentpage',
+    path: '/customer/paymentpage',
+    name: '/customer/paymentpage',
     component: PaymentPageView
   },
   {
-    path: '/productlist',
-    name: '/productlist',
+    path: '/customer/productlist',
+    name: '/customer/productlist',
     component: ProductListView
   },
   {
-    path: '/salesmanagement',
-    name: '/salesmanagement',
+    path: '/admin/salesmanagement',
+    name: '/admin/salesmanagement',
     component: SalesManagementView
   },
   {
-    path: '/shoppingbasket',
+    path: '/customer/shoppingbasket',
     name: '/shoppingbasket',
     component: ShoppingBasketView
   },
   {
-    path: '/paymentmanage',
-    name: '/paymentmanage',
+    path: '/admin/paymentmanage',
+    name: '/admin/paymentmanage',
     component: PaymentManageView
   },
   {
-    path: '/deliverymanagement',
-    name: '/deliverymanagement',
+    path: '/admin/deliverymanagement',
+    name: '/admin/deliverymanagement',
     component: DeliveryManagementView
   },
 

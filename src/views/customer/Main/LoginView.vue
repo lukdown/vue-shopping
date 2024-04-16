@@ -15,7 +15,7 @@
             </ul>
             <div id="login-btns">
                 <button class="login-btn">LOGIN</button>
-                <router-link to="/join">
+                <router-link to="/customer/join">
                     <button class="login-btn">Sign Up</button>
                 </router-link>
             </div>

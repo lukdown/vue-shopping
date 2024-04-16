@@ -13,8 +13,8 @@
                     </router-link>
 
                     <div id="ls-gather-btn">
-                        <router-link to="/login">Login</router-link>
-                        <router-link to="/join">Sign Up</router-link>
+                        <router-link to="/customer/login">Login</router-link>
+                        <router-link to="/customer/join">Sign Up</router-link>
                     </div>
                     
 
@@ -34,16 +34,16 @@
                                 </button>
                                 <div class="collapse show" id="home-collapse">
                                     <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                        <li><router-link to="#"
+                                        <li><router-link to="/customer/productlist"
                                                 class="link-dark d-inline-flex text-decoration-none rounded">Outer</router-link>
                                         </li>
-                                        <li><router-link to="#"
+                                        <li><router-link to="/customer/productlist"
                                                 class="link-dark d-inline-flex text-decoration-none rounded">Top</router-link>
                                         </li>
-                                        <li><router-link to="#"
+                                        <li><router-link to="/customer/productlist"
                                                 class="link-dark d-inline-flex text-decoration-none rounded">Bottom</router-link>
                                         </li>
-                                        <li><router-link to="#"
+                                        <li><router-link to="/customer/productlist"
                                                 class="link-dark d-inline-flex text-decoration-none rounded">ETC</router-link>
                                         </li>
                                     </ul>

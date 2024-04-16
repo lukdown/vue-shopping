@@ -48,8 +48,12 @@
                     </div>
 
                     <div id="ProductDetails-paymentbtn">
-                      <button class="ProductDetails-paymentbutton">결제하기</button>
-                      <button class="ProductDetails-paymentbutton">장바구니</button>
+                      <router-link to="/customer/paymentpage">
+                        <button class="ProductDetails-paymentbutton">결제하기</button>
+                      </router-link>
+                      <router-link to="/customer/shoppingbasket">
+                        <button class="ProductDetails-paymentbutton">장바구니</button>
+                      </router-link>
                     </div>
                   </div>
                 </div>
