@@ -1,0 +1,75 @@
+@font-face {
+    font-family: "bkkGothicBold";
+    src: url("@/assets/font/부크크고딕_굵은글씨.ttf");
+}
+
+#productFormGroup{
+    text-align: center;
+    font-family: "bkkGothicBold";
+}
+
+#productFormGroup table{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    /*border: 1px solid black;*/
+}
+
+#productFormGroup table tr th, td{
+    padding: 8px;
+/*
+    border: 1px solid black;
+    border-collapse: collapse;
+*/
+}
+
+#productFormGroup table tr:nth-child(odd){
+    background-color: rgb(194, 145, 239);
+}
+/*
+tr:nth-child(even){
+    background-color: gold;
+}
+*/
+#productFormGroup table thead tr #firstTh{
+    width: 200px;
+    background-color: white;
+}
+
+#productFormGroup table thead tr #secondTh{
+    width: 400px;
+    background-color: white;
+    font-size: larger;
+    font-weight: bold;
+}
+
+#productFormGroup table thead tr #thirdTh{
+    width: 200px;
+    background-color: white;
+    font-size: larger;
+}
+
+#productFormGroup table thead tr #fourthTh{
+    width: 150px;
+    background-color: white;
+}
+
+#productFormGroup table tbody tr #clothesImage{
+    width: 100px;
+    height: 140px;
+}
+
+#productFormGroup table tbody tr #btnDelete{
+    border: 1px solid black;
+    padding: 5px 10px;
+    border-radius: 4px;
+    background-color: white;
+}
+
+#productFormGroup #addBtn{
+    border: 1px solid black;
+    padding: 5px 10px;
+    border-radius: 4px;
+    /*background-color: gold;*/
+    /*color: white;*/
+}

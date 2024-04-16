@@ -1,0 +1,57 @@
+@font-face {
+    font-family: "bkkGothicBold";
+    src: url("@/assets/font/부크크고딕_굵은글씨.ttf");
+}
+@font-face {
+    font-family: "bkkGothicThin";
+    src: url("@/assets/font/부크크고딕_얇은글씨.ttf");
+}
+
+#addContentGroup{
+    width: 1000px;
+    font-family: "bkkGothicThin";
+}
+
+#addContentGroup h1{
+    font-family: "bkkGothicBold";
+}
+
+#insertImg{
+    float: left;
+	padding: 10px 5px 10px 400px;
+    text-align: left;
+}
+
+#insertImg #clothesImgPreview{
+    width: 300px;
+    height: 300px;
+}
+
+#imageGroup{
+}
+
+#productAddFormTitle{
+    display: inline-block;  /* 인라인 요소 가로폭을 주려고 */
+    width: 70px;
+    margin-right: 20px;
+}
+
+#productAddForm{
+}
+
+#productAddForm #addFormTitleGroup{
+    margin-left: 80px;
+    text-align: right;
+}
+
+#productAddFormGroup{
+	padding: 10px 5px 10px 400px;
+    /*margin-left: auto;
+    margin-right: auto;*/
+    text-align: left;
+    /*float: right;*/
+}
+
+#productAddFormGroup{
+    float: right;
+}

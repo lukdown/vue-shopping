@@ -1,9 +1,52 @@
-#ulAll{
-    display: inline-flex;
-    margin-top: 30px;
+@font-face {
+    font-family: "bkkGothicBold";
+    src: url("@/assets/font/부크크고딕_굵은글씨.ttf");
+}
+@font-face {
+    font-family: "bkkGothicThin";
+    src: url("@/assets/font/부크크고딕_얇은글씨.ttf");
 }
 
-#clothesImg{
-    width: 90px;
-    height: 140px;
+#contentGroup{
+    margin-left: auto;
+    margin-right: auto;
+    width: 700px;
+    background-color: white;
+}
+
+#contentGroup h1{
+    font-family: "bkkGothicBold";
+}
+
+#contentGroup p{
+    margin-left: 20px;
+    font-size: 20px;
+    font-family: "bkkGothicThin";
+}
+
+#background{
+    background-color: blueviolet;
+}
+
+#contentGroup #allUl{
+    display: flex;
+    /*
+    flex-wrap: wrap;
+    width: calc(100%/3);
+    */
+}
+
+#contentGroup #allUl #oneUl{
+    width: 233px;
+    margin: 0px 10px 0px 0px;
+}
+
+#contentGroup #allUl #oneUl #clothesImg{
+    width: 120px;
+    height: 170px;
+}
+
+#contentGroup #paging{
+    margin-top: 20px;
+    text-align: center;
 }

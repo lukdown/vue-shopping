@@ -61,6 +61,7 @@ const routes = [
     name: '/admin/deliverymanagement',
     component: DeliveryManagementView
   },
+  
 
 ]
 

@@ -10,28 +10,63 @@
                     <div id="index">
                         <div id="greetings">
 
+                            <div id="background">
 
-                            <!-- <h1>상품 리스트</h1> -->
 
-                            <div id="ulAll">
 
-                                <ul>
-                                    <li><router-link to="/customer/productdetails"><img id="clothesImg" src="https://www.fashionn.com/files/board/2018/image/p1cforbgmvcok1ii51o8c1tecoc11.jpg"></router-link></li>
-                                    <li>영수 스페셜 원피스</li>
-                                    <li><strong>10,000원</strong></li>
-                                </ul>
+                            
 
-                                <ul>
-                                    <li><router-link to="/customer/productdetails"><img id="clothesImg" src="https://www.fashionn.com/files/board/2018/image/p1cforbgmvcok1ii51o8c1tecoc11.jpg"></router-link></li>
-                                    <li>영수 스페셜 진</li>
-                                    <li><strong>8,000원</strong></li>
-                                </ul>
+                                <div id="contentGroup">
 
-                                <ul>
-                                    <li><router-link to="/customer/productdetails"><img id="clothesImg" src="https://www.fashionn.com/files/board/2018/image/p1cforbgmvcok1ii51o8c1tecoc11.jpg"></router-link></li>
-                                    <li>영수 스페셜 원피스</li>
-                                    <li><strong>10,000원</strong></li>
-                                </ul>
+                                    <h1>상품 리스트</h1>
+                                    
+                                    <p>아우터</p>
+
+                                    <div id="allUl">
+
+                                        <ul id="oneUl">
+                                            <li><router-link to="/customer/productdetails"><img id="clothesImg" src="https://www.fashionn.com/files/board/2018/image/p1cforbgmvcok1ii51o8c1tecoc11.jpg"></router-link></li>
+                                            <li>영수 스페셜 원피스</li>
+                                            <li><strong>10,000원</strong></li>
+                                        </ul>
+
+                                        <ul id="oneUl">
+                                            <li><router-link to="/customer/productdetails"><img id="clothesImg" src="https://www.fashionn.com/files/board/2018/image/p1cforbgmvcok1ii51o8c1tecoc11.jpg"></router-link></li>
+                                            <li>영수 스페셜 진</li>
+                                            <li><strong>8,000원</strong></li>
+                                        </ul>
+
+                                        <ul id="oneUl">
+                                            <li><router-link to="/customer/productdetails"><img id="clothesImg" src="https://www.fashionn.com/files/board/2018/image/p1cforbgmvcok1ii51o8c1tecoc11.jpg"></router-link></li>
+                                            <li>영수 스페셜 원피스</li>
+                                            <li><strong>10,000원</strong></li>
+                                        </ul>
+                                        
+                                        <ul id="oneUl">
+                                            <li><router-link to="/customer/productdetails"><img id="clothesImg" src="https://www.fashionn.com/files/board/2018/image/p1cforbgmvcok1ii51o8c1tecoc11.jpg"></router-link></li>
+                                            <li>영수 스페셜 원피스</li>
+                                            <li><strong>10,000원</strong></li>
+                                        </ul>
+
+                                        <ul id="oneUl">
+                                            <li><router-link to="/customer/productdetails"><img id="clothesImg" src="https://www.fashionn.com/files/board/2018/image/p1cforbgmvcok1ii51o8c1tecoc11.jpg"></router-link></li>
+                                            <li>영수 스페셜 진</li>
+                                            <li><strong>8,000원</strong></li>
+                                        </ul>
+
+                                        <ul id="oneUl">
+                                            <li><router-link to="/customer/productdetails"><img id="clothesImg" src="https://www.fashionn.com/files/board/2018/image/p1cforbgmvcok1ii51o8c1tecoc11.jpg"></router-link></li>
+                                            <li>영수 스페셜 원피스</li>
+                                            <li><strong>10,000원</strong></li>
+                                        </ul>
+
+                                    </div>
+                                    
+                                    <div id="paging">
+                                        <span>1 2 3 4 5 6</span>
+                                    </div>
+
+                                </div>
 
                             </div>
 
