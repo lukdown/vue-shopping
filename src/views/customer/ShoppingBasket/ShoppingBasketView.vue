@@ -24,7 +24,7 @@
                                         </div>
 
                                         <div class="ShoppingBasket-BriefContents">
-                                            <span>영수의 스페셜 울트라 닝수셔츠</span>
+                                            <span id="ShoppingBasket-BriefContents-name">영수의 스페셜 울트라 닝수셔츠</span>
                                         </div>
 
                                         <div class="ShoppingBasket-BriefContents">

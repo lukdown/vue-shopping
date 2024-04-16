@@ -122,11 +122,22 @@
                         
     
                         <!-- 결제 방법 영역-->
-                        <div class="u-payment-method-button">
-                            <label for="payment-method">결제 수단 선택</label>
-                            <button type="button" id="payment-method-button">신용카드</button>
-                            <button type="button" id="bank-transfer-button">계좌이체</button>
-                            <button type="button" id="paypal-button">네이버페이</button>
+                        <div class="u-payment-method">
+                            <div id="u-payment-method-title">결제 수단 선택</div>
+                            <div id="u-payment-method-all">
+                                <div id="u-payment-method-card">
+                                    <label for="rdo-card">카드</label>
+                                    <input type="radio" id="rdo-card" name="payment-method" value="card">
+                                </div>
+                                <div id="u-payment-method-account">
+                                    <label for="rdo-account">계좌이체</label>
+                                    <input type="radio" id="rdo-account" name="payment-method" value="account">
+                                </div>
+                                <div id="u-payment-method-pay">
+                                    <label for="rdo-pay">네이버페이</label>
+                                    <input type="radio" id="rdo-pay" name="payment-method" value="pay">
+                                </div>
+                            </div>
                         </div>
                         
                         <!-- 결제 버튼 -->

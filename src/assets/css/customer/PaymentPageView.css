@@ -1,5 +1,6 @@
 .u-payment-all-all{
     background-color: rgb(56, 9, 95);
+    max-width: 1920px;
 }
 
 .u-payment-all{
@@ -267,32 +268,63 @@
 }
 
 /*결제 수단 선택*/
-.u-payment-method-button{
+.u-payment-method{
     text-align: center;
     font-family: "부크크 고딕";
+    font-weight: bold;
     margin-top: 50px;
-}
-
-.u-payment-method-button label {
     display: block;
     margin-bottom: 5px;
     font-size: 20px;
+    justify-content: space-between;
 }
 
-.u-payment-method-button button {
-    padding: 5px 10px;
-    border-radius: 5px;
-    border: none;
-    background-color: #680EAE;
-    color: #fff;
-    cursor: pointer;
+#u-payment-method-title{
+    font-size: 30px;
+}
+
+#u-payment-method-all{
+    margin: 10px 0px 0px 350px;
+}
+
+.u-payment-method #u-payment-method-card{
     margin-right: 10px;
-    font-family: "부크크 고딕";
+    float: left;
 }
 
-.u-payment-method-button button:hover {
-    background-color: #a15bd6;
+.u-payment-method #u-payment-method-card input[type="radio"]{
+    margin-left: 10px;
 }
+
+.u-payment-method #u-payment-method-account{
+    margin-right: 10px;
+    float: left;
+}
+.u-payment-method #u-payment-method-account input[type="radio"]{
+    margin-left: 10px;
+}
+.u-payment-method #u-payment-method-pay{
+    margin-right: 10px;
+    float: left;
+}
+.u-payment-method #u-payment-method-pay input[type="radio"]{
+    margin-left: 10px;
+}
+.u-payment-method input[type='radio'] {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+  }
+
+.u-payment-method input[type='radio']:checked {
+    background-color: #85006e;
+    border: 3px solid white; 
+    box-shadow: 0 0 0 1.6px #ac0292;
+  }
 
 #payment-final-button {
     width: 290px;
