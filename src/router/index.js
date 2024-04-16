@@ -9,6 +9,7 @@ import SalesManagementView from '@/views/admin/SalesManagement/SalesManagementVi
 import ShoppingBasketView from '@/views/customer/ShoppingBasket/ShoppingBasketView.vue'
 import PaymentManageView from '@/views/admin/PaymentManage/PaymentManageView.vue'
 import DeliveryManagementView from '@/views/admin/DeliveryManagement/DeliveryManagementView.vue'
+import ProductAddView from '@/views/admin/ProductManagement/ProductAddView.vue'
 
 const routes = [
   {
@@ -48,7 +49,7 @@ const routes = [
   },
   {
     path: '/customer/shoppingbasket',
-    name: '/shoppingbasket',
+    name: '/customer/shoppingbasket',
     component: ShoppingBasketView
   },
   {
@@ -60,6 +61,11 @@ const routes = [
     path: '/admin/deliverymanagement',
     name: '/admin/deliverymanagement',
     component: DeliveryManagementView
+  },
+  {
+    path: '/admin/productadd',
+    name: '/admin/productadd',
+    component: ProductAddView
   },
   
 

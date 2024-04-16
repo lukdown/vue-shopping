@@ -95,7 +95,7 @@
 <script>
 import "@/assets/css/admin/ProductAddView.css";
 import AppFooter from "@/components/admin/AdminAppFooter.vue";
-import AppHeader from "@/components/admin/AdminAppFooter.vue";
+import AppHeader from "@/components/admin/AdminAppHeader.vue";
 
 export default {
     name: "ProductAddView",

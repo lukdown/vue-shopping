@@ -39,11 +39,17 @@
                                 <div id="u-payment-product-qprice">총 100,000원</div>
                             </dir>   
                         </div>
+
+                        <!--받는 분 이름-->
+                        <div id="u-payment-name">
+                            <label for="u-payment-phone-name">받는 분 성함:</label>
+                            <input type="tel" name="phone" id="u-payment-phone-name" placeholder="이름">
+                        </div>
     
     
                         <!--받는 분 연락처-->
                         <div id="u-payment-phone">
-                            <label for="u-payment-phone-number">연락처 입력:</label>
+                            <label for="u-payment-phone-number">받는 분 연락처:</label>
                             <input type="tel" name="phone" id="u-payment-phone-number" placeholder="연락처">
                         </div>
     
@@ -71,54 +77,18 @@
                             <textarea id="u-payment-request" placeholder="여기에 입력해주세요" maxlength="500"></textarea>
                         </div>
                         
-    
-                        <!-- 포인트 -->
-                        <div id="u-payment-point">
-                            <p>현재 포인트: 500원</p>
-                            <label for="u-payment-point-push">포인트: </label>
-                            <input type="text" name="point" id="u-payment-point-push" placeholder="0">
-                            <button id="u-payment-point-button">사용</button>
-                        </div>
-    
                         <!--총 결제 금액-->
-                        <div class="u-payment-total-price-all">
-                            <div class="u-payment-total-price">
-                                <table class="u-table_price">
-                                    <tbody>
-                                        <tr id="u-payment-product">
-                                            <th id="u-payment-product-price">상품금액</th>
-                                            <td>300,000<span>원</span></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div>
-                                <p>ㅡ</p>
-                            </div>
-                            <div class="u-payment-total-price">
-                                <table class="u-table_price">
-                                    <tbody>
-                                        <tr>
-                                            <th>포인트 사용금액</th>
-                                            <td>0<span>원</span></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div>
-                                <p>=</p>
-                            </div>
-                            <div class="u-payment-total-price">
-                                <table class="u-table_price">
-                                    <tbody>
-                                        <tr>
-                                            <th>총금액</th>
-                                            <td id="u-total-price">300,000<span>원</span></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                        <div class="u-payment-total-price">
+                            <table class="u-table_price">
+                                <tbody>
+                                    <tr>
+                                        <th>총금액</th>
+                                        <td id="u-total-price">300,000<span>원</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
+
                         
     
                         <!-- 결제 방법 영역-->
@@ -141,8 +111,23 @@
                         </div>
                         
                         <!-- 결제 버튼 -->
-                        <button id="payment-final-button">결제하기</button>
+                        <button type="button" id="payment-final-button" v-on:click.prevent="paymentComplete">결제하기</button>
+
                     </form>
+
+                    <!--결제완료 모달-->
+                    <div id="u-payment-modal">
+                        <div class="u-payment-modal-content">
+                            <div class="u-payment-m-body">
+                                결제가 완료되었습니다.
+                            </div>
+                            <div class="u-payment-m-footer">
+                                <button class="closeBtn" v-on:click="closeModal"><p>확인</p></button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
                 </div>
                 <!-- //greetings -->
                 <div class="clear"></div>
@@ -173,7 +158,18 @@
        data() {
             return {};
         },
-        methods: {},
+        methods: {
+            paymentComplete(){
+                console.log("모달창 보이기");
+                let modal = document.querySelector("#u-payment-modal");
+                modal.style.display = "block";
+            },
+
+            closeModal(){
+                console.log("모달창 닫기");
+                this.$router.push("/");
+            }
+        },
         created() { }
     };
     </script>

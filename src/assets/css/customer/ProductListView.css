@@ -10,17 +10,20 @@
 #contentGroup{
     margin-left: auto;
     margin-right: auto;
-    width: 700px;
+    width: 1000px;
+    height: 700px;
     background-color: white;
 }
 
 #contentGroup h1{
+    margin-left: 20px;
     font-family: "bkkGothicBold";
+    font-weight: bold;
 }
 
 #contentGroup p{
-    margin-left: 20px;
-    font-size: 20px;
+    margin-left: 40px;
+    font-size: 18px;
     font-family: "bkkGothicThin";
 }
 
@@ -28,25 +31,30 @@
     background-color: blueviolet;
 }
 
-#contentGroup #allUl{
+#background #contentGroup #allUl{
     display: flex;
-    /*
+    float: left;
+    margin-left: 74px;
+    width: 1000px;
+    overflow: hidden;
     flex-wrap: wrap;
-    width: calc(100%/3);
-    */
 }
 
-#contentGroup #allUl #oneUl{
-    width: 233px;
-    margin: 0px 10px 0px 0px;
+#background #contentGroup #allUl #oneUl{
+    width: 250px;
+    float: left;
+    margin-left: 33px;
+    font-family: "bkkGothicThin";
+    font-size: 17px;
 }
 
 #contentGroup #allUl #oneUl #clothesImg{
-    width: 120px;
-    height: 170px;
+    width: 160px;
+    height: 203px;
 }
 
 #contentGroup #paging{
     margin-top: 20px;
     text-align: center;
+    font-size: 18px;
 }
