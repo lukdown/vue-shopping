@@ -15,8 +15,8 @@
                     <div id="ls-gather-btn">
                         
                         <ul v-if="this.$store.state.authUser != null">
-                            <li>{{ this.$store.state.authUser.user_name}} 님 안녕하세요^^</li>
-                            <li><button v-on:click="logout" type="button" class="btn_s">Logout</button></li>
+                            <li id="btn-li">{{ this.$store.state.authUser.user_name}} 님</li>
+                            <li><button v-on:click="logout" type="button" class="btn_s" id="logout-btn">Logout</button></li>
                         </ul>
                         
                         <ul v-if="this.$store.state.authUser == null">

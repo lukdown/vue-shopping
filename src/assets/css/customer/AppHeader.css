@@ -26,6 +26,22 @@
   font-size: 25px;
   color: white;
 }
+#btn-li{
+  font-family: "부크크 고딕";
+  font-weight: bold;
+  font-size: 25px;
+  color: #fff;
+  margin-right: 160px;
+  float: left;
+}
+#logout-btn{
+  font-family: "Cafe24 ClassicType";
+  font-size: 30px;
+  color: #fff;
+  background-color: #680eae;
+  border: none;
+
+}
 
 #logo {
   width: 400px;
