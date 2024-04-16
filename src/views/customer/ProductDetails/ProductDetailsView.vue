@@ -24,8 +24,13 @@
 
                     <div>
                       <div class="ProductDetails-fontsize">
-                        <strong>사이즈&색상:</strong>
-                        <span>영수표 빨강(L)</span>
+                        <strong>사이즈:</strong>
+                        <select id="ProductDetails-sizechoose" name="size">
+                          <option class="" value="S">S</option>
+                          <option class="" value="M">M</option>
+                          <option class="" value="L">L</option>
+                          <option class="" value="XL">XL</option>
+                        </select>
                       </div>
                     </div>
 
@@ -37,14 +42,16 @@
                     </div>
 
                     <div class="ProductDetails-fontsize">
-                      <div>
-                        <strong>수량:</strong>
-                      </div>
-                      <span id="ProductDetails-quantityButton">
+                      <div id="ProductDetails-quantityButton">
+
+                        <strong id="ProductDetails-quantityName">수량:</strong>
+
                         <button class="ProductDetails-quantitynumberButton">-</button>
                         <input id="ProductDetails-quantitynumber" type="text" value="1">
                         <button class="ProductDetails-quantitynumberButton">+</button>
-                      </span>
+                        
+                      </div>
+
                     </div>
 
                     <div id="ProductDetails-paymentbtn">

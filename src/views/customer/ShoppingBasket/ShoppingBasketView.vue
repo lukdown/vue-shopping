@@ -28,12 +28,20 @@
                                         </div>
 
                                         <div class="ShoppingBasket-BriefContents">
-                                            <span>영수표 빨강(L)</span>
+                                            <label>사이즈:</label>
+                                            <select id="ShoppingBasket-sizechoose" name="size">
+                                                <option class="" value="S">S</option>
+                                                <option class="" value="M">M</option>
+                                                <option class="" value="L">L</option>
+                                                <option class="" value="XL">XL</option>
+                                            </select>
                                         </div>
 
-                                        <div class="ShoppingBasket-BriefContents">
+                                        <div id="ShoppingBasket-quantitynumberAll" class="ShoppingBasket-BriefContents">
                                             <label>수량:</label>
-                                            <span>1</span>
+                                            <button class="ShoppingBasket-quantitynumberButton">-</button>
+                                            <input id="ShoppingBasket-quantitynumber" type="text" value="1">
+                                            <button class="ShoppingBasket-quantitynumberButton">+</button>
                                         </div>
 
                                         <div class="ShoppingBasket-BriefContents">

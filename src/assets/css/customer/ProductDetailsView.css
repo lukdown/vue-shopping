@@ -36,14 +36,22 @@
   padding-left: 30px;
 }
 
+#ProductDetails-sizechoose{
+  border: none;
+}
+
 #ProductDetails-quantity {
   text-align: center;
 }
 
 #ProductDetails-quantityButton {
-  max-width: 320px;
+  max-width: 400px;
   display: flex;
   align-items: center;
+}
+
+#ProductDetails-quantityName{
+  width: 70px;
 }
 
 .ProductDetails-quantitynumberButton {
@@ -61,6 +69,7 @@
 
 #ProductDetails-quantitynumber {
   width: 200px;
+  height: 40px;
   text-align: center;
   border: none;
   font-size: 40px;
