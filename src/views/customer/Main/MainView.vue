@@ -86,6 +86,7 @@ export default {
         {
           image: require('@/assets/img/short-haired-woman-sunglasses-posing-yellow-doors-curly-woman-undershirt-with-jacket-looks-away-yellow-doors.jpg')
         }
+        // Other slides...
       ]
     };
   },

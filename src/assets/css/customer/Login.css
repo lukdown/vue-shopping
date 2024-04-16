@@ -22,14 +22,14 @@
     font-family: "Cafe24 Classictype";
 }
 
-.login-form-li{
+.login-form{
     margin-bottom: 30px;
-    margin-left: 145px;
+    margin-left: 180px;
 }
 
-.login-form-li:nth-child(2){
+.login-form:nth-child(2){
     margin-bottom: 30px;
-    margin-left: 128px;
+    margin-left: 163px;
 }
 
 .login-input{
