@@ -12,6 +12,11 @@
   margin-bottom: 20px;
 }
 
+#side-bar{
+  z-index: 7;
+}
+
+
 .header-btn {
   float: right;
 }
