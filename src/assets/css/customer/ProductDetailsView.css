@@ -7,7 +7,7 @@
 
 #ProductDetails-All{
   margin-top: 100px;
-  font-family: "순바탕 중간체";
+  font-family: "부크크 고딕 Bold";
 }
 
 #ProductDetails-All2{
@@ -21,13 +21,13 @@
   margin-left: 600px;
 }
 @font-face {
-  font-family: "순바탕 중간체";
-  src: url('../../font/SunBatang-Medium.ttf') format('opentype');
+  font-family: "부크크 고딕 Bold";
+  src: url('../../font/부크크고딕_굵은글씨.ttf') format('opentype');
 }
 #ProductDetails-clothesname {
   font-size: 50px;
   padding-left: 30px;
-  font-family: "순바탕 중간체";
+  font-family: "부크크 고딕 Bold";
 }
 
 .ProductDetails-fontsize {

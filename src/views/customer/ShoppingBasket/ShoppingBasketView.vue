@@ -10,11 +10,11 @@
                     <div id="index">
                         <div id="greetings">
                             <div id="ShoppingBasketList-PagenameBreadcrumbs">
-                                <h2>장바구니</h2>
-                                <h5>나의 패션리스트</h5>
+                                <h2 class="ShoppingBasket-FontFamilyTitle">장바구니</h2>
+                                <h5 class="ShoppingBasket-FontFamilyLitleTitle">나의 패션리스트</h5>
                             </div>
                             <div id="ShoppingBasketList-All">
-                                <div>
+                                <div id="ShoppingBasketList-scroll">
                                     <li id="ShoppingBasketList">
 
                                         <img id="ShoppingBasket-img" src="@/assets/img/Kim-Jong-kook.jpg">
@@ -38,7 +38,7 @@
 
                                         <div class="ShoppingBasket-BriefContents">
                                             <label>가격:</label>
-                                            <span>1,000,000</span>
+                                            <span>1,000,000원</span>
                                         </div>
                                     </li>
                                 </div>
@@ -49,13 +49,18 @@
 
                                 <div id="ShoppingBasket-TotalPaymentAmountPayment">
                                     <div id="ShoppingBasket-TotalPaymentAmount">
-                                        <label>총 결제금액:</label>
-                                        <span>1,000,000</span>
+                                        <div>
+                                            <label class="ShoppingBasket-TotalNumberOfProducts">총 상품갯수:</label>
+                                            <span class="ShoppingBasket-TotalNumberOfProducts">1개</span>
+                                        </div>
+                                        <div>
+                                            <label class="ShoppingBasket-TotalPaymentAmountFont">총 결제금액:</label>
+                                            <span class="ShoppingBasket-TotalPaymentAmountFont">1,000,000원</span>
+                                        </div>
+                                    </div>
+                                    <div>
                                         <button id="ShoppingBasket-MakePaymentbtn" type="button">결제하기</button>
                                     </div>
-                                    
-                                    
-                                    
                                 </div>
                             </div>
                         </div>
