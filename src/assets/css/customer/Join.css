@@ -15,35 +15,53 @@
     color : #680eae;
 }
 
-.join-table-li{
+.duplicate-check-div{
+    margin-left: 175px;
+}
+
+.duplicate-P{
+    display: inline-block;
+    font-family: "부크크 고딕";
+    font-weight: bold;
+}
+
+.join-table-div{
     margin-left: 230px;
     margin-bottom: 20px;
 }
 
-.join-table-li:nth-child(2){
+.join-table-div:nth-child(3){
     margin-left: 210px;
     margin-bottom: 20px;
 }
 
-.join-table-li:nth-child(3){
+.join-table-div:nth-child(4){
     margin-left: 173px;
     margin-bottom: 20px;
 }
-.join-table-li:nth-child(4){
+.join-table-div:nth-child(5){
     margin-left: 155px;
     margin-bottom: 20px;
 }
-.join-table-li:nth-child(5){
+.join-table-div:nth-child(6){
     margin-left: 213px;
     margin-bottom: 20px;
 }
-.join-table-li:nth-child(6){
+.join-table-div:nth-child(7){
     margin-left: 213px;
     margin-bottom: 20px;
 }
-.join-table-li:nth-child(7){
-    margin-left: 213px;
+.join-table-div:nth-child(8){
+    margin-left: 177px;
     margin-bottom: 20px;
+}
+
+.join-input6{
+    border-bottom: 3px solid #680eae;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 350px;
 }
 
 .join-label{
