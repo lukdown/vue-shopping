@@ -28,6 +28,7 @@
                 <!--결제관리 table-->
                 <table id="m-payment-table">
                     <tr class="m-payment-table-th">
+                        <th>주문번호</th>
                         <th>결제 날짜</th>
                         <th>구매자명</th>
                         <th>주소</th>
@@ -35,15 +36,27 @@
                         <th>요청사항</th>
                         <th>총 가격</th>
                         <th>배송상태</th>
+                        <th>상태변경</th>
                     </tr>
                     <tr v-bind:key="i" v-for="(paymentVo,i) in paymentList" class="m-payment-table-content">
+                        <td>{{ paymentVo.o_no }}</td>
                         <td id="m-payment-date">{{ paymentVo.o_date }}</td>
                         <td id="m-payment-name">{{ paymentVo.o_name }}</td>
                         <td id="m-payment-address">{{ paymentVo.o_address }}</td>
                         <td id="m-payment-hp">{{ paymentVo.o_hp }}</td>
                         <td id="m-payment-request">{{ paymentVo.o_request }}</td>
                         <td id="m-payment-total-price">{{ paymentVo.totalprice }}</td>
-                        <td>{{ paymentVo.o_status}}</td>
+                        <td>
+                            <div v-if="paymentVo.o_status == '0'">결제완료</div>
+                            <div v-else-if="paymentVo.o_status == 1">배송중</div>
+                            <div v-else-if="paymentVo.o_status == 2">배송완료</div>
+                            <div v-else>결제대기</div>
+                        </td>
+                        <td>
+                            <button v-if="paymentVo.o_status == '0'" v-on:click="paymentStatus(paymentVo.o_no)">배송시작</button>
+                            <button v-else-if="paymentVo.o_status == 1" v-on:click="paymentStatus(paymentVo.o_no)">배송완료</button>
+                            <div v-else></div>
+                        </td>
                     </tr>
                     
                 </table>
@@ -164,6 +177,24 @@
                 this.paymentpageVo.crtPage = this.paymentpageVo.crtPage + 6;
                 this.getList(this.paymentpageVo.crtPage);
             }
+        },
+        paymentStatus(o_no){
+            console.log("배송상태 버튼");
+            console.log(o_no);
+            axios({
+                method: 'put',
+                url: 'http://localhost:9002/api/admin/paymentmanage/'+ o_no,
+                headers: {"Content-Type": "application/json; charset=utf-8"},
+                data: {o_no},
+                responseType: 'json'
+            }).then(response => {
+                console.log(response.data); //수신데이타    
+
+                window.location.reload();
+            }).catch(error => {
+                console.log(error);
+            });
+
         }
     },
     created() {
