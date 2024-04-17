@@ -62,10 +62,48 @@
 
 #search-box{
     display: center;
-    text-align: center;
-    margin-bottom: 20px;
+    margin: 0px 0px 20px 30px;
 }
 
 #productList {
     text-align: center;
+}
+
+/* 페이지네이션 */
+.product-pagination {
+    margin: 40px auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.product-pagination a {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    border: 1px solid gray;
+}
+
+.product-pagination .product-page-no {
+    font-size: 18px;
+}
+
+.product-pagination .product-page-arrow {
+    color: gray;
+}
+
+.product-pagination a.on,
+.product-pagination a:hover {
+    background-color: #7a1558;
+    font-weight: bold;
+    color: white;
+}
+
+
+#search-box input[type="text"]{
+    width: 200px;
+    font-size: 20px;
+    font-family: 'bkkGothicThin';
+    padding: 15px 0px 15px 10px
 }

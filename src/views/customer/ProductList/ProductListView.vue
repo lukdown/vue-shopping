@@ -45,19 +45,23 @@
                                     </div>  
                                     
                                     
-                                    <ol id="productList">
+                                    <ol id="productList" class="product-pagination">
 
 
                                         <li class="" v-if="prev != false" v-on:click="prevPage">이전</li>
                                         <li class="" v-else-if="prev == true" v-on:click="prevPage">이전</li>
                                         <li id="memberlistpage" v-bind:key="index" v-for="(i, index) in endNo-startNo+1">
 
-                                            <a v-on:click.prevent="list(startNo+i)" href="">{{startNo+i-1}}</a>
+                                            <div class="product-page-list">
+                                                <a v-on:click.prevent="list(startNo+i)" href="">{{startNo+i-1}}</a>
+                                            </div>
+                                            
 
                                         </li>
-                                        <li v-if="next == true" v-on:click="nextPage">다음</li>
+                                        <li class="product-page-arrow" v-if="next == true" v-on:click="nextPage">다음</li>
 
                                     </ol>
+
 
                                 </div>
 
