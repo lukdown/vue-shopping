@@ -28,7 +28,7 @@ const routes = [
     component: JoinView
   },
   {
-    path: '/customer/productdetails',
+    path: '/customer/productdetails/:p_no',
     name: '/customer/productdetails',
     component: ProductDetailsView
   },
