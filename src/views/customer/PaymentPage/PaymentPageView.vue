@@ -19,10 +19,10 @@
                         <p id="u-payment-product-quantity">수량: {{cartVo.c_p_amount}}개</p>
                         
                         <!-- 상품 가격표시 영역 -->
-                        <dir id="u-payment-product-qqqprice">
+                        <div id="u-payment-product-qqqprice">
                             <p id="u-payment-product-qqq">개당: {{cartVo.p_price}}원</p>
                             <div id="u-payment-product-qprice">총 {{cartVo.c_p_amount*cartVo.p_price}}원</div>
-                        </dir>   
+                        </div>   
                     </div>
                        
                     <form v-on:submit.prevent="paymentComplete" action="" method="post">    
@@ -60,7 +60,7 @@
                         <!--요청사항-->
                         <div class="u-payment-request-class">
                             <label for="u-payment-request">요청사항</label>
-                            <textarea id="u-payment-request" placeholder="여기에 입력해주세요" maxlength="500"></textarea>
+                            <textarea v-model="userVo.o_request" id="u-payment-request" placeholder="여기에 입력해주세요" maxlength="500"></textarea>
                         </div>
                         
                         <!--총 결제 금액-->
@@ -83,15 +83,15 @@
                                 <div id="u-payment-method-all">
                                     <div id="u-payment-method-card">
                                         <label for="rdo-card">카드</label>
-                                        <input type="radio" id="rdo-card" name="payment-method" value="card">
+                                        <input type="radio" id="rdo-card" name="payment-method" value="card" v-model="userVo.o_payment">
                                     </div>
                                     <div id="u-payment-method-account">
                                         <label for="rdo-account">계좌이체</label>
-                                        <input type="radio" id="rdo-account" name="payment-method" value="account">
+                                        <input type="radio" id="rdo-account" name="payment-method" value="account" v-model="userVo.o_payment">
                                     </div>
                                     <div id="u-payment-method-pay">
                                         <label for="rdo-pay">네이버페이</label>
-                                        <input type="radio" id="rdo-pay" name="payment-method" value="pay">
+                                        <input type="radio" id="rdo-pay" name="payment-method" value="pay" v-model="userVo.o_payment">
                                     </div>
                             </div>
                         </div>
@@ -157,7 +157,9 @@
                     o_name: "",
                     o_hp: "",
                     o_address: "",
-
+                    o_request: "",
+                    totalPrice: "",
+                    o_payment: ""
                 },
                 user_new_address: "",
                 isNewAddress: false
@@ -209,6 +211,14 @@
                 if(this.user_new_address != null){
                     this.userVo.o_address = this.user_new_address;
                 }
+
+                this.setTotalPrice();
+                this.userVo.totalPrice = this.totalPrice;
+
+                const formData = new FormData();
+                formData.append('userVo', JSON.stringify(this.userVo));
+                formData.append('paymentList', JSON.stringify(this.paymentList));
+
                 axios({
                     method: 'post', // put, post, delete 
                     url: 'http://localhost:9002/api/customer/payment',
@@ -216,7 +226,7 @@
                         "Authorization": "Bearer " + this.$store.state.token
                     }, //전송타입
                     //params: guestbookVo, //get방식 파라미터로 값이 전달
-                    data: this.userVo, //put, post, delete 방식 자동으로 JSON으로 변환 전달
+                    data: formData, //put, post, delete 방식 자동으로 JSON으로 변환 전달
                     responseType: 'json' //수신타입
                 }).then(response => {
                     console.log(response.data); //수신데이타
@@ -232,7 +242,9 @@
                 });
 
             },
-
+            setTotalPrice(){
+                this.totalPrice = this.getTotalPrice;
+            },
 
 
 
