@@ -22,7 +22,7 @@
                                                 v-bind:src="`http://localhost:9002/upload/${cartVo.saveName}`">
 
                                             <div>
-                                                <button class="ShoppingBasket-Cancelbtn" v-on:click="Cancelbtn()"
+                                                <button class="ShoppingBasket-Cancelbtn" v-on:click="Cancelbtn(cartVo.c_no)"
                                                     type="button">X</button>
                                             </div>
 
@@ -44,23 +44,24 @@
                                             <div id="ShoppingBasket-quantitynumberAll"
                                                 class="ShoppingBasket-BriefContents">
                                                 <label>수량:</label>
-                                                <button class="ShoppingBasket-quantitynumberButton">-</button>
+                                                <button class="ShoppingBasket-quantitynumberButton" v-on:click="quantitydownbtn(i)">-</button>
                                                 <input id="ShoppingBasket-quantitynumber" type="text"
                                                     v-model="cartVo.c_p_amount">
-                                                <button class="ShoppingBasket-quantitynumberButton">+</button>
+                                                <button class="ShoppingBasket-quantitynumberButton" v-on:click="quantityupbtn(i)">+</button>
                                             </div>
 
                                             <div class="ShoppingBasket-BriefContents">
                                                 <label>가격:</label>
-                                                <span>{{ cartVo.p_price }}원</span>
+                                                <span>{{ cartVo.p_price*cartVo.c_p_amount }}원</span>
                                             </div>
                                             
+                                            <button id="ShoppingBasket-Confirmbutton" type="button" v-on:click="Confirmbutton(i)">확정</button>
                                         </li>
                                     </div>
                                 </div>
 
                                 <div>
-                                    <button id="ShoppingBasket-Emptybtn" type="button">장바구니 비우기</button>
+                                    <button id="ShoppingBasket-Emptybtn" type="button" v-on:click="EmptybtnAll()">장바구니 비우기</button>
                                 </div>
 
                                 <div id="ShoppingBasket-TotalPaymentAmountPayment">
@@ -68,10 +69,11 @@
                                         <div id="ShoppingBasket-TotalNumberOfProductsAll">
                                             <label class="ShoppingBasket-TotalNumberOfProducts">총 상품갯수:</label>
                                             <input id="ShoppingBasket-TotalNumberOfProductsId" class="ShoppingBasket-TotalNumberOfProducts" type="text" v-bind:value="cartList.length" readonly/>
+                                            <span class="ShoppingBasket-TotalNumberOfProducts">개</span>
                                         </div>
                                         <div>
                                             <label class="ShoppingBasket-TotalPaymentAmountFont">총 결제금액:</label>
-                                            <span class="ShoppingBasket-TotalPaymentAmountFont">1,000,000원</span>
+                                            <span class="ShoppingBasket-TotalPaymentAmountFont">{{ getTotalPrice }}원</span>
                                         </div>
                                     </div>
                                     <div>
@@ -114,6 +116,7 @@ export default {
         return {
             cartList: [],
             cartVo: {
+                c_no:"",
                 saveName: "",
                 p_name: "",
                 p_price: "",
@@ -123,10 +126,16 @@ export default {
             
         };
     },
+    computed: {
+        getTotalPrice() {
+            let totalPrice = 0;
+            for (let i = 0; i < this.cartList.length; i++) {
+                totalPrice += this.cartList[i].p_price * this.cartList[i].c_p_amount;
+            }
+            return totalPrice;
+        }
+    },
     methods: {
-        Cancelbtn() {
-            console.log("클릭");
-        },
         getcartList() {
 
             console.log("데이터 가져오기")
@@ -149,6 +158,86 @@ export default {
                 console.log(error);
             });
         },
+        Cancelbtn(c_no) {
+            console.log("클릭");
+
+
+            axios({
+				method: 'delete', // put, post, delete                   
+				url: 'http://localhost:9002/api/customer/shoppingbasket/' + c_no,
+				headers: { "Content-Type": "application/json; charset=utf-8" }, //전송타입
+				//params:{personId: this.phonebookVo.personId} , //get방식 파라미터로 값이 전달
+				//data:{personId: this.phonebookVo.personId} , //put, post, delete 방식 자동으로 JSON으로 변환 전달
+
+				responseType: 'json' //수신타입
+			}).then(response => {
+				console.log(response.data); //수신데이타
+				
+				this.getcartList();
+				
+			}).catch(error => {
+				console.log(error);
+			});
+
+        },
+        quantitydownbtn(i){
+            console.log("뺴기");
+            if(this.cartList[i].c_p_amount == 1){
+                this.cartList[i].c_p_amount
+            }else{
+                this.cartList[i].c_p_amount--;
+            }
+        },
+        quantityupbtn(i){
+            console.log("더하기");
+            this.cartList[i].c_p_amount++;
+        },
+        Confirmbutton(i){
+            console.log("수정");
+            this.cartVo.c_p_amount = this.cartList[i].c_p_amount;
+            this.cartVo.c_size = this.cartList[i].c_size;
+            this.cartVo.c_no = this.cartList[i].c_no;
+
+            console.log(this.cartVo);
+            axios({
+				method: 'put', // put, post, delete                   
+				url: 'http://localhost:9002/api/customer/shoppingbasket',
+				headers: { "Content-Type": "application/json; charset=utf-8" }, //전송타입
+				//params:{personId: this.phonebookVo.personId} , //get방식 파라미터로 값이 전달
+				data:this.cartVo, //put, post, delete 방식 자동으로 JSON으로 변환 전달
+
+				responseType: 'json' //수신타입
+			}).then(response => {
+				console.log(response.data.apiData); //수신데이타
+				
+				this.getcartList();
+				
+			}).catch(error => {
+				console.log(error);
+			});
+        },
+        EmptybtnAll(){
+            console.log("전체삭제");
+
+            axios({
+				method: 'delete', // put, post, delete                   
+				url: 'http://localhost:9002/api/customer/shoppingbasket',
+				headers: { "Content-Type": "application/json; charset=utf-8",
+                           "Authorization": "Bearer " + this.$store.state.token
+                         }, //전송타입
+				//params:{personId: this.phonebookVo.personId} , //get방식 파라미터로 값이 전달
+				//data:{personId: this.phonebookVo.personId} , //put, post, delete 방식 자동으로 JSON으로 변환 전달
+
+				responseType: 'json' //수신타입
+			}).then(response => {
+				console.log(response.data); //수신데이타
+				
+				this.getcartList();
+				
+			}).catch(error => {
+				console.log(error);
+			});
+        }
     },
     created() {
         this.getcartList()
