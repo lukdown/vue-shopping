@@ -21,7 +21,9 @@
                                     <h1>상품 리스트</h1>
                                     
                                     <p>아우터</p>
-
+                                    <div id="search-box">
+                                        <input type="text" id="postSearch" placeholder="검색" v-model="productVo.keyword" v-on:keyup.enter="search">
+                                    </div>
                                     <div id="allUl">
 
                                         <ul>
@@ -42,16 +44,20 @@
 
                                     </div>  
                                     
-                                    <div id="paging">
-                                        <a href="#" class="page-arrow" id="first">&laquo;</a>
-                                        <a href="#" class="page-arrow" id="prev">&lsaquo;</a>
-                                        <!-- 페이지 번호 목록 -->
-                                        <div class="page-list">
+                                    
+                                    <ol id="productList">
 
-                                        </div>
-                                        <a href="javascript:;" class="page-arrow" id="next">&rsaquo;</a>
-                                        <a href="javascript:;" class="page-arrow" id="last">&raquo;</a>
-                                    </div>
+
+                                        <li class="" v-if="prev != false" v-on:click="prevPage">이전</li>
+                                        <li class="" v-else-if="prev == true" v-on:click="prevPage">이전</li>
+                                        <li id="memberlistpage" v-bind:key="index" v-for="(i, index) in endNo-startNo+1">
+
+                                            <a v-on:click.prevent="list(startNo+i)" href="">{{startNo+i-1}}</a>
+
+                                        </li>
+                                        <li v-if="next == true" v-on:click="nextPage">다음</li>
+
+                                    </ol>
 
                                 </div>
 
@@ -92,40 +98,69 @@ export default {
         return {
             productList: [],
             productVo: {
-                p_no: "",
-                p_name: "",
-                p_price: "",
-                p_category: "",
-                p_explanation: "",
-                filePath: "",
-                orgName: "",
-                saveName: "",
-                fileSize: "",
-                p_remarks: ""
+                crtPage: 1,
+                keyword: ""
             },
+            startNo: 0,
+            endNo: 0,
+            next: "",
+            prev: ""
         };
     },
     methods: {
-        getList(){
+        getList(list){
             console.log("데이터 가져오기");
             // http://localhost:9000/api/guests
+            if (this.productVo.crtPage == 1) {
+                this.productVo.crtPage = 1;
+            } else if (this.productVo.crtPage < 1) {
+                this.productVo.crtPage = 1;
+            }
+            else {
+                this.productVo.crtPage = list - 1;
+            }
 
+            console.log(this.productVo.crtPage);
             axios({
-                method: 'get', // put, post, delete 
+                method: 'post', // put, post, delete 
                 url: 'http://localhost:9002/api/customer/list',
                 headers: { "Content-Type": "application/json; charset=utf-8" }, //전송타입
                 // params: guestbookVo, //get방식 파라미터로 값이 전달
-                //data: guestbookVo, //put, post, delete 방식 자동으로 JSON으로 변환 전달
+                data: this.productVo, //put, post, delete 방식 자동으로 JSON으로 변환 전달
 
                 responseType: 'json' //수신타입
             }).then(response => {
-                //console.log(response); //수신데이타
-                this.productList = response.data;
+                console.log(response.data.apiData); //수신데이타
+                this.productList = response.data.apiData.productList;
+                this.endNo = response.data.apiData.endPageBtnNo;
+                this.startNo = response.data.apiData.startPageBtnNo;
+                this.next = response.data.apiData.next;
+                this.prev = response.data.apiData.prev;
                 
             }).catch(error => {
                 console.log(error);
 
             });
+        },
+        search() {
+            this.productVo.crtPage = 1;
+            this.getList();
+        },
+        list(page) {
+            this.productVo.crtPage = page;
+            this.getList(this.productVo.crtPage);
+        },
+        prevPage() {
+            if (this.prev == false) {
+                console.log(this.productVo.crtPage);
+                this.getList(this.productVo.crtPage);
+            }
+        },
+        nextPage() {
+            if (this.next == true) {
+                this.productVo.crtPage = this.productVo.crtPage + 6;
+                this.getList(this.productVo.crtPage);
+            }
         }
     },
     created(){
