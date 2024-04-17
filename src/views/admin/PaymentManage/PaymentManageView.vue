@@ -14,14 +14,14 @@
                 <!--카테고리별 정렬-->
                 <div class="m-payment-btn-box">
                     <div class="item">
-                        <select name="search-type" id="search-type" class="input-search">
-                            <option value="0">전체</option>
+                        <select name="search-type" id="search-type" class="input-search" v-model="paymentpageVo.category">
+                            <option disabled>카테고리 선택</option>
+                            <option value="0" selected>전체</option>
                             <option value="1">구매자명</option>
                             <option value="2">핸드폰 번호</option>
                         </select>
-                        <input type="text" name="keyword" id="keyword" class="input-search"
-                            autocomplete="on" placeholder="검색어를 입력하세요">
-                        <a href="javascript:;" class="dm-btn" id="btn-search">검색</a>
+                        <input v-model="paymentpageVo.keyword" type="text" name="keyword" id="keyword" class="input-search" autocomplete="on" placeholder="검색어를 입력하세요">
+                        <a href="javascript:;" class="dm-btn" id="btn-search" v-on:click="search">검색</a>
                     </div>
                 </div>
 
@@ -51,12 +51,12 @@
                 <!-- 페이지네이션 -->
                 <div class="pagination">
                     <a href="#" class="page-arrow" id="first">&laquo;</a>
-                    <a href="#" class="page-arrow" id="prev">&lsaquo;</a>
+                    <a href="#" class="page-arrow" id="prev" v-if="prev != false" v-on:click="prevPage">&lsaquo;</a>
                     <!-- 페이지 번호 목록 -->
-                    <div class="page-list">
-
+                    <div class="page-list" v-bind:key="index" v-for="(i, index) in endNo-startNo+1">
+                        <a v-on:click.prevent="list(startNo+i)" href="">{{startNo+i-1}}</a>
                     </div>
-                    <a href="javascript:;" class="page-arrow" id="next">&rsaquo;</a>
+                    <a href="javascript:;" class="page-arrow" id="next" v-if="next == true" v-on:click="nextPage">&rsaquo;</a>
                     <a href="javascript:;" class="page-arrow" id="last">&raquo;</a>
                 </div>
             </div>
@@ -101,32 +101,69 @@
                 o_date: "",
                 o_status: "",
                 o_payment: ""
-            }
+            },
+            paymentpageVo:{
+                crtPage: 1,
+                keyword: "",
+                category: ""
+            },
+            startNo: 0,
+            endNo: 0,
+            next: "",
+            prev: ""
+        
         };
     },
     methods: {
-        getList(){
-            console.log("getList");
-            //서버로 전송
-            axios({
-                method: 'get', // put, post, delete  //불러오는것은 GET //저장은 POST
-                url: 'http://localhost:9002/api/admin/paymentmanage', //''따옴표 문법도 중요
-                headers: {
-                    "Content-Type": "application/json; charset=utf-8"
-                },
-                //params: guestbookVo, //get방식 파라미터로 값이 전달 @ModelAttribute
-                //data: this.memberVo.no, //put, post, delete 방식 자동으로 JSON으로 변환 전달 @RequestBody
+        getList(list){
 
-                responseType: 'json' //수신타입
+            if (this.paymentpageVo.crtPage == 1) {
+                this.paymentpageVo.crtPage = 1;
+            } else if (this.paymentpageVo.crtPage < 1) {
+                this.paymentpageVo.crtPage = 1;
+            }
+            else {
+                this.paymentpageVo.crtPage = list - 1;
+            }
+            console.log(this.paymentpageVo.crtPage);
+            console.log(this.paymentpageVo.category);
+            console.log(this.paymentpageVo.keyword);
+            axios({
+                method: 'post',
+                url: 'http://localhost:9002/api/admin/paymentmanage',
+                headers: {"Content-Type": "application/json; charset=utf-8"},
+                data: this.paymentpageVo,
+                responseType: 'json'
             }).then(response => {
-                console.log(response.data.apiData); //수신데이타
-                
-                this.paymentList = response.data.apiData;
-                console.log(this.paymentList);
+                console.log(response.data.apiData.pList); //수신데이타    
+                this.paymentList = response.data.apiData.pList;
+                this.endNo = response.data.apiData.endPageBtnNo;
+                this.startNo = response.data.apiData.startPageBtnNo;
+                this.next = response.data.apiData.next;
+                this.prev = response.data.apiData.prev;
             }).catch(error => {
                 console.log(error);
             });
-
+        },
+        search() {
+            this.paymentpageVo.crtPage = 1;
+            this.getList();
+        },
+        list(page) {
+            this.paymentpageVo.crtPage = page;
+            this.getList(this.paymentpageVo.crtPage);
+        },
+        prevPage() {
+            if (this.prev == false) {
+                console.log(this.paymentpageVo.crtPage);
+                this.getList(this.paymentpageVo.crtPage);
+            }
+        },
+        nextPage() {
+            if (this.next == true) {
+                this.paymentpageVo.crtPage = this.paymentpageVo.crtPage + 6;
+                this.getList(this.paymentpageVo.crtPage);
+            }
         }
     },
     created() {
