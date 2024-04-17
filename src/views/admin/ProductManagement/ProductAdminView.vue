@@ -68,8 +68,8 @@
 <script>
 import axios from 'axios';
 import "@/assets/css/admin/ProductAdminView.css";
-import AppFooter from "@/components/customer/AppFooter.vue";
-import AppHeader from "@/components/customer/AppHeader.vue";
+import AppFooter from "@/components/admin/AdminAppFooter.vue";
+import AppHeader from "@/components/admin/AdminAppHeader.vue";
 
 export default {
     name: "ProductAdminView",

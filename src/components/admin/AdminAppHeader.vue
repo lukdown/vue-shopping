@@ -31,9 +31,9 @@
                             </button>
                             <div class="collapse show" id="home-collapse">
                             <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                <li><router-link to="#" class="link-dark d-inline-flex text-decoration-none rounded">Overview</router-link></li>
-                                <li><router-link to="#" class="link-dark d-inline-flex text-decoration-none rounded">Updates</router-link></li>
-                                <li><router-link to="#" class="link-dark d-inline-flex text-decoration-none rounded">Reports</router-link></li>
+                                <li><router-link to="/admin/productadmin" class="link-dark d-inline-flex text-decoration-none rounded">Overview</router-link></li>
+                                <li><router-link to="/admin/productadmin" class="link-dark d-inline-flex text-decoration-none rounded">Updates</router-link></li>
+                                <li><router-link to="/admin/productadmin" class="link-dark d-inline-flex text-decoration-none rounded">Reports</router-link></li>
                             </ul>
                             </div>
                         </li>
