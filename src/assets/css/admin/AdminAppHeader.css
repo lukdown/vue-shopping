@@ -18,7 +18,11 @@
 @font-face {
   font-family: "Cafe24 ClassicType";
   src: url('../../font/Cafe24Classictype-v1.1.otf') format('opentype');
+
+
 }
+
+
 #ls-gather-btn a{
   display: inline-block;
   margin: 50px 15px 15px 15px;
