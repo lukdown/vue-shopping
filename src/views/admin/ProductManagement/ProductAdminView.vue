@@ -108,7 +108,7 @@ export default {
                     console.log(error);
                 });
 
-        },
+        },/*
         remove(p_no){
             console.log("클릭클릭");
             console.log(p_no);
@@ -129,6 +129,27 @@ export default {
                 } else {
                     alert("삭제에 실패했습니다");
                 }
+
+            }).catch(error => {
+                console.log(error);
+            });
+        }*/
+        remove(p_no){
+            console.log("클릭클릭");
+            console.log(p_no);
+
+            axios({
+                method: 'delete', // put, post, delete                   
+                url: 'http://localhost:9002/api/admin/delete/'+p_no,
+                headers: { "Content-Type": "application/json; charset=utf-8" }, //전송타입
+                //params: guestbookVo, //get방식 파라미터로 값이 전달
+                //data: { p_no }, //put, post, delete 방식 자동으로 JSON으로 변환 전달
+
+                responseType: 'json' //수신타입
+            }).then(response => {
+                console.log(response.data); //수신데이타
+
+                this.getLst();
 
             }).catch(error => {
                 console.log(error);
