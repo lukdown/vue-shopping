@@ -1,4 +1,14 @@
 <template>
+  <div class="black-bg" v-if="modalonoff == true">
+    <div class="white-bg">
+      <p class="ProductDetailsmodal-Notice">상품을 장바구니에 담았습니다.</p>
+      <div class="ProductDetailsmodal-btn">
+        <button class="ProductDetailsmodal-btn2" v-on:click="modalonoff = false">쇼핑 더 하기</button>
+        <button class="ProductDetailsmodal-btn2"><router-link to="/customer/shoppingbasket">장바구니 가기</router-link></button>
+      </div>
+    </div>
+  </div>
+
   <div>
     <AppHeader />
     <div id="wrap">
@@ -41,7 +51,7 @@
                       <div>
                         <div class="ProductDetails-fontsize">
                           <strong>가격:</strong>
-                          <span>{{ productVo.p_price*cartVo.c_p_amount }}원</span>
+                          <span>{{ productVo.p_price * cartVo.c_p_amount }}원</span>
                         </div>
                       </div>
 
@@ -50,9 +60,11 @@
 
                           <strong id="ProductDetails-quantityName">수량:</strong>
 
-                          <button class="ProductDetails-quantitynumberButton" type="button" v-on:click="quantityNumberDownButton()">-</button>
+                          <button class="ProductDetails-quantitynumberButton" type="button"
+                            v-on:click="quantityNumberDownButton()">-</button>
                           <input id="ProductDetails-quantitynumber" type="text" v-model="cartVo.c_p_amount">
-                          <button class="ProductDetails-quantitynumberButton" type="button" v-on:click="quantityNumberUpButton()">+</button>
+                          <button class="ProductDetails-quantitynumberButton" type="button"
+                            v-on:click="quantityNumberUpButton()">+</button>
 
                         </div>
 
@@ -70,11 +82,13 @@
                   </div>
                   <br><br><br>
 
+
+
                   <div>
                     <p id="ProductDetails-explanation">상 품 설 명</p>
 
                     <div id="ProductDetails-Description">
-                      <span>영수하다의 기본이 되는 셔츠랄까? 영수가 되고 싶은 분 입으세요</span>
+                      <span>{{ productVo.p_explanation }}</span>
                     </div>
                   </div>
                 </div>
@@ -110,68 +124,81 @@ export default {
   },
   data() {
     return {
-      productVo:{
-        p_no:this.$route.params.p_no,
-        p_name:"",
-        p_price:"",
-        saveName:"",       
+      productVo: {
+        p_no: this.$route.params.p_no,
+        p_name: "",
+        p_price: "",
+        saveName: "",
+        p_explanation:""
       },
-      cartVo:{
-        c_p_amount: 1 ,
-        c_size:"S",
-        p_no:this.$route.params.p_no
-      }
+      cartVo: {
+        c_p_amount: 1,
+        c_size: "S",
+        p_no: this.$route.params.p_no
+      },
+      modalonoff: false
     };
   },
   methods: {
-    insertform(){
+    insertform() {
       console.log("등록폼");
 
       axios({
-				method: 'get', // put, post, delete                   
-				url: 'http://localhost:9002/api/customer/productdetails/'+this.productVo.p_no,
-				headers: { "Content-Type": "application/json; charset=utf-8" }, //전송타입
-				//params: this.phonebookVo.personId, //get방식 파라미터로 값이 전달
-				//data: this.phonebookVo, //put, post, delete 방식 자동으로 JSON으로 변환 전달
+        method: 'get', // put, post, delete                   
+        url: 'http://localhost:9002/api/customer/productdetails/' + this.productVo.p_no,
+        headers: { "Content-Type": "application/json; charset=utf-8" }, //전송타입
+        //params: this.phonebookVo.personId, //get방식 파라미터로 값이 전달
+        //data: this.phonebookVo, //put, post, delete 방식 자동으로 JSON으로 변환 전달
 
-				responseType: 'json' //수신타입
-			}).then(response => {
-				console.log(response.data); //수신데이타
-				this.productVo = response.data.apiData;
-			}).catch(error => {
-				console.log(error);
-			});
+        responseType: 'json' //수신타입
+      }).then(response => {
+        console.log(response.data); //수신데이타
+        this.productVo = response.data.apiData;
+      }).catch(error => {
+        console.log(error);
+      });
 
     },
-    quantityNumberDownButton(){
-      if(this.cartVo.c_p_amount == 1){
+    quantityNumberDownButton() {
+      if (this.cartVo.c_p_amount == 1) {
         this.cartVo.c_p_amount
-      }else{
+      } else {
         this.cartVo.c_p_amount--
       }
     },
-    quantityNumberUpButton(){
+    quantityNumberUpButton() {
       this.cartVo.c_p_amount++
     },
-    RegisterShoppingCart(){
+    RegisterShoppingCart() {
       console.log("장바구니 슛~");
 
+      if(this.$store.state.token == null){
+        alert("로그인상태에서 이용해주세요.");
+        this.$router.push({path:'/customer/login'});
+      }
+
       axios({
-				method: 'post', // put, post, delete                   
-				url: 'http://localhost:9002/api/customer/productdetails/' + this.cartVo.p_no,
-				headers: { "Content-Type": "application/json; charset=utf-8",
-                   "Authorization": "Bearer " + this.$store.state.token 
-                  }, //전송타입
-				//params:this.phonebookVo , //get방식 파라미터로 값이 전달
-				data: this.cartVo, //put, post, delete 방식 자동으로 JSON으로 변환 전달
+        method: 'post', // put, post, delete                   
+        url: 'http://localhost:9002/api/customer/productdetails/' + this.cartVo.p_no,
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+          "Authorization": "Bearer " + this.$store.state.token
+        }, //전송타입
+        //params:this.phonebookVo , //get방식 파라미터로 값이 전달
+        data: this.cartVo, //put, post, delete 방식 자동으로 JSON으로 변환 전달
 
-				responseType: 'json' //수신타입
-			}).then(response => {
-				console.log(response.data); //수신데이타
+        responseType: 'json' //수신타입
+      }).then(response => {
+        console.log(response.data); //수신데이타
 
-			}).catch(error => {
-				console.log(error);
-			});
+       
+        this.modalonoff = true;
+        
+        
+
+      }).catch(error => {
+        console.log(error);
+      });
     }
   },
   created() {

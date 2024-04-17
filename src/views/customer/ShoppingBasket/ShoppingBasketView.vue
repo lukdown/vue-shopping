@@ -68,8 +68,7 @@
                                     <div id="ShoppingBasket-TotalPaymentAmount">
                                         <div id="ShoppingBasket-TotalNumberOfProductsAll">
                                             <label class="ShoppingBasket-TotalNumberOfProducts">총 상품갯수:</label>
-                                            <input id="ShoppingBasket-TotalNumberOfProductsId" class="ShoppingBasket-TotalNumberOfProducts" type="text" v-bind:value="cartList.length" readonly/>
-                                            <span class="ShoppingBasket-TotalNumberOfProducts">개</span>
+                                            <span class="ShoppingBasket-TotalNumberOfProducts">{{ cartList.length }}개</span>
                                         </div>
                                         <div>
                                             <label class="ShoppingBasket-TotalPaymentAmountFont">총 결제금액:</label>
