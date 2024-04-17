@@ -19,6 +19,7 @@
                 <input type="date">
               </div>
               <div id="content">
+                
                 <div class="dchart">
                   <canvas ref="MyChart"></canvas>
                 </div>
@@ -26,33 +27,37 @@
                 <div id="sales-table">
 
 
-                  <table class="deleverymanagement hover">
-                    <thead>
-                      <tr>
-                        <th class="title">상품명</th>
+                  <!--결제관리 table-->
+                <table id="m-payment-table">
+                    <tr class="m-payment-table-th">
+                        <th>상품명</th>
                         <th>출고량</th>
-                        <th>매출 가격</th>
+                        <th>매출금액</th>
                         <th>날짜</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>ㄹㄴㅇㄷㄹ</td>
-                        <td>ㄹㄴㅇㄷㄹ</td>
-                        <td>ㄹㄴㅇㄷㄹ</td>
-                        <td>ㄹㄴㅇㄷㄹ</td>
-                      </tr>
-                    </tbody>
+                    </tr>
+                    <tr class="m-payment-table-content">
+                        <td id="m-payment-date">gregseg</td>
+                        <td id="m-payment-name">gsergsergsergesr</td>
+                        <td id="m-payment-address">gresg</td>
+                        <td>grseg</td>
+                    </tr>
+                    <tr class="m-payment-table-tfooter">
+                      <td>총합계</td>
+                      <td>321</td>
+                      <td>22</td>
+                      <td>11</td>
+                    </tr>
+                    
+                </table>
 
-                    <tfoot>
-                      <tr>
-                        <td>총합계</td>
-                        <td>3213</td>
-                        <td>412512</td>
-                        <td>42131</td>
-                      </tr>
-                    </tfoot>
-                  </table>
+
+
+
+
+
+
+                
+
                 </div>
               </div>
             </div>
@@ -83,6 +88,7 @@ export default {
     AdminAppHeader,
   },
   data: () => ({
+    isModalViewed: false,
     type: "bar",
     data: {
       labels: [
@@ -142,4 +148,6 @@ export default {
   },
 };
 </script>
-<style></style>
+<style>
+
+</style>

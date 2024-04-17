@@ -23,80 +23,45 @@
 
 
 
-
-/* 테이블 - (게시글목록) */
-.deleverymanagement {
+/*테이블*/
+#m-payment-table {
     width: 100%;
     border-top: 2px solid black;
     border-bottom: 2px solid black;
     margin: 30px 0;
     border-collapse: collapse;
-
 }
 
-.deleverymanagement tr {
-    border-bottom: 1px solid gray;
+#m-payment-table th{
     text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
 }
 
-.deleverymanagement.hover tr:hover {
-    background-color: lightblue;
-    font-weight: bold;
+#m-payment-table td {
+    text-align: center;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
 }
 
-.deleverymanagement .num {
-    width: 10%;
+#m-payment-table tr:hover td{
+    background-color:#f5f5f5;
 }
 
-.deleverymanagement .title {
-    width: 40%;
-    max-width: 340px;
+#m-payment-table {
+    margin: 20px 0;
 }
 
-.deleverymanagement .writer {
-    width: 20%;
-    max-width: 160px;
+.m-payment-table-th {
+    background-color: #3f0a2d;
+    color: white;
 }
 
-.deleverymanagement .date {
-    width: 20%;
+.m-payment-table-content {
+    background-color: white;
 }
 
-.deleverymanagement .view {
-    width: 10%;
-}
 
-.deleverymanagement tbody .title {
-    text-align: left;
-}
-
-/* 줄 넘침 방지 (...) */
-.txt-over {
-    display: inline-block;
-    width: 95%;
-    max-height: 32px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    /* 말줄임(...) */
-    white-space: nowrap;
-}
-
-/* 읽기 */
-.deleverymanagement .label {
-    width: 20%;
-}
-
-.deleverymanagement .data {
-    width: 80%;
-    text-align: left;
-}
-
-.deleverymanagement thead {
-    font-weight: bold;
-}
-
-.deleverymanagement td {
-    display: inline-block;
-    padding: 15px 0;
-    font-size: 1.2rem;
+.m-payment-table-tfooter{
+    background-color: #eceaea;
 }

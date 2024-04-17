@@ -50,19 +50,7 @@
                             </ul>
                             </div>
                         </li>
-                        <li class="mb-1">
-                            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-                            배송관리
-                            </button>
-                            <div class="collapse" id="orders-collapse">
-                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                                <li><router-link to="/admin/deliverymanagement" class="link-dark d-inline-flex text-decoration-none rounded">New</router-link></li>
-                                <li><router-link to="/admin/deliverymanagement" class="link-dark d-inline-flex text-decoration-none rounded">Processed</router-link></li>
-                                <li><router-link to="/admin/deliverymanagement" class="link-dark d-inline-flex text-decoration-none rounded">Shipped</router-link></li>
-                                <li><router-link to="/admin/deliverymanagement" class="link-dark d-inline-flex text-decoration-none rounded">Returned</router-link></li>
-                            </ul>
-                            </div>
-                        </li>
+                        
                         <li class="mb-1">
                             <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
                             매출관리
