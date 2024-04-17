@@ -26,13 +26,13 @@
 
                                         <ul>
                                             
-                                            <li id="oneUl">
-                                                <router-link to="/customer/productdetails"><img id="clothesImg" src="https://www.fashionn.com/files/board/2018/image/p1cforbgmvcok1ii51o8c1tecoc11.jpg"></router-link>
+                                            <li id="oneUl" v-bind:key="i" v-for="(productVo, i) in productList">
+                                                <router-link to="/customer/productdetails"><img id="clothesImg" v-bind:src="`${this.$store.state.apiBaseUrl}/upload/${productVo.saveName}`"></router-link>
                                                 <div>
-                                                    영수 스페셜 원피스
+                                                    {{ productVo.p_name }}
                                                 </div>
                                                 <div>
-                                                    <strong>10,000원</strong>
+                                                    <strong>{{ productVo.p_price }}원</strong>
                                                 </div>
                                             </li>
                                             
@@ -77,6 +77,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import "@/assets/css/customer/ProductListView.css";
 import AppFooter from "@/components/customer/AppFooter.vue";
 import AppHeader from "@/components/customer/AppHeader.vue";
@@ -88,10 +89,48 @@ export default {
         AppFooter,
     },
     data() {
-        return {};
+        return {
+            productList: [],
+            productVo: {
+                p_no: "",
+                p_name: "",
+                p_price: "",
+                p_category: "",
+                p_explanation: "",
+                filePath: "",
+                orgName: "",
+                saveName: "",
+                fileSize: "",
+                p_remarks: ""
+            },
+        };
     },
-    methods: {},
-    created(){},
+    methods: {
+        getList(){
+            console.log("데이터 가져오기");
+            // http://localhost:9000/api/guests
+
+            axios({
+                method: 'get', // put, post, delete 
+                url: 'http://localhost:9002/api/customer/list',
+                headers: { "Content-Type": "application/json; charset=utf-8" }, //전송타입
+                // params: guestbookVo, //get방식 파라미터로 값이 전달
+                //data: guestbookVo, //put, post, delete 방식 자동으로 JSON으로 변환 전달
+
+                responseType: 'json' //수신타입
+            }).then(response => {
+                //console.log(response); //수신데이타
+                this.productList = response.data;
+                
+            }).catch(error => {
+                console.log(error);
+
+            });
+        }
+    },
+    created(){
+        this.getList();
+    }
 };
 </script>
 
