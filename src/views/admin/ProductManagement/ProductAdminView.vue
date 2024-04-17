@@ -28,10 +28,13 @@
                                     </thead>
 
                                     <tbody v-bind:key="i" v-for="(pVo, i) in pList">
-                                        <tr>
+                                        <tr id="trOne">
                                             <td>
-                                                <img id="clothesImage"
+                                                <!--
+                                                    <img id="clothesImage"
                                                     src="https://www.fashionn.com/files/board/2018/image/p1cforbgmvcok1ii51o8c1tecoc11.jpg">
+                                                -->
+                                                <img id="clothesImage" v-bind:src="`http://localhost:9002/upload/${pVo.saveName}`">
                                             </td>
                                             <td>{{ pVo.p_name }}</td>
                                             <td>{{ pVo.p_price }}원</td>
@@ -83,7 +86,8 @@ export default {
             pVo: {
                 p_no: "",
                 p_name: "",
-                p_price: ""
+                p_price: "",
+                saveName: ""
             },
         };
     },
@@ -114,32 +118,7 @@ export default {
             console.log(p_no);
 
             axios({
-                method: 'delete', // put, post, delete                   
-                url: 'http://localhost:9002/api/admin/delete/' + this.p_no,
-                headers: { "Content-Type": "application/json; charset=utf-8" }, //전송타입
-                //params: guestbookVo, //get방식 파라미터로 값이 전달
-                data: { p_no }, //put, post, delete 방식 자동으로 JSON으로 변환 전달
-
-                responseType: 'json' //수신타입
-            }).then(response => {
-                console.log(response.data); //수신데이타
-
-                if (response.data.count > 0) {
-                    this.pList.splice(response.data, 1);
-                } else {
-                    alert("삭제에 실패했습니다");
-                }
-
-            }).catch(error => {
-                console.log(error);
-            });
-        }*/
-        remove(p_no){
-            console.log("클릭클릭");
-            console.log(p_no);
-
-            axios({
-                method: 'delete', // put, post, delete                   
+                method: 'post', // put, post, delete                   
                 url: 'http://localhost:9002/api/admin/delete/'+p_no,
                 headers: { "Content-Type": "application/json; charset=utf-8" }, //전송타입
                 //params: guestbookVo, //get방식 파라미터로 값이 전달
@@ -149,12 +128,17 @@ export default {
             }).then(response => {
                 console.log(response.data); //수신데이타
 
+                const row=document.getElementsByTagName('tr');
+                document.getElementById('trOne').style.display
+
+                row.style.display='none';
+
                 this.getLst();
 
             }).catch(error => {
                 console.log(error);
             });
-        }
+        }*/
     },
     created() {
         this.getList();
