@@ -108,9 +108,9 @@
                                 결제가 완료되었습니다.
 
                                 <ol>
-                                    <li>거래일시: {{ productVo.p_name }}</li>
-                                    <li>받는 분 성함: {{ userVo.o_name }}</li>
-                                    <li>받는 분 주소: {{ userVo.o_address }}</li>
+                                    <li><strong>거래일시: </strong> {{ productVo.p_name }}</li>
+                                    <li><strong>받는 분 성함: </strong>{{ userVo.o_name }}</li>
+                                    <li><strong>받는 분 주소: </strong>{{ userVo.o_address }}</li>
                                 </ol>
                             </div>
                             <div class="u-payment-m-footer">

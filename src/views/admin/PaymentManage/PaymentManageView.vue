@@ -64,14 +64,12 @@
 
                 <!-- 페이지네이션 -->
                 <div class="pagination">
-                    <a href="#" class="page-arrow" id="first">&laquo;</a>
-                    <a href="#" class="page-arrow" id="prev" v-if="prev != false" v-on:click="prevPage">&lsaquo;</a>
+                    <a href="#" class="page-arrow" id="prev" v-if="prev == true" v-on:click="prevPage">&lt;</a>
                     <!-- 페이지 번호 목록 -->
                     <div class="page-list" v-bind:key="index" v-for="(i, index) in endNo-startNo+1">
                         <a v-on:click.prevent="list(startNo+i)" href="">{{startNo+i-1}}</a>
                     </div>
-                    <a href="javascript:;" class="page-arrow" id="next" v-if="next == true" v-on:click="nextPage">&rsaquo;</a>
-                    <a href="javascript:;" class="page-arrow" id="last">&raquo;</a>
+                    <a href="javascript:;" class="page-arrow" id="next" v-if="next == true" v-on:click="nextPage">	&gt;</a>
                 </div>
             </div>
             <!-- //greetings -->
@@ -168,8 +166,9 @@
             this.getList(this.paymentpageVo.crtPage);
         },
         prevPage() {
-            if (this.prev == false) {
+            if (this.prev == true) {
                 console.log(this.paymentpageVo.crtPage);
+                this.paymentpageVo.crtPage = this.paymentpageVo.crtPage - 6;
                 this.getList(this.paymentpageVo.crtPage);
             }
         },
