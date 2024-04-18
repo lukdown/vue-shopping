@@ -147,11 +147,13 @@
                 paymentList: [],
                 cartVo:{
                     c_no: "",
+                    p_no: "",
                     p_name: "",
                     user_no: "",
                     c_p_amount: "",
                     c_size: "",
-                    p_price: ""
+                    p_price: "",
+                    o_no: ""
                 },
                 userVo: {
                     o_name: "",
@@ -203,9 +205,7 @@
                 this.isNewAddress = true;
             },
 
-            productPaymentComplete(){
-                console.log("상품결제완료");
-            },
+           
             paymentComplete(){
                 console.log("결제완료");
                 if(this.user_new_address != null){
@@ -214,11 +214,6 @@
 
                 this.setTotalPrice();
                 this.userVo.totalPrice = this.totalPrice;
-
-                const formData = new FormData();
-                formData.append('userVo', JSON.stringify(this.userVo));
-                formData.append('paymentList', JSON.stringify(this.paymentList));
-
                 axios({
                     method: 'post', // put, post, delete 
                     url: 'http://localhost:9002/api/customer/payment',
@@ -226,24 +221,67 @@
                         "Authorization": "Bearer " + this.$store.state.token
                     }, //전송타입
                     //params: guestbookVo, //get방식 파라미터로 값이 전달
-                    data: formData, //put, post, delete 방식 자동으로 JSON으로 변환 전달
+                    data: this.userVo, //put, post, delete 방식 자동으로 JSON으로 변환 전달
                     responseType: 'json' //수신타입
                 }).then(response => {
-                    console.log(response.data); //수신데이타
+                    console.log(response.data.apiData); //수신데이타
+                    console.log(this.paymentList);
+                    this.changeOno(response.data.apiData);
 
-                    if (response.data == 1) {
-                        alert("^^")
-                        this.$router.push("/");
-                    } else {
-                        alert("^m^");
-                    }
+                    this.productPaymentComplete();
+                    
                 }).catch(error => {
                     console.log(error);
                 });
 
             },
+
+            productPaymentComplete(){
+                console.log("상품결제완료");
+                console.log(this.paymentList);
+                axios({
+                    method: 'post', // put, post, delete 
+                    url: 'http://localhost:9002/api/customer/payment/p',
+                    headers: { "Content-Type": "application/json; charset=utf-8",
+                        "Authorization": "Bearer " + this.$store.state.token
+                    }, //전송타입
+                    //params: guestbookVo, //get방식 파라미터로 값이 전달
+                    data: this.paymentList, //put, post, delete 방식 자동으로 JSON으로 변환 전달
+                    responseType: 'json' //수신타입
+                }).then(response => {
+                    console.log(response.data); //수신데이타
+
+                    this.deleteCart(); //장바구니 비워주기
+
+                }).catch(error => {
+                    console.log(error);
+                });
+
+            },
+
+            deleteCart(){
+                console.log("장바구니 비워주기");
+                axios({
+                    method: 'delete', // put, post, delete 
+                    url: 'http://localhost:9002/api/customer/payment',
+                    headers: { "Content-Type": "application/json; charset=utf-8",
+                        "Authorization": "Bearer " + this.$store.state.token
+                    }, //전송타입
+                    //params: guestbookVo, //get방식 파라미터로 값이 전달
+                    //data: this.paymentList, //put, post, delete 방식 자동으로 JSON으로 변환 전달
+                    responseType: 'json' //수신타입
+                }).then(response => {
+                    console.log(response.data); //수신데이타
+
+                    this.paymentCompleteModal(); //결제완료 모달창 뜨기
+                }).catch(error => {
+                    console.log(error);
+                });
+            },
+
             setTotalPrice(){
                 this.totalPrice = this.getTotalPrice;
+                console.log(this.getTotalPrice);
             },
 
 
@@ -259,6 +297,13 @@
             closeModal(){
                 console.log("모달창 닫기");
                 this.$router.push("/");
+            },
+            changeOno(no) {
+                
+                for (let i = 0; i < this.paymentList.length; i++) {
+                    this.paymentList[i].o_no = no;
+                }
+                
             }
         },
         created() { 
