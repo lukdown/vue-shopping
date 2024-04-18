@@ -31,7 +31,7 @@
                                             <li id="oneUl" v-bind:key="i" v-for="(productVo, i) in productList">
                                                 <router-link v-bind:to="`/customer/productdetails/${productVo.p_no}`"><img id="clothesImg" v-bind:src="`${this.$store.state.apiBaseUrl}/upload/${productVo.saveName}`"></router-link>
                                                 <div>
-                                                    {{ productVo.p_name }}{{ productVo.p_no }}
+                                                    {{ productVo.p_name }}
                                                 </div>
                                                 <div>
                                                     <strong>{{ productVo.p_price }}원</strong>
