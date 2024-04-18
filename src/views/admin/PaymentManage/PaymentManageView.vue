@@ -53,8 +53,8 @@
                             <div v-else>결제대기</div>
                         </td>
                         <td>
-                            <button v-if="paymentVo.o_status == '0'" v-on:click="paymentStatus(paymentVo.o_no)">배송시작</button>
-                            <button v-else-if="paymentVo.o_status == 1" v-on:click="paymentStatus(paymentVo.o_no)">배송완료</button>
+                            <button class="delivery_btn" v-if="paymentVo.o_status == '0'" v-on:click="paymentStatus(paymentVo.o_no)">배송시작</button>
+                            <button class="delivery_btns" v-else-if="paymentVo.o_status == 1" v-on:click="paymentStatus(paymentVo.o_no)">배송완료</button>
                             <div v-else></div>
                         </td>
                     </tr>
