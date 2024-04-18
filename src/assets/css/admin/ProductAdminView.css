@@ -9,6 +9,7 @@
 }
 
 #productFormGroup table{
+    margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
@@ -66,6 +67,10 @@ tr:nth-child(even){
     font-size: 15px;
 }
 
+#productFormGroup table tbody tr{
+    border-bottom: 2px solid #d9d9d9;
+}
+
 #productFormGroup table tbody tr #clothesImage{
     width: 100px;
     height: 100px;
@@ -77,4 +82,11 @@ tr:nth-child(even){
     border-radius: 4px;
     color: #680eae;
     font-family: "부크크 고딕 Bold";
+    margin-left: 850px;
+    margin-bottom: 50px;
+}
+
+#productadminList{
+    margin-top: 20px;
+    margin-left: -30px;
 }
