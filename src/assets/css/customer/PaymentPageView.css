@@ -327,7 +327,7 @@
 /*모달창 내용 흰색부분*/
 .u-payment-modal-content{
     width: 500px;
-    height: 300px;
+    height: 420px;
     border-radius: 10px;
     margin: 400px auto; /*상하 100px, 좌우 가운데*/
     padding: 0px 20px 20px 20px; /*안쪽 여백*/
@@ -339,7 +339,12 @@
 }
 
 .u-payment-m-body{
-    font-size: 30px;
+    font-size: 40px;
+    margin-top: 80px;
+}
+
+.u-payment-m-body o{
+    font-size: 20px;
     margin-top: 80px;
 }
 

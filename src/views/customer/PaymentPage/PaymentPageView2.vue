@@ -12,16 +12,16 @@
                     <h1 id="u-payment-h1">결제/주문 창</h1>
                     
                     <!-- 상품 정보 영역-->
-                    <div v-bind:key="i" v-for="(cartVo,i) in paymentList" class="u-payment-product-information" >
+                    <div class="u-payment-product-information" >
                         <div class="u-payment-title">상품 정보</div>
-                        <p id="u-payment-product-name">{{ cartVo.p_name }}</p>
-                        <p id="u-payment-product-intro">{{ cartVo.c_size }}</p>
-                        <p id="u-payment-product-quantity">수량: {{cartVo.c_p_amount}}개</p>
+                        <p id="u-payment-product-name">{{ productVo.p_name }}</p>
+                        <p id="u-payment-product-intro">사이즈: {{this.$store.state.c_size}}</p>
+                        <p id="u-payment-product-quantity">수량: {{this.$store.state.c_p_amount}}개</p>
                         
                         <!-- 상품 가격표시 영역 -->
                         <div id="u-payment-product-qqqprice">
-                            <p id="u-payment-product-qqq">개당: {{cartVo.p_price}}원</p>
-                            <div id="u-payment-product-qprice">총 {{cartVo.c_p_amount*cartVo.p_price}}원</div>
+                            <p id="u-payment-product-qqq">개당: {{productVo.p_price}}원</p>
+                            <div id="u-payment-product-qprice">총 {{this.$store.state.c_p_amount*productVo.p_price}}원</div>
                         </div>   
                     </div>
                        
@@ -69,7 +69,7 @@
                                 <tbody>
                                     <tr>
                                         <th>총금액</th>
-                                        <td id="u-total-price">{{ userVo.totalprice }}<span>원</span></td>
+                                        <td id="u-total-price">{{this.$store.state.c_p_amount*productVo.p_price}}<span>원</span></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -106,6 +106,12 @@
                         <div class="u-payment-modal-content">
                             <div class="u-payment-m-body">
                                 결제가 완료되었습니다.
+
+                                <ol>
+                                    <li>거래일시: {{ productVo.p_name }}</li>
+                                    <li>받는 분 성함: {{ userVo.o_name }}</li>
+                                    <li>받는 분 주소: {{ userVo.o_address }}</li>
+                                </ol>
                             </div>
                             <div class="u-payment-m-footer">
                                 <button class="closeBtn" v-on:click="closeModal"><p>확인</p></button>
@@ -144,16 +150,10 @@
         },
        data() {
             return {
-                paymentList: [],
-                cartVo:{
-                    c_no: "",
-                    p_no: "",
+                productVo:{
                     p_name: "",
-                    user_no: "",
-                    c_p_amount: "",
-                    c_size: "",
                     p_price: "",
-                    o_no: ""
+                    p_no: this.$route.params.p_no,
                 },
                 userVo: {
                     o_name: "",
@@ -163,9 +163,14 @@
                     totalprice: "",
                     o_payment: ""
                 },
+                productEVo: {
+                    o_no: "",
+                    p_no: this.$route.params.p_no,
+                    c_p_amount: this.$store.state.c_p_amount,
+                    c_size: this.$store.state.c_size
+                },
                 user_new_address: "",
                 isNewAddress: false,
-                
             };
         },
         computed: {
@@ -174,24 +179,25 @@
         methods: {
             getInfoList(){
                 console.log("불러오기");
+                console.log(this.productVo.p_no);
                 axios({
                     method: 'get', // put, post, delete                   
-                    url: 'http://localhost:9002/api/customer/payment',
+                    url: 'http://localhost:9002/api/customer/payment/direct/'+ this.productVo.p_no,
                     headers: {
                         "Content-Type": "application/json; charset=utf-8",
                         "Authorization": "Bearer " + this.$store.state.token
                     }, //전송타입
                     //params: guestbookVo, //get방식 파라미터로 값이 전달
-                    //data: this.myMemberVo, //put, post, delete 방식 자동으로 JSON으로 변환 전달
+                    data: this.productVo.p_no, //put, post, delete 방식 자동으로 JSON으로 변환 전달
 
                     responseType: 'json' //수신타입
                 }).then(response => {
                     console.log(response.data); //수신데이타
-                    this.paymentList = response.data.cartList;
+                    this.productVo = response.data.productVo;
                     this.userVo.o_name = response.data.userVo.user_name;
                     this.userVo.o_hp = response.data.userVo.user_hp;
                     this.userVo.o_address = response.data.userVo.user_address;
-                    this.getTotalPrice();
+                    this.userVo.totalprice = this.$store.state.c_p_amount*this.productVo.p_price;
                 }).catch(error => {
                     console.log(error);
                 });
@@ -211,7 +217,7 @@
                 } else {
                     console.log("g");
                 }
-
+                
                 axios({
                     method: 'post', // put, post, delete 
                     url: 'http://localhost:9002/api/customer/payment',
@@ -223,9 +229,7 @@
                     responseType: 'json' //수신타입
                 }).then(response => {
                     console.log(response.data.apiData); //수신데이타
-                    console.log(this.paymentList);
-                    this.changeOno(response.data.apiData);
-
+                    this.productEVo.o_no = response.data.apiData;
                     this.productPaymentComplete();
                     
                 }).catch(error => {
@@ -236,37 +240,15 @@
 
             productPaymentComplete(){
                 console.log("상품결제완료");
-                console.log(this.paymentList);
+                console.log(this.productEVo);
                 axios({
                     method: 'post', // put, post, delete 
-                    url: 'http://localhost:9002/api/customer/payment/p',
+                    url: 'http://localhost:9002/api/customer/payment/direct',
                     headers: { "Content-Type": "application/json; charset=utf-8",
                         "Authorization": "Bearer " + this.$store.state.token
                     }, //전송타입
                     //params: guestbookVo, //get방식 파라미터로 값이 전달
-                    data: this.paymentList, //put, post, delete 방식 자동으로 JSON으로 변환 전달
-                    responseType: 'json' //수신타입
-                }).then(response => {
-                    console.log(response.data); //수신데이타
-
-                    this.deleteCart(); //장바구니 비워주기
-
-                }).catch(error => {
-                    console.log(error);
-                });
-
-            },
-
-            deleteCart(){
-                console.log("장바구니 비워주기");
-                axios({
-                    method: 'delete', // put, post, delete 
-                    url: 'http://localhost:9002/api/customer/payment',
-                    headers: { "Content-Type": "application/json; charset=utf-8",
-                        "Authorization": "Bearer " + this.$store.state.token
-                    }, //전송타입
-                    //params: guestbookVo, //get방식 파라미터로 값이 전달
-                    //data: this.paymentList, //put, post, delete 방식 자동으로 JSON으로 변환 전달
+                    data: this.productEVo, //put, post, delete 방식 자동으로 JSON으로 변환 전달
                     responseType: 'json' //수신타입
                 }).then(response => {
                     console.log(response.data); //수신데이타
@@ -275,19 +257,8 @@
                 }).catch(error => {
                     console.log(error);
                 });
+
             },
-
-            getTotalPrice() { 
-                let totalPrice = 0;
-                for (let i = 0; i < this.paymentList.length; i++) {
-                    totalPrice += this.paymentList[i].p_price * this.paymentList[i].c_p_amount;
-                }
-                this.userVo.totalprice = totalPrice;
-            },
-
-
-
-
 
             paymentCompleteModal(){
                 console.log("모달창 보이기");
@@ -299,13 +270,7 @@
                 console.log("모달창 닫기");
                 this.$router.push("/");
             },
-            changeOno(no) {
-                
-                for (let i = 0; i < this.paymentList.length; i++) {
-                    this.paymentList[i].o_no = no;
-                }
-                
-            }
+            
         },
         created() { 
             this.getInfoList();

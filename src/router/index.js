@@ -4,6 +4,7 @@ import LoginView from '@/views/customer/Main/LoginView.vue'
 import JoinView from '@/views/customer/Main/JoinView.vue'
 import ProductDetailsView from '@/views/customer/ProductDetails/ProductDetailsView.vue'
 import PaymentPageView from '@/views/customer/PaymentPage/PaymentPageView.vue'
+import PaymentPageView2 from '@/views/customer/PaymentPage/PaymentPageView2.vue'
 import ProductListView from '@/views/customer/ProductList/ProductListView.vue'
 import SalesManagementView from '@/views/admin/SalesManagement/SalesManagementView.vue'
 import ShoppingBasketView from '@/views/customer/ShoppingBasket/ShoppingBasketView.vue'
@@ -37,6 +38,11 @@ const routes = [
     path: '/customer/paymentpage',
     name: '/customer/paymentpage',
     component: PaymentPageView
+  },
+  {
+    path: '/customer/paymentpage2/:p_no',
+    name: '/customer/paymentpage2',
+    component: PaymentPageView2
   },
   {
     path: '/customer/productlist',

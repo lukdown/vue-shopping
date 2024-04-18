@@ -71,8 +71,8 @@
                       </div>
 
                       <div id="ProductDetails-paymentbtn">
-                        <router-link to="/customer/paymentpage">
-                          <button class="ProductDetails-paymentbutton" type="button">결제하기</button>
+                        <router-link :to="'/customer/paymentpage2/' + this.$route.params.p_no">
+                          <button class="ProductDetails-paymentbutton" type="button" v-on:click="paymentDirect">결제하기</button>
                         </router-link>
 
                         <button class="ProductDetails-paymentbutton" type="submit">장바구니</button>
@@ -199,6 +199,15 @@ export default {
       }).catch(error => {
         console.log(error);
       });
+    },
+
+    paymentDirect(){
+      console.log("결제 바로 하기");
+      this.$store.commit("setC_p_amount", this.cartVo.c_p_amount);
+      this.$store.commit("setC_size", this.cartVo.c_size);
+
+      this.$router.push("'/customer/paymentpage2/' + this.$route.params.p_no");
+
     }
   },
   created() {
