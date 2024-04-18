@@ -20,7 +20,7 @@
                             <li><button v-on:click="logout" type="button" class="btn_s" id="logout-btn">Logout</button></li>
                         </ul>
                         
-                        <ul v-if="this.$store.state.authUser == null">
+                        <ul v-if="this.$store.state.authUser == null" id="header-ul2">
                             <router-link to="/customer/login">Login</router-link>
                             <router-link to="/customer/join">Sign Up</router-link>
                         </ul>

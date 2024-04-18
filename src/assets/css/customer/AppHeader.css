@@ -16,7 +16,7 @@
   src: url('../../font/Cafe24Classictype-v1.1.otf') format('opentype');
 }
 #ls-gather-btn-box{
-  width: 370px;
+  width: 420px;
 }
 
 
@@ -24,30 +24,58 @@
   font-family: "Cafe24 ClassicType";
   font-size: 25px;
   color: white;
+  margin-right: 10px;
+}
+#ls-gather-btn-box a:nth-child(2){
+  position: absolute;
+  top: 45px;
+  right: 70px;
+}
+
+#ls-gather-btn-box a:nth-child(1){
+  position: absolute;
+  top: 45px;
+  right: 210px;
 }
 
 
 #ls-gather-btn-box ul>li{
-  font-family: "부크크 고딕";
+  font-family: "넥슨 풋볼고딕 B";
   font-weight: bold;
-  font-size: 25px;
+  font-size: 30px;
   color: #fff;
-  margin-right: 20px;
+  margin-right: 25px;
+  margin-left: 0px;
   float: left;
 }
+
+#ls-gather-btn-box ul>li:nth-child(1){
+  font-family: "넥슨 풋볼고딕 B";
+  font-weight: bold;
+  font-size: 30px;
+  color: #fff;
+  margin-top: 6px;
+  margin-right: 25px;
+  margin-left: 0px;
+  float: left;
+}
+
 #logout-btn{
   font-family: "Cafe24 ClassicType";
-  font-size: 30px;
+  font-size: 25px;
+  font-weight: bold;
   color: #fff;
   background-color: #680eae;
   border: none;
+  margin-left: 80px;
+  margin-top: 8px;
 
 }
 
 #logo {
   width: 400px;
   height: 107px;
-
+  margin-left: 200px;
 }
 
 
