@@ -15,8 +15,8 @@
                 <div class="m-payment-btn-box">
                     <div class="item">
                         <select name="search-type" id="search-type" class="input-search" v-model="paymentpageVo.category">
-                            <option disabled>카테고리 선택</option>
-                            <option value="0" selected>전체</option>
+                            <option disabled value="">카테고리 선택</option>
+                            <option value="0" >전체</option>
                             <option value="1">구매자명</option>
                             <option value="2">핸드폰 번호</option>
                         </select>
@@ -39,7 +39,7 @@
                         <th>상태변경</th>
                     </tr>
                     <tr v-bind:key="i" v-for="(paymentVo,i) in paymentList" class="m-payment-table-content">
-                        <td>{{ paymentVo.o_no }}</td>
+                        <td><router-link :to="`/admin/paymentmanage/details/${paymentVo.o_no}`">{{ paymentVo.o_no }}</router-link></td>
                         <td id="m-payment-date">{{ paymentVo.o_date }}</td>
                         <td id="m-payment-name">{{ paymentVo.o_name }}</td>
                         <td id="m-payment-address">{{ paymentVo.o_address }}</td>
