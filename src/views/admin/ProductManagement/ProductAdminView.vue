@@ -11,7 +11,6 @@
                         <div id="greetings">
 
 
-
                             <!-- <h1>상품 관리 (등록/삭제/수정)</h1> -->
 
                             <div id="productFormGroup">
@@ -19,11 +18,11 @@
 
                                 <table>
                                     <thead>
-                                        <tr>
-                                            <th id="firstTh"></th>
+                                        <tr id="admin-product-thtr">
+                                            <th id="firstTh">사진</th>
                                             <th id="secondTh">상품명</th>
                                             <th id="thirdTh">가격</th>
-                                            <th id="fourthTh"></th>
+                                            <th id="fourthTh">삭제</th>
                                         </tr>
                                     </thead>
 
@@ -39,7 +38,7 @@
                                             <td>{{ pVo.p_name }}</td>
                                             <td>{{ pVo.p_price }}원</td>
                                             <td>
-                                                <button v-on:click="remove(pVo.p_no)">삭제</button>
+                                                <button v-on:click="remove(pVo.p_no)" id="admin-product-remove-btn">삭제</button>
                                             </td>
                                         </tr>
                                     </tbody>
