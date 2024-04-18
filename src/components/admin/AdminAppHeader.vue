@@ -9,7 +9,7 @@
                     </button>
 
                     <router-link to="/">
-                        <img id="logo" src="@/assets/img/logo.png" alt="youngground" />
+                        <img id="logo" src="@/assets/img/admin_logo.jpg" alt="youngground" />
                     </router-link>
                     
                     <div id="ls-gather-btn">

@@ -19,7 +19,8 @@
 
 .ShoppingBasket-FontFamilyLitleTitle {
     font-family: "부크크 고딕 Light";
-    font-size: 30px;
+    font-size: 25px;
+    margin-bottom: 30px;
 }
 
 #ShoppingBasketList-All {
@@ -39,36 +40,42 @@
     width: 500px;
     height: 200px;
     list-style-type: none;
-    border: 3px solid #680EAE;
-    border-radius: 50px;
-    margin: 30px 30px 0px 30px;
+    border: 2px solid #d5d5d5;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.shoppingBasket-label{
+    margin-right: 15px;
 }
 
 #ShoppingBasket-img {
-    width: 200px;
-    height: 195px;
+    width: 160px;
+    height: 160px;
     float: left;
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
+    margin-top: 20px;
+    margin-left: 25px;
 }
 
 .ShoppingBasket-Cancelbtn {
     width: 20px;
     height: 20px;
-    font-size: 10px;
-    background-color: #E0E8F6;
+    font-size: 17px;
+    font-weight: bold;
+    color: #be4a4a;
     position: relative;
-    left: 255px;
-    top: 10px;
-    border-radius: 20px;
+    left: 275px;
+    top: 5px;
+    border: none;
+    background-color: transparent;
 }
 
 .ShoppingBasket-BriefContents {
     font-family: "부크크 고딕 Light";
     font-size: 18px;
-    margin-top: 10px;
     position: relative;
     left: 10px;
+    margin-bottom: 11px;
 }
 
 #ShoppingBasket-BriefContents-name {
@@ -102,6 +109,7 @@
 
 #ShoppingBasket-Emptybtn {
     width: 160px;
+    height: 45px;
     font-family: "부크크 고딕 Bold";
     font-size: 20px;
     border: none;
@@ -113,14 +121,14 @@
 
 #ShoppingBasket-TotalPaymentAmountPayment {
     width: 400px;
-    height: 300px;
+    height: 450px;
     font-size: 25px;
     text-align: center;
     margin: 0px 0px 10px 60px;
     position: relative;
     left: 600px;
-    bottom: 420px;
-    border-radius: 50px;
+    bottom: 472px;
+    border-radius: 20px;
     background-color: #f6f6f6;
     vertical-align: baseline;
 }
@@ -129,6 +137,22 @@
     font-family: "부크크 고딕 Bold";
     position: relative;
     top: 30px;
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+.ShoppingBasket-TotalNumberOfProducts:nth-child(1) {
+    font-family: "부크크 고딕 Bold";
+    position: relative;
+    top: 50px;
+    font-size: 35px;
+    margin-left: 18px;
+}
+
+.ShoppingBasket-TotalNumberOfProducts:nth-child(2) {
+    font-family: "부크크 고딕 Bold";
+    position: relative;
+    top: 50px;
     font-size: 35px;
 }
 
@@ -165,15 +189,18 @@
     margin-left: 20px;
     position: relative;
     top: 230px;
+    right: 5px;
+    color: #414141;
 }
 
 #ShoppingBasket-Confirmbutton{
+    font-family: "부크크 고딕 Bold";
     width: 45px;
-    height: 45px;
+    height: 35px;
     border: none;
-    border-radius: 20px;
+    border-radius: 5px;
     position: relative;
-    left: 220px;
-    bottom: 35px;
+    left: 235px;
+    bottom: 30px;
     background-color: #FDC828;
 }

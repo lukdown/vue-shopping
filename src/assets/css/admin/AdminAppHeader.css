@@ -1,5 +1,5 @@
 #admin-header {
-  background-color: #a5a5a5;
+  background-color: #d5d5d5;
   left: 0px;
   top: -2px;
   max-width: 1920px;
@@ -28,10 +28,12 @@
   margin: 50px 15px 15px 15px;
   font-family: "Cafe24 ClassicType";
   font-size: 25px;
-  color: white;
+  font-weight: bold;
+  color: #680eae;
 }
 
 #logo {
+  margin-left: -10px;
   width: 400px;
   height: 107px;
 }

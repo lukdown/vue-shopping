@@ -8,12 +8,12 @@
                     <div class="join-table-div">
                         <label for="id" class="join-label id">id</label>
                         <input type="text" class="join-input id" id="id" v-model="userVo.user_id">
-                        <button id="check-btn" v-on:click="idCheck">중복체크</button>
+                        <button id="check-btn" v-on:click="idCheck" type="button">중복체크</button>
                     </div>
                     <div class="duplicate-check-div">
                         <label for="" class="join-label">중복체크</label>
                         <p class="duplicate-P" v-if="isDuplicated">중복된 아이디입니다.</p>
-                        <p class="duplicate-P" v-if="isNotDuplicated">사용 가능한 아이디입니다.</p>
+                        <p class="duplicate-P" v-else-if="isNotDuplicated">사용 가능한 아이디입니다.</p>
                         <p class="duplicate-P" v-else>아이디를 입력해주세요</p>
                     </div>
                     <div class="join-table-div">
@@ -34,10 +34,11 @@
                     </div>
                     <div class="join-table-div">
                         <span class="join-label">성별</span>
-                        <label for="gender-male">남자</label>
-                        <input type="radio" id="gender-male" name="gender" value="male" v-model="userVo.user_gender">
-                        <label for="gender-female">여자</label>
-                        <input type="radio" id="gender-female" name="gender" value="female" v-model="userVo.user_gender">
+                        <label for="gender-male" id="label-male">남자</label>
+                        <input type="radio" class="gender-rdo" id="gender-male" name="gender" value="male" v-model="userVo.user_gender">
+                        <label for="gender-female" id="label-female">여자</label>
+                        <input type="radio" class="gender-rdo" id="gender-female" name="gender" value="female"
+                            v-model="userVo.user_gender">
                     </div>
                     <div class="join-table-div">
                         <label for="age" class="join-label">생년월일</label>
@@ -75,8 +76,8 @@ export default {
                 user_address: ""
             },
             check: 0,
-            isDuplicated : false,
-            isNotDuplicated : false
+            isDuplicated: false,
+            isNotDuplicated: false
         };
     },
     methods: {
@@ -84,6 +85,8 @@ export default {
             if (this.userVo.user_id == "") {
                 alert("아이디를 입력해주세요");
 
+            }else if (this.check == 1) {
+                alert("아이디 중복확인을 해주세요")
             } else {
                 axios({
                     method: 'put', // put, post, delete                   
@@ -96,11 +99,11 @@ export default {
                 }).then(response => {
                     console.log(response.data); //수신데이타
 
-                    if(response.data ==0){
+                    if (response.data == 0) {
                         this.isNotDuplicated = true;
                         this.isDuplicated = false;
                         this.check = 1;
-                    }else{
+                    } else {
                         this.isDuplicated = true;
                         this.isNotDuplicated = false;
                     }
@@ -112,9 +115,36 @@ export default {
             }
 
         },
-        join() {
-            if (this.check != 1) {
-                alert("아이디 중복확인을 해주세요")
+        join(event) {
+            
+            if (this.userVo.user_id == "") {
+                event.preventDefault();//폼기능 제한
+                window.alert("아이디를 입력해주세요");//경고장
+                return false;//이벤트 전파를 막는다
+            } else if (this.userVo.user_pw == "") {
+                event.preventDefault();//폼기능 제한
+                window.alert("비밀번호를 입력해주세요");//경고장
+                return false;//이벤트 전파를 막는다
+            } else if (this.userVo.user_name == "") {
+                event.preventDefault();//폼기능 제한
+                window.alert("이름을 입력해주세요");//경고장
+                return false;//이벤트 전파를 막는다
+            } else if (this.userVo.user_hp == "") {
+                event.preventDefault();//폼기능 제한
+                window.alert("휴대폰번호를 입력해주세요");//경고장
+                return false;//이벤트 전파를 막는다
+            } else if (this.userVo.user_address == "") {
+                event.preventDefault();//폼기능 제한
+                window.alert("주소를 입력해주세요");//경고장
+                return false;//이벤트 전파를 막는다
+            } else if (this.userVo.user_gender == "") {
+                event.preventDefault();//폼기능 제한
+                window.alert("성별을 체크해주세요");//경고장
+                return false;//이벤트 전파를 막는다
+            } else if (this.userVo.user_age == "") {
+                event.preventDefault();//폼기능 제한
+                window.alert("생년월일을 입력해주세요");//경고장
+                return false;//이벤트 전파를 막는다
             } else {
                 axios({
                     method: 'put', // put, post, delete                   
@@ -127,10 +157,10 @@ export default {
                 }).then(response => {
                     console.log(response.data); //수신데이타
 
-                    if(response.data == 1){
+                    if (response.data == 1) {
                         alert("회원가입 성공");
                         this.$router.push("/");
-                    }else{
+                    } else {
                         alert("회원가입 실패");
                     }
 
