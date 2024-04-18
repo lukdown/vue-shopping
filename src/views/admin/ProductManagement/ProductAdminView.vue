@@ -35,11 +35,11 @@
                                             <td>{{ pVo.p_name }}</td>
                                             <td>{{ pVo.p_price }}원</td>
                                             <td>
-<<<<<<< HEAD
+
                                                 <button v-if="pVo.ep_no == 0" v-on:click="remove(pVo.p_no)" type="button">삭제</button>
-=======
-                                                <button v-on:click="remove(pVo.p_no)" id="admin-product-remove-btn">삭제</button>
->>>>>>> 1aff49a3fe5083dee4eb0ad11c245c341e680b25
+
+                                                
+
                                             </td>
                                         </tr>
                                     </tbody>
