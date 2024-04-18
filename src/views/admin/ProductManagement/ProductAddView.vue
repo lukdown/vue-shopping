@@ -15,24 +15,24 @@
                             <!-- <h1>상품 등록창</h1> -->
 
                             <div id="addContentGroup">
-                                
+
                                 <h1>상품 관리</h1>
 
                                 <p>상품 등록</p>
 
                                 <div id="productAddForm">
-                                    <form v-on:submit.prevent="addProduct" action="" method="post">
+                                    <form v-on:submit.prevent="uploadImgFile" action="" method="">
 
                                         <div id="addFormTitleGroup">
 
-                                                <div id="insertImg">
-                                                    <img id="clothesImgPreview" src="#">
-                                                    <div id="imageGroup">
-                                                        <label id="productAddFormTitle">착장 사진</label>
-                                                        <input id="clothesImg" type="file">
-                                                        <!-- v-model="productVo.saveName" -->
-                                                    </div>
+                                            <div id="insertImg">
+                                                <img id="clothesImgPreview" src="">
+                                                <div id="imageGroup">
+                                                    <label id="productAddFormTitle">착장 사진:</label>
+                                                    <input v-on:change="selectFile" id="file" type="file">
+                                                    <!-- v-model="productVo.saveName" -->
                                                 </div>
+                                            </div>
 
                                             <div id="productAddFormGroup">
                                                 <label id="productAddFormTitle">상품명</label>
@@ -47,13 +47,16 @@
                                             <div id="productAddFormGroup">
                                                 <span id="productAddFormTitle">종류</span>
 
-                                                <input type="radio" name="productType" value="outer" v-model="productVo.p_category">
+                                                <input type="radio" name="productType" value="outer"
+                                                    v-model="productVo.p_category">
                                                 <label>아우터</label>
 
-                                                <input type="radio" name="productType" value="top" v-model="productVo.p_category">
+                                                <input type="radio" name="productType" value="top"
+                                                    v-model="productVo.p_category">
                                                 <label>상의</label>
 
-                                                <input type="radio" name="productType" value="bottom" v-model="productVo.p_category">
+                                                <input type="radio" name="productType" value="bottom"
+                                                    v-model="productVo.p_category">
                                                 <label>하의</label>
                                             </div>
 
@@ -105,50 +108,96 @@ export default {
     },
     data() {
         return {
-            pList:[],
-            productVo:{
-                p_name:"",
-                p_price:"",
-                p_category:"",
-                p_explanation:""
-            }
+            productVo: {
+                p_name: "",
+                p_price: "",
+                p_category: "",
+                p_explanation: ""
+            },
+            file: "",
+            previewImage: ""
         };
     },
-    methods: {/*
-        imgPreview(){
-            let file=document.getElementById("clothesImg");
-            let preview=document.getElementById("clothesImgPreview");
+    methods: {
+        selectFile(event) {
+            console.log("파일등록");
+            this.file = event.target.files[0];
 
-            file.addEventListener("change", ()=>{
-                let reader=new FileReader();
-                reader.onload=()=>{
-                    preview.src=reader.result;
-                }
-                reader.readAsDataURL(file.files[0]);
-            });
+            // Create a FileReader object
+            let reader = new FileReader();
+
+            // Define a function to handle the load event when reading is completed
+            reader.onload = () => {
+                // Set the previewImage data with the result of reading the file
+                this.previewImage = reader.result;
+            };
+
+            // Read the selected file
+            if (this.file) {
+                reader.readAsDataURL(this.file);
+            }
+        },
+        /*
+        handleImagePreview(event) {
+
+            // 선택한 파일
+            const file = event.target.files[0];
+
+            // FileReader 객체를 사용하여 이미지를 읽음
+            const reader = new FileReader();
+
+            // 읽기가 완료된 후 실행되는 콜백 함수
+            reader.onload = (e) => {
+                // 읽은 이미지 데이터를 previewImage에 할당하여 이미지 미리보기 업데이트
+                this.previewImage = e.target.result;
+            };
+
+            // 파일을 읽음
+            if (file) {
+                reader.readAsDataURL(file);
+            }
+
+            this.file = event.target.value;
+
+            this.productVo.saveName = this.previewImage;
         },*/
-        addProduct(){
+        uploadImgFile() {
             console.log("등록");
-            //console.log(this.productVo);
+
+            let formData = new FormData();
+            formData.append("file", this.file);
+            formData.append("p_name", this.productVo.p_name);
+            formData.append("p_price", this.productVo.p_price);
+            formData.append("p_category", this.productVo.p_category);
+            formData.append("p_explanation", this.productVo.p_explanation);
+
+            console.log(formData);
 
             axios({
-                method: 'post',  //put,post,delete
+                method: 'post', // put, post, delete                   
                 url: 'http://localhost:9002/api/admin/add',
-                headers: { "Content-Type": "application/json; charset=utf-8" }, //전송타입
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                },//전송타입+토큰
                 //params: guestbookVo, //get방식 파라미터로 값이 전달
-                data: this.productVo, //put, post, delete 방식 자동으로 JSON으로 변환 전달
+                data: formData, //put, post, delete 방식 자동으로 JSON으로 변환 전달
 
                 responseType: 'json' //수신타입
             }).then(response => {
-                console.log(response.data); //수신데이타
-                //this.pList.unshift(response.data);
+
+
+                console.log(response.data.apiData);
+
+                this.$router.push({ path: '/admin/productadmin' });
 
             }).catch(error => {
                 console.log(error);
             });
-        }
+        },
     },
-    created(){},
+    created() {
+
+    },
 };
 </script>
 

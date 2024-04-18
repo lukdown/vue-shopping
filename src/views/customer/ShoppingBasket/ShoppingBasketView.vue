@@ -31,7 +31,7 @@
                                             </div>
 
                                             <div class="ShoppingBasket-BriefContents">
-                                                <label>사이즈:</label>
+                                                <label class="shoppingBasket-label">사이즈 :</label>
                                                 <select id="ShoppingBasket-sizechoose" name="size"
                                                     v-model="cartVo.c_size">
                                                     <option class="" value="S">S</option>
@@ -43,7 +43,7 @@
 
                                             <div id="ShoppingBasket-quantitynumberAll"
                                                 class="ShoppingBasket-BriefContents">
-                                                <label>수량:</label>
+                                                <label class="shoppingBasket-label">수량 :</label>
                                                 <button class="ShoppingBasket-quantitynumberButton" v-on:click="quantitydownbtn(i)">-</button>
                                                 <input id="ShoppingBasket-quantitynumber" type="text"
                                                     v-model="cartVo.c_p_amount">
@@ -51,7 +51,7 @@
                                             </div>
 
                                             <div class="ShoppingBasket-BriefContents">
-                                                <label>가격:</label>
+                                                <label class="shoppingBasket-label">가격 :</label>
                                                 <span>{{ cartVo.p_price*cartVo.c_p_amount }}원</span>
                                             </div>
                                             

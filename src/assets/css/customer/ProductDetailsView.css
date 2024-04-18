@@ -1,7 +1,7 @@
 #ProductDetails-img {
   float: left;
   width: 500px;
-  height: 550px;
+  height: 500px;
   margin-left: 70px;
 }
 
@@ -44,6 +44,14 @@
   text-align: center;
 }
 
+#ProductDetails-sizeButton {
+  margin-right: 20px;
+}
+
+#ProductDetails-priceButton {
+  margin-right: 20px;
+}
+
 #ProductDetails-quantityButton {
   max-width: 400px;
   display: flex;
@@ -52,6 +60,7 @@
 
 #ProductDetails-quantityName{
   width: 70px;
+  margin-right: 20px;
 }
 
 .ProductDetails-quantitynumberButton {
@@ -76,7 +85,7 @@
 }
 
 #ProductDetails-paymentbtn {
-  margin: 75px 0px 0px 0px;
+  margin: 50px 0px 0px 0px;
   position: relative;
 }
 
@@ -84,17 +93,17 @@
   border: none;
   border-radius: 10px;  
   background-color: #FDC828;
-  font-size: 25px;
+  font-size: 30px;
   width: 232px;
   height: 80px;
-  margin: 0px 30px 0px 30px;
+  margin: 5px 30px 0px 30px;
 }
 
 #ProductDetails-explanation {
   max-width: 1920px;
   text-align: center;
-  border-top: 4px solid #CC66FF;
-  border-bottom: 5px solid #CC66FF;
+  border-top: 4px solid #680eae;
+  border-bottom: 5px solid #680eae;
   padding: 30px 0px 30px 0px;
   font-size: 60px;
 
@@ -152,8 +161,7 @@
   border: none;
   border-radius: 20px;
   margin: 0px 15px 0px 15px;
-  background-color: #CC66FF;
-}
-.ProductDetailsmodal-btn2:hover{
-  color: #0A58CA;
+  background-color: #FDC828;
+  color: black;
+  
 }

@@ -9,6 +9,7 @@
 }
 
 #productFormGroup table{
+    margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
@@ -22,10 +23,6 @@
     border-collapse: collapse;
 */
 }
-
-#productFormGroup table tr:nth-child(odd){
-    background-color: rgb(194, 145, 239);
-}
 /*
 tr:nth-child(even){
     background-color: gold;
@@ -33,43 +30,63 @@ tr:nth-child(even){
 */
 #productFormGroup table thead tr #firstTh{
     width: 200px;
-    background-color: white;
+    font-size: 20px;
+    background-color: #680eae;
+    color: #fff;
 }
 
 #productFormGroup table thead tr #secondTh{
     width: 400px;
-    background-color: white;
-    font-size: larger;
+    background-color: #680eae;
+    font-size: 20px;
     font-weight: bold;
+    color: #fff;
 }
 
 #productFormGroup table thead tr #thirdTh{
     width: 200px;
-    background-color: white;
-    font-size: larger;
+    background-color: #680eae;
+    font-size: 20px;
+    color: #fff;
 }
 
 #productFormGroup table thead tr #fourthTh{
     width: 150px;
-    background-color: white;
+    font-size: 20px;
+    background-color: #680eae;
+    color: #fff;
+}
+#admin-product-remove-btn{
+    background-color: #680eae;
+    width: 50px;
+    height: 30px;
+    border-radius: 7px;
+    border: none;
+    color: #fff;
+    font-family: "부크크 고딕 Bold";
+    font-size: 15px;
+}
+
+#productFormGroup table tbody tr{
+    border-bottom: 2px solid #d9d9d9;
 }
 
 #productFormGroup table tbody tr #clothesImage{
     width: 100px;
-    height: 140px;
-}
-
-#productFormGroup table tbody tr #btnDelete{
-    border: 1px solid black;
-    padding: 5px 10px;
-    border-radius: 4px;
-    background-color: white;
+    height: 100px;
 }
 
 #productFormGroup #addBtn{
-    border: 1px solid black;
+    border: 1px solid #680eae;
     padding: 5px 10px;
     border-radius: 4px;
-    /*background-color: gold;*/
-    /*color: white;*/
+    color: #680eae;
+    font-family: "부크크 고딕 Bold";
+    margin-left: 850px;
+    margin-bottom: 50px;
+}
+
+#productadminList{
+    margin-top: 20px;
+    margin-left: -30px;
 }

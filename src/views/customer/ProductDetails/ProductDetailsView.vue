@@ -4,7 +4,7 @@
       <p class="ProductDetailsmodal-Notice">상품을 장바구니에 담았습니다.</p>
       <div class="ProductDetailsmodal-btn">
         <button class="ProductDetailsmodal-btn2" v-on:click="modalonoff = false">쇼핑 더 하기</button>
-        <button class="ProductDetailsmodal-btn2"><router-link to="/customer/shoppingbasket">장바구니 가기</router-link></button>
+        <button class="ProductDetailsmodal-btn2"><router-link to="/customer/shoppingbasket" style="color: black;">장바구니 가기</router-link></button>
       </div>
     </div>
   </div>
@@ -38,7 +38,7 @@
 
                       <div>
                         <div class="ProductDetails-fontsize">
-                          <strong>사이즈:</strong>
+                          <strong id="ProductDetails-sizeButton">사이즈:</strong>
                           <select id="ProductDetails-sizechoose" name="size" v-model="cartVo.c_size">
                             <option class="" value="S">S</option>
                             <option class="" value="M">M</option>
@@ -50,7 +50,7 @@
 
                       <div>
                         <div class="ProductDetails-fontsize">
-                          <strong>가격:</strong>
+                          <strong id="ProductDetails-priceButton">가격:</strong>
                           <span>{{ productVo.p_price * cartVo.c_p_amount }}원</span>
                         </div>
                       </div>
