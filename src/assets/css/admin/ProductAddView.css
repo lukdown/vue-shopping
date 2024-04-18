@@ -2,84 +2,97 @@
     font-family: "bkkGothicBold";
     src: url("@/assets/font/부크크고딕_굵은글씨.ttf");
 }
+
 @font-face {
     font-family: "bkkGothicThin";
     src: url("@/assets/font/부크크고딕_얇은글씨.ttf");
 }
 
-#addContentGroup{
+#addContentGroup {
     width: 1200px;
     font-family: "bkkGothicThin";
 }
 
-#addContentGroup h1{
+#addContentGroup h1 {
     margin-left: 300px;
     font-family: "bkkGothicBold";
     font-weight: bold;
 }
 
-#addContentGroup p{
+#addContentGroup p {
     margin-left: 310px;
     font-size: large;
 }
 
-#insertImg{
+#insertImg {
     float: left;
-   padding: 10px 5px 10px 250px;
+    padding: 10px 5px 10px 250px;
     text-align: left;
 }
 
-#insertImg #clothesImgPreview{
-    width: 330px;
-    height: 380px;
+#insertImg #clothesImgPreviewAll {
+    width: 350px;
+    height: 350px;
+    background: url('@/assets/img/imgX.avif');
+    background-repeat: no-repeat;
+    background-size: 350px;
+
 }
 
-#insertImg #imageGroup{
+#clothesImgPreviewAll>img {
+    width: 350px;
+    height: 350px;
+}
+
+#insertImg #imageGroup {
     padding-top: 10px;
 }
 
-#insertImg #imageGroup input{
+#insertImg #imageGroup input {
     width: 240px;
 }
 
-#productAddFormTitle{
-    display: inline-block;  /* 인라인 요소 가로폭을 주려고 */
+#productAddFormTitle {
+    display: inline-block;
+    /* 인라인 요소 가로폭을 주려고 */
     width: 70px;
     margin-right: 20px;
 }
 
-#productAddForm #addFormTitleGroup{
+#productAddForm #addFormTitleGroup {
     margin-left: 80px;
     text-align: right;
 }
 
-#rightContent{
+#rightContent {
     float: right;
     padding: 0px 30px 0px 0px;
     font-size: medium;
 }
 
-#productAddFormGroup{
-   padding: 50px 5px 10px 0px;
+#productAddFormGroup {
+    padding: 50px 5px 10px 0px;
     /*margin-left: auto;
     margin-right: auto;*/
     text-align: left;
     /*float: right;*/
 }
 
-#productAddForm #productAddFormGroup input[type="text"]{
+#productAddForm #productAddFormGroup input[type="text"] {
     border: none;
     border-bottom: 2px solid #680eae;
 }
 
-#productAddForm #productAddFormGroup input[type="radio"] {margin-left: 10px;}
-
-#productAddForm #btnAdd{
-    margin: 30px 0px 0px 0px;
-   text-align: center;
+#productAddForm #productAddFormGroup input[type="radio"] {
+    margin-left: 10px;
 }
 
-#productAddForm #btnAdd button{
+#productAddForm #btnAdd {
+    margin: 30px 0px 0px 0px;
+    text-align: center;
+}
+
+#productAddForm #btnAdd button {
     width: 80px;
     margin: 0px 0px 0px 280px;
     padding: 5px;

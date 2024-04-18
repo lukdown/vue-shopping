@@ -26,7 +26,11 @@
                                         <div id="addFormTitleGroup">
 
                                             <div id="insertImg">
-                                                <img id="clothesImgPreview" src="">
+                                                <div id="clothesImgPreviewAll">
+                                                    
+                                                    <img v-if="previewImage != '' " class="clothesImgPreview" v-bind:src="previewImage">
+                                                </div>
+                                                
                                                 <div id="imageGroup">
                                                     <label id="productAddFormTitle">착장 사진:</label>
                                                     <input v-on:change="selectFile" id="file" type="file">
@@ -127,9 +131,9 @@ export default {
             let reader = new FileReader();
 
             // Define a function to handle the load event when reading is completed
-            reader.onload = () => {
+            reader.onload = (e) => {
                 // Set the previewImage data with the result of reading the file
-                this.previewImage = reader.result;
+                this.previewImage = e.target.result;
             };
 
             // Read the selected file
