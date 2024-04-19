@@ -94,8 +94,6 @@ import axios from 'axios';
 import "@/assets/css/admin/SalesManagementView.css";
 import { Chart, registerables } from "chart.js";
 import AdminAppHeader from "@/components/admin/AdminAppHeader.vue";
-import ChartDataLabels from "chartjs-plugin-datalabels";
-Chart.register(ChartDataLabels);
 Chart.register(...registerables);
 
 export default {
@@ -141,9 +139,7 @@ export default {
       options: {
               responsive: false,
               plugins: {
-                datalabels: {
-                  color: "#000000",
-                },
+                
                 title: {
                   display: true,
                   text: "총 판매비율",
@@ -152,7 +148,6 @@ export default {
             },
     };
   },
-  plugins: [ChartDataLabels],
   mounted() {
     
   },

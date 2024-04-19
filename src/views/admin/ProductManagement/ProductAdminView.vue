@@ -36,7 +36,7 @@
                                             <td>{{ pVo.p_price }}원  {{ pVo.ep_no }}</td>
                                             <td>
 
-                                                <button v-if="pVo.ep_no != 0" v-on:click="remove(pVo.p_no)" type="button" id="admin-product-remove-btn">삭제</button>
+                                                <button v-if="pVo.ep_no == 0" v-on:click="remove(pVo.p_no)" type="button" id="admin-product-remove-btn">삭제</button>
 
                                                 
 

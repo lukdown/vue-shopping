@@ -13,6 +13,7 @@ import PaymentManageDetailsView from '@/views/admin/PaymentManage/PaymentManageD
 import DeliveryManagementView from '@/views/admin/DeliveryManagement/DeliveryManagementView.vue'
 import ProductAddView from '@/views/admin/ProductManagement/ProductAddView.vue'
 import ProductAdminView from '@/views/admin/ProductManagement/ProductAdminView.vue'
+import SalesManagementView from '@/views/admin/SalesManagement/SalesManagementView.vue'
 
 const routes = [
   {
@@ -84,6 +85,12 @@ const routes = [
     path: '/admin/productadmin',
     name: '/admin/productadmin',
     component: ProductAdminView
+  },
+  
+  {
+    path: '/admin/salesmanagement',
+    name: '/admin/salesmanagement',
+    component: SalesManagementView
   },
   
 
