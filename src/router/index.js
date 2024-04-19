@@ -6,7 +6,7 @@ import ProductDetailsView from '@/views/customer/ProductDetails/ProductDetailsVi
 import PaymentPageView from '@/views/customer/PaymentPage/PaymentPageView.vue'
 import PaymentPageView2 from '@/views/customer/PaymentPage/PaymentPageView2.vue'
 import ProductListView from '@/views/customer/ProductList/ProductListView.vue'
-import SalesManagementView from '@/views/admin/SalesManagement/SalesManagementView.vue'
+
 import ShoppingBasketView from '@/views/customer/ShoppingBasket/ShoppingBasketView.vue'
 import PaymentManageView from '@/views/admin/PaymentManage/PaymentManageView.vue'
 import PaymentManageDetailsView from '@/views/admin/PaymentManage/PaymentManageDetailsView.vue'
@@ -50,11 +50,7 @@ const routes = [
     name: '/customer/productlist',
     component: ProductListView
   },
-  {
-    path: '/admin/salesmanagement',
-    name: '/admin/salesmanagement',
-    component: SalesManagementView
-  },
+  
   {
     path: '/customer/shoppingbasket',
     name: '/customer/shoppingbasket',
