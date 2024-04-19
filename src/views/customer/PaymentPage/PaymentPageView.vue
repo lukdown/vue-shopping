@@ -182,7 +182,7 @@
                 console.log("불러오기");
                 axios({
                     method: 'get', // put, post, delete                   
-                    url: 'http://localhost:9002/api/customer/payment',
+                    url: `${this.$store.state.apiBaseUrl}/api/customer/payment`,
                     headers: {
                         "Content-Type": "application/json; charset=utf-8",
                         "Authorization": "Bearer " + this.$store.state.token
@@ -220,7 +220,7 @@
 
                 axios({
                     method: 'post', // put, post, delete 
-                    url: 'http://localhost:9002/api/customer/payment',
+                    url: `${this.$store.state.apiBaseUrl}/api/customer/payment`,
                     headers: { "Content-Type": "application/json; charset=utf-8",
                         "Authorization": "Bearer " + this.$store.state.token
                     }, //전송타입
@@ -245,7 +245,7 @@
                 console.log(this.paymentList);
                 axios({
                     method: 'post', // put, post, delete 
-                    url: 'http://localhost:9002/api/customer/payment/p',
+                    url: `${this.$store.state.apiBaseUrl}/api/customer/payment/p`,
                     headers: { "Content-Type": "application/json; charset=utf-8",
                         "Authorization": "Bearer " + this.$store.state.token
                     }, //전송타입
@@ -267,7 +267,7 @@
                 console.log("장바구니 비워주기");
                 axios({
                     method: 'delete', // put, post, delete 
-                    url: 'http://localhost:9002/api/customer/payment',
+                    url: `${this.$store.state.apiBaseUrl}/api/customer/payment`,
                     headers: { "Content-Type": "application/json; charset=utf-8",
                         "Authorization": "Bearer " + this.$store.state.token
                     }, //전송타입

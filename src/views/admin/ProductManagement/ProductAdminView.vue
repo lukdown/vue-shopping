@@ -30,7 +30,7 @@
                                         <tr id="trOne">
                                             <td>
                                                 <img id="clothesImage"
-                                                    v-bind:src="`http://localhost:9002/upload/${pVo.saveName}`">
+                                                    v-bind:src="`${this.$store.state.apiBaseUrl}/upload/${pVo.saveName}`">
                                             </td>
                                             <td>{{ pVo.p_name }}</td>
                                             <td>{{ pVo.p_price }}원</td>
@@ -121,7 +121,7 @@ export default {
             console.log(this.pVo.crtPage);
             axios({
                 method: "post", // put, post, delete
-                url: "http://localhost:9002/api/admin/productlist",
+                url: `${this.$store.state.apiBaseUrl}/api/admin/productlist`,
                 headers: { "Content-Type": "application/json; charset=utf-8" }, //전송타입
                 //params: guestbookVo, //get방식 파라미터로 값이 전달
                 data: this.pVo, //put, post, de    lete 방식 자동으로 JSON으로 변환 전달
@@ -167,7 +167,7 @@ export default {
 
             axios({
                 method: 'delete', // put, post, delete                   
-                url: 'http://localhost:9002/api/admin/delete/'+p_no,
+                url: `${this.$store.state.apiBaseUrl}/api/admin/delete/`+p_no,
                 headers: { "Content-Type": "application/json; charset=utf-8" }, //전송타입
                 //params: guestbookVo, //get방식 파라미터로 값이 전달
                 //data: { p_no }, //put, post, delete 방식 자동으로 JSON으로 변환 전달

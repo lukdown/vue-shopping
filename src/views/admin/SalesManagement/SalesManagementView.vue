@@ -181,7 +181,7 @@ export default {
             //console.log(this.salesVo.crtPage);
             axios({
                 method: 'post', // put, post, delete 
-                url: 'http://localhost:9002/api/admin/list',
+                url: `${this.$store.state.apiBaseUrl}/api/admin/list`,
                 headers: { "Content-Type": "application/json; charset=utf-8" }, //전송타입
                 // params: guestbookVo, //get방식 파라미터로 값이 전달
                 data: this.salesVo, //put, post, delete 방식 자동으로 JSON으로 변환 전달
@@ -243,7 +243,7 @@ export default {
         getOneChartList(keyword) {
           axios({
                 method: 'get',
-                url: 'http://localhost:9002/api/admin/list',
+                url: `${this.$store.state.apiBaseUrl}/api/admin/list`,
                 headers: { "Content-Type": "application/json; charset=utf-8" },
                 params: {
                   keyword

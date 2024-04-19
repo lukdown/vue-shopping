@@ -142,7 +142,7 @@
             console.log(this.paymentpageVo.keyword);
             axios({
                 method: 'post',
-                url: 'http://localhost:9002/api/admin/paymentmanage',
+                url: `${this.$store.state.apiBaseUrl}/api/admin/paymentmanage`,
                 headers: {"Content-Type": "application/json; charset=utf-8"},
                 data: this.paymentpageVo,
                 responseType: 'json'
@@ -183,7 +183,7 @@
             console.log(o_no);
             axios({
                 method: 'put',
-                url: 'http://localhost:9002/api/admin/paymentmanage/'+ o_no,
+                url: `${this.$store.state.apiBaseUrl}/api/admin/paymentmanage/`+ o_no,
                 headers: {"Content-Type": "application/json; charset=utf-8"},
                 data: {o_no},
                 responseType: 'json'

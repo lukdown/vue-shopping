@@ -182,7 +182,7 @@
                 console.log(this.productVo.p_no);
                 axios({
                     method: 'get', // put, post, delete                   
-                    url: 'http://localhost:9002/api/customer/payment/direct/'+ this.productVo.p_no,
+                    url: `${this.$store.state.apiBaseUrl}/api/customer/payment/direct/`+ this.productVo.p_no,
                     headers: {
                         "Content-Type": "application/json; charset=utf-8",
                         "Authorization": "Bearer " + this.$store.state.token
@@ -220,7 +220,7 @@
                 
                 axios({
                     method: 'post', // put, post, delete 
-                    url: 'http://localhost:9002/api/customer/payment',
+                    url: `${this.$store.state.apiBaseUrl}/api/customer/payment`,
                     headers: { "Content-Type": "application/json; charset=utf-8",
                         "Authorization": "Bearer " + this.$store.state.token
                     }, //전송타입
@@ -243,7 +243,7 @@
                 console.log(this.productEVo);
                 axios({
                     method: 'post', // put, post, delete 
-                    url: 'http://localhost:9002/api/customer/payment/direct',
+                    url: `${this.$store.state.apiBaseUrl}/api/customer/payment/direct`,
                     headers: { "Content-Type": "application/json; charset=utf-8",
                         "Authorization": "Bearer " + this.$store.state.token
                     }, //전송타입

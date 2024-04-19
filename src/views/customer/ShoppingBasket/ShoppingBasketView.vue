@@ -19,7 +19,7 @@
                                         <li id="ShoppingBasketList">
 
                                             <img id="ShoppingBasket-img"
-                                                v-bind:src="`http://localhost:9002/upload/${cartVo.saveName}`">
+                                                v-bind:src="`${this.$store.state.apiBaseUrl}/upload/${cartVo.saveName}`">
 
                                             <div>
                                                 <button class="ShoppingBasket-Cancelbtn" v-on:click="Cancelbtn(cartVo.c_no)"
@@ -141,7 +141,7 @@ export default {
 
             axios({
                 method: 'get', // put, post, delete                   
-                url: 'http://localhost:9002/api/customer/shoppingbasket',
+                url: `${this.$store.state.apiBaseUrl}/api/customer/shoppingbasket`,
                 headers: {
                     "Content-Type": "application/json; charset=utf-8",
                     "Authorization": "Bearer " + this.$store.state.token
@@ -163,7 +163,7 @@ export default {
 
             axios({
 				method: 'delete', // put, post, delete                   
-				url: 'http://localhost:9002/api/customer/shoppingbasket/' + c_no,
+				url: `${this.$store.state.apiBaseUrl}/api/customer/shoppingbasket/` + c_no,
 				headers: { "Content-Type": "application/json; charset=utf-8" }, //전송타입
 				//params:{personId: this.phonebookVo.personId} , //get방식 파라미터로 값이 전달
 				//data:{personId: this.phonebookVo.personId} , //put, post, delete 방식 자동으로 JSON으로 변환 전달
@@ -200,7 +200,7 @@ export default {
             console.log(this.cartVo);
             axios({
 				method: 'put', // put, post, delete                   
-				url: 'http://localhost:9002/api/customer/shoppingbasket',
+				url: `${this.$store.state.apiBaseUrl}/api/customer/shoppingbasket`,
 				headers: { "Content-Type": "application/json; charset=utf-8" }, //전송타입
 				//params:{personId: this.phonebookVo.personId} , //get방식 파라미터로 값이 전달
 				data:this.cartVo, //put, post, delete 방식 자동으로 JSON으로 변환 전달
@@ -220,7 +220,7 @@ export default {
 
             axios({
 				method: 'delete', // put, post, delete                   
-				url: 'http://localhost:9002/api/customer/shoppingbasket',
+				url: `${this.$store.state.apiBaseUrl}/api/customer/shoppingbasket`,
 				headers: { "Content-Type": "application/json; charset=utf-8",
                            "Authorization": "Bearer " + this.$store.state.token
                          }, //전송타입
