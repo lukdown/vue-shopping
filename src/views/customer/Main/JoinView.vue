@@ -90,7 +90,7 @@ export default {
             } else {
                 axios({
                     method: 'put', // put, post, delete                   
-                    url: 'http://localhost:9002/api/customer/idcheck',
+                    url: `${this.$store.state.apiBaseUrl}/api/customer/idcheck`,
                     headers: { "Content-Type": "application/json; charset=utf-8" }, //전송타입
                     //params: guestbookVo, //get방식 파라미터로 값이 전달
                     data: this.userVo, //put, post, delete 방식 자동으로 JSON으로 변환 전달
@@ -148,7 +148,7 @@ export default {
             } else {
                 axios({
                     method: 'put', // put, post, delete                   
-                    url: 'http://localhost:9002/api/customer/join',
+                    url: `${this.$store.state.apiBaseUrl}/api/customer/join`,
                     headers: { "Content-Type": "application/json; charset=utf-8" }, //전송타입
                     //params: guestbookVo, //get방식 파라미터로 값이 전달
                     data: this.userVo, //put, post, delete 방식 자동으로 JSON으로 변환 전달

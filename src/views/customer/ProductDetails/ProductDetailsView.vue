@@ -27,7 +27,7 @@
                   <div id="ProductDetails-All2">
 
                     <div>
-                      <img id="ProductDetails-img" v-bind:src="`http://localhost:9002/upload/${productVo.saveName}`">
+                      <img id="ProductDetails-img" v-bind:src="`${this.$store.state.apiBaseUrl}/upload/${productVo.saveName}`">
                     </div>
 
 
@@ -145,7 +145,7 @@ export default {
 
       axios({
         method: 'get', // put, post, delete                   
-        url: 'http://localhost:9002/api/customer/productdetails/' + this.productVo.p_no,
+        url: `${this.$store.state.apiBaseUrl}/api/customer/productdetails/` + this.productVo.p_no,
         headers: { "Content-Type": "application/json; charset=utf-8" }, //전송타입
         //params: this.phonebookVo.personId, //get방식 파라미터로 값이 전달
         //data: this.phonebookVo, //put, post, delete 방식 자동으로 JSON으로 변환 전달
@@ -179,7 +179,7 @@ export default {
 
       axios({
         method: 'post', // put, post, delete                   
-        url: 'http://localhost:9002/api/customer/productdetails/' + this.cartVo.p_no,
+        url: `${this.$store.state.apiBaseUrl}/api/customer/productdetails/` + this.cartVo.p_no,
         headers: {
           "Content-Type": "application/json; charset=utf-8",
           "Authorization": "Bearer " + this.$store.state.token

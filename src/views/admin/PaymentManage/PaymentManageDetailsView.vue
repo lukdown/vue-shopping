@@ -90,7 +90,7 @@
                 console.log("하하");
                 axios({
                     method: 'get',
-                    url: 'http://localhost:9002/api/admin/paymentmanage/'+ this.productEVo.o_no,
+                    url: `${this.$store.state.apiBaseUrl}/api/admin/paymentmanage/`+ this.productEVo.o_no,
                     headers: {"Content-Type": "application/json; charset=utf-8"},
                     data: this.productEVo.o_no,
                     responseType: 'json'

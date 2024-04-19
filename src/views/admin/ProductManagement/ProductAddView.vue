@@ -179,7 +179,7 @@ export default {
 
             axios({
                 method: 'post', // put, post, delete                   
-                url: 'http://localhost:9002/api/admin/add',
+                url: `${this.$store.state.apiBaseUrl}/api/admin/add`,
                 headers: {
                     "Content-Type": "multipart/form-data",
                 },//전송타입+토큰
