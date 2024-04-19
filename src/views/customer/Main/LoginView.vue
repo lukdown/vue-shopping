@@ -22,7 +22,7 @@
                 <!-- 버튼영역 -->
                 <div id="login-btns">
                     <button type="submit" class="login-btn">LOGIN</button>
-                    <button class="login-btn">Sign Up</button>
+                    <router-link to="/customer/join"><button class="login-btn" type="button">Sign Up</button></router-link>
                 </div>
                 
             </form>
