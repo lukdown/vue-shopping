@@ -179,6 +179,12 @@
         methods: {
             getInfoList(){
                 console.log("불러오기");
+
+                if(this.$store.state.token == null){
+                    alert("로그인상태에서 이용해주세요.");
+                    this.$router.push({path:'/customer/login'});
+                }
+
                 axios({
                     method: 'get', // put, post, delete                   
                     url: 'http://localhost:9002/api/customer/payment',
